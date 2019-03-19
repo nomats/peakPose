@@ -12,6 +12,15 @@
 // the project's config changing)
 
 module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
+  on('before:browser:launch', (browser = {}, args) => {
+    if (browser.name === 'chrome') {
+      // Mac/Linux
+      args.push('--use-file-for-fake-video-capture=file:///Users/_Aodhan_/Projects/week-10-tech-tests/final-project/asanaApp/cypress/fixtures/my-video.y4m')
+
+      // Windows
+      // args.push('--use-file-for-fake-video-capture=c:\\path\\to\\video\\my-video.y4m')
+    }
+
+    return args
+  })
 }
