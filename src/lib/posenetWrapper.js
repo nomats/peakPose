@@ -1,8 +1,8 @@
 import Bodypart from './bodypart';
 
 class Pose{
-  constructor(posenet_object) {
-    this.source = posenet_object;
+  constructor(posenetObject) {
+    this.source = posenetObject;
     this._bodypartIndexLookup = {
       "nose" : 0, "leftEye" : 1, "rightEye" : 2,
       "leftEar" : 3, "rightEar" : 4, "leftShoulder" : 5,

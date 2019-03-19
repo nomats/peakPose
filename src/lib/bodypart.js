@@ -1,6 +1,6 @@
 class Bodypart{
-  constructor(posenetBodypartObject){
-    this.source = posenetBodypartObject
+  constructor(posenetKeypointObject){
+    this.source = posenetKeypointObject
     this.position = this.source['position']
   }
 }
