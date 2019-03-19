@@ -6,12 +6,14 @@
     "dotenv": "^7.0.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "start-server-and-test": "^1.7.12"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "cypress open",
+    "cy:run": "cypress run",
+    "test": "start-server-and-test start http://localhost:3030 cy:run",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
