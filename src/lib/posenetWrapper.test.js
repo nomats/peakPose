@@ -19,7 +19,6 @@ it('#bodypart can get leftEye position', () => {
   expect(subject.bodypart("leftEye").position).toEqual({x: 884.5536936801585, y: 120.80305946448948})
 });
 
-
 it('#bodypart can get rightEye position', () => {
   const input = sample['correct'][0]
   const subject = new Pose(input)
@@ -111,4 +110,27 @@ it('#bodypart can get rightAnkle position', () => {
   console.log(subject.bodypart("rightAnkle").position)
 });
 
+it('#isMountainPose can recognise position', () => {
+  var input = sample['correct'][0]
+  var subject = new Pose(input)
+  expect(subject.isMountainPose()).toEqual(true)
+  input = sample['correct'][1]
+  subject = new Pose(input)
+  expect(subject.isMountainPose()).toEqual(true)
+});
+
+it('#isMountainPose can recognise wrong position', () => {
+  var input = sample['incorrect'][0]
+  var subject = new Pose(input)
+  expect(subject.isMountainPose()).toEqual(false)
+  input = sample['incorrect'][1]
+  subject = new Pose(input)
+  expect(subject.isMountainPose()).toEqual(false)
+  input = sample['incorrect'][2]
+  subject = new Pose(input)
+  expect(subject.isMountainPose()).toEqual(false)
+  input = sample['incorrect'][3]
+  subject = new Pose(input)
+  expect(subject.isMountainPose()).toEqual(false)
+});
 ///make bodypart hash
