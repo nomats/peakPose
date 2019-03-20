@@ -16,6 +16,16 @@ class Pose{
   bodypart(bodypart){
     return (new Bodypart(this.source['keypoints'][this._bodypartIndexLookup[bodypart]]))
   }
+
+  isMountainPose(){
+    const c1 = this.bodypart("rightWrist").position['y'] > this.bodypart("rightHip").position['y']
+    const c2 = this.bodypart("leftWrist").position['y'] > this.bodypart("leftHip").position['y']
+    // lower body x-coordinates
+    const c3 = this.bodypart("leftShoulder").position['x'] > this.bodypart("leftAnkle").position['x'] && this.bodypart("rightShoulder").position['x'] < this.bodypart("leftAnkle").position['x']
+    const c4 = this.bodypart("leftShoulder").position['x'] > this.bodypart("rightAnkle").position['x'] && this.bodypart("rightShoulder").position['x'] < this.bodypart("rightAnkle").position['x']
+    const c5 = this.bodypart("leftAnkle").position['x'] > this.bodypart("rightAnkle").position['x']
+    return (c1 && c2 && c3 && c4 && c5 )
+  }
 };
 
 module.exports = Pose
