@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WebcamFeed should render correctly with no props 1`] = `
+<Webcam
+  audio={true}
+  className=""
+  height={480}
+  imageSmoothing={true}
+  onUserMedia={[Function]}
+  onUserMediaError={[Function]}
+  screenshotFormat="image/webp"
+  screenshotQuality={0.92}
+  width={640}
+/>
+`;
