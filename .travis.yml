@@ -1,13 +1,12 @@
 language: node_js
 node_js:
-- stable
+  - stable
 cache:
   directories:
-  - ~/.cache
-  - node_modules
+    - node_modules
 script:
-- yarn test
-- yarn build
+  - yarn test
+  - yarn build
 deploy:
   provider: heroku
   api_key:
