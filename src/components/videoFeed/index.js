@@ -1,29 +1,25 @@
 import React from "react";
 
 class VideoFeed extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {videoSrc:null};
-  }
-
   componentDidMount() {
-    navigator.mediaDevices.getUserMedia({video: true}).then((stream) => {
-      this.handleVideo(stream)
+    let video = document.querySelector('video');
+    navigator.mediaDevices.getUserMedia({video: true})
+    .then((stream) => {
+      video.srcObject = stream
     })
-  }
-
-  handleVideo(stream) {
-    this.setState({ videoSrc: window.URL.createObjectURL(stream) });
+    .catch(this.videoError)
   }
 
   videoError() {
-    
+    alert("Webcam not working!")
   }
 
-  render() { 
-    
+  render() {
     return (
-      <video id="Webcam" src={this.state.videoSrc} autoPlay="true"/>
+      <video
+      id="Webcam"
+      autoPlay={true}
+      />
     )
   }
 }
