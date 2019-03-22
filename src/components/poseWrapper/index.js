@@ -14,6 +14,7 @@ class PoseWrapper extends React.Component {
         return net.estimateSinglePose(imageElement, imageScaleFactor, flipHorizontal, outputStride)
       }).then(function(pose){
         var wrapped = new Pose(pose);
+        console.log(wrapped.isMountainPose());
       })
     }, 500);
   }
