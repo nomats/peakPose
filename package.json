@@ -2,15 +2,28 @@
   "name": "asana_app",
   "version": "0.1.0",
   "private": true,
+  "devDependencies": {
+    "webpack-cli": "^3.1.2"
+  },
   "dependencies": {
+    "@tensorflow-models/posenet": "^1.0.0",
+    "@tensorflow/tfjs": "^1.0.2",
+    "canvas": "^2.4.1",
+    "dotenv": "^7.0.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.11.2",
+    "enzyme-to-json": "^3.3.5",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "react-testing-library": "^6.0.1",
+    "react-webcam": "^1.1.1",
+    "start-server-and-test": "^1.7.12"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test -u",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -21,5 +34,10 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  }
 }
