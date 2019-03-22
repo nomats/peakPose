@@ -1,15 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`WebcamFeed should render correctly with no props 1`] = `
-<Webcam
-  audio={true}
-  className=""
-  height={480}
-  imageSmoothing={true}
-  onUserMedia={[Function]}
-  onUserMediaError={[Function]}
-  screenshotFormat="image/webp"
-  screenshotQuality={0.92}
-  width={640}
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-bdVaJa",
+        "isStatic": true,
+        "rules": Array [
+          "
+  border: 5px solid palevioletred;
+",
+        ],
+      },
+      "displayName": "Styled(WebcamFeed)",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "sc-bdVaJa",
+      "target": [Function],
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+      Symbol(Symbol.hasInstance): [Function],
+    }
+  }
+  forwardedRef={null}
 />
 `;
