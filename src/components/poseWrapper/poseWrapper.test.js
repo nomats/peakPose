@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import HelloBox from "./index.js";
+import PoseWrapper from "./index.js";
 import { mount, shallow, render } from "enzyme";
 
-describe("HelloBox", () => {
+describe("PoseWrapper", () => {
   it("should render correctly with no props", () => {
-    const component = shallow(<HelloBox />);
+    const component = shallow(<PoseWrapper />);
 
     expect(component).toMatchSnapshot();
   });
