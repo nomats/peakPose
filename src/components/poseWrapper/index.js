@@ -15,20 +15,26 @@ class PoseWrapper extends React.Component {
   };
 
   runPosenet() {
+    console.log("runPosenet executed")
     setInterval(function() {
+      console.log("setInterval executed")
       let imageElement = document.getElementById('webcam');
+      console.log(imageElement)
+      console.log(posenet.load())
       posenet.load().then(function(net){
-        return net.estimateSinglePose(this.imageElement, this.imageScaleFactor, this.flipHorizontal, this.outputStride)
+        return net.estimateSinglePose(imageElement, this.imageScaleFactor, this.flipHorizontal, this.outputStride)
       }).then(function(pose){
         var wrapped = new Pose(pose);
-        sessionStorage.setItem('pose', pose);
-        sessionStorage.setItem('nailingIt', wrapped.isMountainPose());
-        console.log(sessionStorage.getItem('nailingIt'));
+        // sessionStorage.setItem('pose', pose);
+        // sessionStorage.setItem('nailingIt', wrapped.isMountainPose());
+        console.log(wrapped.isMountainPose());
       })
     }, 500);
   }
 
   render() {
+    this.runPosenet();
+    console.log("hello");
     return <WebcamFeed />;
   }
 }
