@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`HelloBox should render correctly with no props 1`] = `
-<h1>
-  Hello world!
-</h1>
-`;

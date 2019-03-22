@@ -3,7 +3,7 @@ import Webcam from "react-webcam";
 
 class WebcamFeed extends React.Component {
   render() {
-    return <Webcam id="webcam"/>;
+    return <Webcam />;
   }
 }
 export default WebcamFeed;

@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import PoseWrapper from "./index.js";
 import { mount, shallow, render } from "enzyme";
 
-describe("WebcamFeed", () => {
+describe("PoseWrapper", () => {
   it("should render correctly with no props", () => {
     const component = shallow(<PoseWrapper />);
 
