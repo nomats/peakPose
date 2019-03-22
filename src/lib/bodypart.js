@@ -5,4 +5,4 @@ class Bodypart{
   }
 }
 
-module.exports = Bodypart
+export default Bodypart;

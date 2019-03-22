@@ -6,6 +6,8 @@
     "webpack-cli": "^3.1.2"
   },
   "dependencies": {
+    "@tensorflow-models/posenet": "^1.0.0",
+    "@tensorflow/tfjs": "^1.0.2",
     "dotenv": "^7.0.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",

@@ -1,14 +1,13 @@
 import React, { Component } from "react";
-// import logo from "./logo.svg";
 import "./App.css";
-import WebcamFeed from "./components/webcamFeed";
+import PoseWrapper from "./components/poseWrapper";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        Here's the webcam
-        <WebcamFeed />
+        Posenet wrapper & webcam child
+        <PoseWrapper />
       </div>
     );
   }
