@@ -32,11 +32,11 @@ class Pose{
     const c3 = this._isPointBetween(this.bodypart("leftAnkle").position['x'],[this.bodypart("leftShoulder").position['x'],this.bodypart("rightShoulder").position['x']])
     const c4 = this._isPointBetween(this.bodypart("rightAnkle").position['x'],[this.bodypart("leftShoulder").position['x'],this.bodypart("rightShoulder").position['x']])
     const c5 = this.bodypart("leftAnkle").position['x'] > this.bodypart("rightAnkle").position['x']
-    console.log(c1)
-    console.log(c2)
-    console.log(c3)
-    console.log(c4)
-    console.log(c5)
+    const c6 = this._isStraight([this.bodypart("leftAnkle").position,
+                                this.bodypart("leftKnee").position,
+                                this.bodypart("leftHip").position])
+    console.log("is straight:")
+    console.log(c6)
     return (c1 && c2 && c3 && c4 && c5 )
   }
 
