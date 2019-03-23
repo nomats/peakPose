@@ -1,8 +1,10 @@
 import Bodypart from './bodypart';
+import MathModels from './mathModels'
 
 class Pose{
   constructor(posenetObject) {
     this.source = posenetObject;
+    this._mm = new MathModels();
     this._bodypartIndexLookup = {
       "nose" : 0, "leftEye" : 1, "rightEye" : 2,
       "leftEar" : 3, "rightEar" : 4, "leftShoulder" : 5,
@@ -43,6 +45,18 @@ class Pose{
     const withinUpperBound = boundary[1] > point
     const withinLowerBound = boundary[0] < point
     return withinUpperBound && withinLowerBound
+  }
+
+  _isStraight(points){
+    return this._mm.isStraight(points)
+  }
+
+  _angle(edge1,middle,edge2){
+    return this._mm.angle(edge1,middle,edge2)
+  }
+
+  _isHorizontal(points){
+    return this._mm.isHorizontal(points)
   }
 };
 
