@@ -10,28 +10,23 @@ class RegressionHandler {
    }
    var xBar = xCum / data.length
    var yBar = yCum / data.length
-   console.log([xBar,yBar])
    return [xBar,yBar]
   }
 
   s_xx(data) {
    var sum = 0;
    var xBar;
-   var yBar;
-   [xBar, yBar] = this.average(data)
+   xBar = this.average(data)[0]
      for(var i = 0; i < data.length; i++){
        sum += (data[i]['x'] - xBar)**2
    }
-   console.log("s_xx")
-   console.log(sum)
    return sum
   }
 
   s_yy(data) {
    var sum = 0;
-   var xBar;
    var yBar;
-   [xBar, yBar] = this.average(data)
+   yBar = this.average(data)[1]
      for(var j = 0; j < data.length; j++){
        sum += (data[j]['y'] - yBar)**2
    }

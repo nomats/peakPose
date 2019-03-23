@@ -27,3 +27,15 @@ it('MathModels#isStraight can deduce straight lines', () => {
   expect(_mm.isStraight([{x: 1, y: -0.5},{x: 3,y: -0.6},{x: 5,y: -0.7},{x: 7,y: -0.8},
      {x: 9, y:-0.9}, {x: 11, y:-1.0}])).toEqual(true)
 });
+
+it('MathModels#isStraight can deduce straight lines', () => {
+  var _mm = new MathModels()
+  expect(_mm.isStraight([{x: -1, y: -0.5},{x: -1.01,y: -0.6},{x: -1.02,y: -0.7},{x: -1.03,y: -0.8},
+     {x: -1.04, y:-0.9}, {x: -1.05, y:-1.0}])).toEqual(true)
+});
+
+it('MathModels#isStraight can deduce straight lines', () => {
+  var _mm = new MathModels()
+  expect(_mm.isStraight([{x: -1, y: -9},{x: -1.01,y: 5},{x: -1.02,y: -3.7},{x: 1.03,y: -0.8},
+     {x: 13.04, y:-0.9}, {x: -1.05, y:-1.0}])).toEqual(false)
+});
