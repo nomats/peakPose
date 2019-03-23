@@ -1,5 +1,4 @@
 class RegressionHandler {
-  constructor(){};
 
   average(data) {
    var xCum = 0
