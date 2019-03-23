@@ -48,6 +48,10 @@ class RegressionHandler {
    return (this.s_xy(data)/(Math.sqrt(this.s_xx(data)*this.s_yy(data))))
   }
 
+  b_1(data){
+    return (this.s_xy(data)/this.s_xx(data));
+  }
+
 }
 
 export default RegressionHandler

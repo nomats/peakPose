@@ -19,6 +19,10 @@ class MathModels{
     console.log(regression)
     return (regression > margin || regression < -1*margin)
   }
+  isHorizontal(points, margin=0.1){
+    var gradient = this._regHandler.b_1(points)
+    return gradient < margin && gradient > -1*margin
+  }
 }
 
 export default MathModels;
