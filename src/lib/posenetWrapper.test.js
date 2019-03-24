@@ -133,4 +133,19 @@ it('#isMountainPose can recognise wrong position', () => {
   subject = new Pose(input)
   expect(subject.isMountainPose()).toEqual(false)
 });
+
+it('#isChairPose can recognise wrong position', () => {
+  var input = sample['incorrect'][0]
+  var subject = new Pose(input)
+  expect(subject.isMountainPose()).toEqual(false)
+  input = sample['incorrect'][1]
+  subject = new Pose(input)
+  expect(subject.isMountainPose()).toEqual(false)
+  input = sample['incorrect'][2]
+  subject = new Pose(input)
+  expect(subject.isMountainPose()).toEqual(false)
+  input = sample['incorrect'][3]
+  subject = new Pose(input)
+  expect(subject.isMountainPose()).toEqual(false)
+});
 ///make bodypart hash
