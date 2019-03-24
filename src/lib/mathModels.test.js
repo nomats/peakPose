@@ -53,3 +53,17 @@ it('MathModels#isHorizontal can deduce horizontal lines', () => {
   expect(_mm.isHorizontal([{x: -1, y: 3},{x: 1,y: 3.1},{x: 3,y: 3.6},{x: 5,y: 3.3},
      {x: 7, y:2.9}, {x: 9, y:2.8}],0.7)).toEqual(true)
 });
+
+it('MathModels#isHorizontal can deduce non-horizontal lines', () => {
+  console.log("horizontal")
+  var _mm = new MathModels()
+  expect(_mm.isHorizontal([{x: -1, y: 3},{x: 1,y: 3.1},{x: 3,y: 3.9},{x: 5,y: 3.3},
+     {x: 7, y:2.9}, {x: 9, y:2.2}],0.7)).toEqual(false)
+});
+
+it('MathModels#isHorizontal can deduce horizontal lines', () => {
+  console.log("horizontal")
+  var _mm = new MathModels()
+  expect(_mm.isHorizontal([{x: -100, y: 326},{x: 0,y: 328},{x: 100,y: 323},{x: 200,y: 330},
+     {x: 300, y:329}],10)).toEqual(true)
+});
