@@ -1,8 +1,10 @@
 import Bodypart from './bodypart';
+import MathModels from './mathModels'
 
 class Pose{
   constructor(posenetObject) {
     this.source = posenetObject;
+    this._mm = new MathModels();
     this._bodypartIndexLookup = {
       "nose" : 0, "leftEye" : 1, "rightEye" : 2,
       "leftEar" : 3, "rightEar" : 4, "leftShoulder" : 5,
@@ -30,11 +32,11 @@ class Pose{
     const c3 = this._isPointBetween(this.bodypart("leftAnkle").position['x'],[this.bodypart("leftShoulder").position['x'],this.bodypart("rightShoulder").position['x']])
     const c4 = this._isPointBetween(this.bodypart("rightAnkle").position['x'],[this.bodypart("leftShoulder").position['x'],this.bodypart("rightShoulder").position['x']])
     const c5 = this.bodypart("leftAnkle").position['x'] > this.bodypart("rightAnkle").position['x']
-    console.log(c1)
-    console.log(c2)
-    console.log(c3)
-    console.log(c4)
-    console.log(c5)
+    const c6 = this._isStraight([this.bodypart("leftAnkle").position,
+                                this.bodypart("leftKnee").position,
+                                this.bodypart("leftHip").position])
+    console.log("is straight:")
+    console.log(c6)
     return (c1 && c2 && c3 && c4 && c5 )
   }
 
@@ -43,6 +45,18 @@ class Pose{
     const withinUpperBound = boundary[1] > point
     const withinLowerBound = boundary[0] < point
     return withinUpperBound && withinLowerBound
+  }
+
+  _isStraight(points){
+    return this._mm.isStraight(points)
+  }
+
+  _angle(edge1,middle,edge2){
+    return this._mm.angle(edge1,middle,edge2)
+  }
+
+  _isHorizontal(points){
+    return this._mm.isHorizontal(points)
   }
 };
 
