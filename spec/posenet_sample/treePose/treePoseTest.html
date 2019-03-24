@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet"></script>
+
+    <script type="text/javascript">
+      console.log("hello");
+      var imageScaleFactor = 0.5;
+      var outputStride = 16;
+      var flipHorizontal = false;
+
+      function runBoy(imageElement) {
+        posenet
+          .load()
+          .then(function(net) {
+            return net.estimateSinglePose(
+              imageElement,
+              imageScaleFactor,
+              flipHorizontal,
+              outputStride
+            );
+          })
+          .then(function(pose) {
+            console.log(pose);
+          });
+      }
+    </script>
+
+    <img
+      src="https://images.unsplash.com/photo-1551656927-4f07ba471344?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
+      id="sample"
+      crossorigin="anonymous"
+    />
+    <script type="text/javascript">
+      var firstGuy = document.getElementById("sample");
+      runBoy(firstGuy);
+    </script>
+  </body>
+</html>
