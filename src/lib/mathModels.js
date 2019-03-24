@@ -20,12 +20,15 @@ class MathModels{
     console.log((goodness > margin))
     return (goodness > margin)
   }
-  isHorizontal(points, margin=0.1){
-    var gradient = this._regHandler.b_1(points)
-    console.log("gradient:")
-    console.log(gradient)
-    console.log((gradient < margin) && (gradient > -1*margin))
-    return (gradient < margin) && (gradient > -1*margin)
+  isHorizontal(points, margin=5){
+    var result = points.length < 2 ? false : true
+    var average = this._regHandler.average(points)[1]
+    for(var i = 0; i < points.length ; i++ ){
+      if((points[i]['y']>average+margin) || (points[i]['y']<(average-margin))){
+        result = false
+      };
+    };
+    return result
   }
 }
 

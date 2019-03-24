@@ -48,7 +48,8 @@ it('MathModels#isStraight can deduce straight lines', () => {
 });
 
 it('MathModels#isHorizontal can deduce horizontal lines', () => {
+  console.log("horizontal")
   var _mm = new MathModels()
   expect(_mm.isHorizontal([{x: -1, y: 3},{x: 1,y: 3.1},{x: 3,y: 3.6},{x: 5,y: 3.3},
-     {x: 7, y:2.9}, {x: 9, y:2.8}])).toEqual(true)
+     {x: 7, y:2.9}, {x: 9, y:2.8}],0.7)).toEqual(true)
 });
