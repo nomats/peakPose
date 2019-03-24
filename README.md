@@ -1,3 +1,6 @@
+![Build Status](https://img.shields.io/travis/com/nomats/asanaApp.svg)
+![Built By](https://img.shields.io/badge/built%20by-nomats-blue.svg)
+
 # Asana
 
 
