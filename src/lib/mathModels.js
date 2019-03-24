@@ -17,7 +17,6 @@ class MathModels{
     var result = true
     var b_1 = this._regHandler.b_1(points)
     var b_0 = this._regHandler.b_0(points, b_1)
-    var b_1Inverted = -1*(1/b_1)
     const yHat = this._regHandler.yHat
     for(var i = 0; i < points.length; i++){
       var c_o = points[i]['y'] + points[i]['x']/b_1
@@ -27,15 +26,6 @@ class MathModels{
       if(distance > margin ){
         result = false
       }
-      console.log("intercept")
-      console.log(distance>margin)
-      console.log("distance")
-      console.log(distance)
-      console.log(x_i)
-      console.log(y_i)
-      console.log("original coordinate")
-      console.log(points[i]['x'])
-      console.log(points[i]['y'])
     }
     return result
   }

@@ -36,7 +36,7 @@ class Pose{
     //   this.bodypart("leftElbow").position,
     //   this.bodypart("leftWrist").position
     // ], 5)
-    return c1;
+    return c1 ;
   }
 
   isMountainPose(){
