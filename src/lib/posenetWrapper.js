@@ -19,6 +19,19 @@ class Pose{
     return (new Bodypart(this.source['keypoints'][this._bodypartIndexLookup[bodypart]]))
   }
 
+  isDownwardFacingDog(){
+    const c1 = this.bodypart("rightHip").position['y'] > this.bodypart("rightKnee").position['y'] && this.bodypart("rightShoulder")
+    const c2 = this._isStraight([this.bodypart("rightAnkle").position,
+                                 this.bodypart("rightKnee").position,
+                                 this.bodypart("rightHip").position]) && 
+                                 this._isStraight([this.bodypart("rightHip").position,
+                                 this.bodypart("rightShoulder").position,
+                                 this.bodypart("rightWrist").position])
+                                 console.log("back and leg are straight")
+                                 console.log(c2)
+                                 return (c1 && c2)
+  }
+
   isMountainPose(){
     // var conditional =  new conditional([
     //this._isPointBetween(blah),
