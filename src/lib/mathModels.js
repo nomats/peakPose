@@ -17,11 +17,15 @@ class MathModels{
     var regression = this._regHandler.r(points)
     console.log("regression:")
     console.log(regression)
+    console.log((regression > margin || regression < -1*margin))
     return (regression > margin || regression < -1*margin)
   }
   isHorizontal(points, margin=0.1){
     var gradient = this._regHandler.b_1(points)
-    return gradient < margin && gradient > -1*margin
+    console.log("gradient:")
+    console.log(gradient)
+    console.log((gradient < margin) && (gradient > -1*margin))
+    return (gradient < margin) && (gradient > -1*margin)
   }
 }
 
