@@ -551,6 +551,6 @@ const handsOnHips1 = {
 };
 
 module.exports = {
-  correct: [mountain1, mountain2],
-  incorrect: [wrongSample5, wrongSample4, goddess1, handsOnHips1]
+  correct: [tree1],
+  incorrect: [mountain2, wrongSample5, wrongSample4, goddess1, handsOnHips1]
 };
