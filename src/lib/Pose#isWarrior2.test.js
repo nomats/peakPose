@@ -8,6 +8,12 @@ it('#isWarrior2 can recognise correct position', () => {
   expect(subject.isWarrior2()).toEqual(true)
 });
 
+it('#isWarrior2 can recognise correct position', () => {
+  var input = sample['correct'][1]
+  var subject = new Pose(input)
+  expect(subject.isWarrior2()).toEqual(true)
+});
+
 it('#isWarrior2 can recognise incorrect position', () => {
   console.log("bad")
   var input = sample['incorrect'][0]

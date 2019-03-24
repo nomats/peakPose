@@ -28,12 +28,13 @@ class Pose{
       this.bodypart("leftElbow").position,
       this.bodypart("leftWrist").position
     ],15)
+
     var kneeAngle = this._angle(
       this.bodypart("rightHip").position,
       this.bodypart("rightKnee").position,
       this.bodypart("rightAnkle").position,
     )
-    const c2 = (kneeAngle > 85) && (kneeAngle < 110)
+    const c2 = (kneeAngle > 85) && (kneeAngle < 115)
     return c1 && c2;
   }
 

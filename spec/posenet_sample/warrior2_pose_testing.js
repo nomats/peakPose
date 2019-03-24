@@ -25,6 +25,30 @@ const warriorTwo1 = {
   ]
 };
 
+const warriorTwo2 = {
+  //https://st2.depositphotos.com/4157265/6814/i/950/depositphotos_68146739-stock-photo-yoga-pose-warrior-2.jpg
+  score: 0.7909733057022095,
+  keypoints: [
+    {score: 0.996211051940918, part: "nose", position: {x: 535.493836861501, y: 128.13956272566708}},
+    {score: 0.9081234335899353, part: "leftEye", position: {x: 530.0600137077347, y: 116.88385851942112}},
+    {score: 0.9906643629074097, part: "rightEye", position: {x: 518.6512401741995, y: 119.09072235288535}},
+    {score: 0.0969153344631195, part: "leftEar", position: {x: 463.9178968771123, y: 139.07383904612735}},
+    {score: 0.9735137224197388, part: "rightEar", position: {x: 475.0303365910797, y: 144.25125515991573}},
+    {score: 0.9719441533088684, part: "leftShoulder", position: {x: 541.5136691732426, y: 202.59260889613662}},
+    {score: 0.9787555932998657, part: "rightShoulder", position: {x: 432.7833100900324, y: 211.40786670718774}},
+    {score: 0.6172356605529785, part: "leftElbow", position: {x: 683.5111192668708, y: 208.85069827297673}},
+    {score: 0.8335677981376648, part: "rightElbow", position: {x: 297.65643890810685, y: 203.41490721207344}},
+    {score: 0.47577187418937683, part: "leftWrist", position: {x: 190.32118866765043, y: 206.86856631496892}},
+    {score: 0.8212095499038696, part: "rightWrist", position: {x: 197.84236714537715, y: 209.84432956231453}},
+    {score: 0.930208683013916, part: "leftHip", position: {x: 532.795455963319, y: 394.04063456277817}},
+    {score: 0.9737575650215149, part: "rightHip", position: {x: 464.1161437312842, y: 393.8038482213232}},
+    {score: 0.8233045339584351, part: "leftKnee", position: {x: 698.8812807877539, y: 437.4697755536269}},
+    {score: 0.8011705279350281, part: "rightKnee", position: {x: 699.5916025326766, y: 437.4326889083364}},
+    {score: 0.8467032313346863, part: "leftAnkle", position: {x: 711.1959532463335, y: 606.7223240883485}},
+    {score: 0.4074891209602356, part: "rightAnkle", position: {x: 716.9707408882003, y: 611.5666243103208}},
+  ]
+};
+
 
 const mountain1 = {
   //https://www.yogajournal.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_1720/MTQ3MTUyNzM1MjQ1MzEzNDg2/mountainhp2_292_37362_cmyk.webp
@@ -99,6 +123,6 @@ const goddess1 = {
 };
 
 module.exports = {
-  correct: [warriorTwo1],
+  correct: [warriorTwo1, warriorTwo2],
   incorrect: [mountain1, handsOnHips1, goddess1]
 }
