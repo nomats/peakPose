@@ -3,7 +3,9 @@
 
 # Asana
 
+Asana is a web application that gives yogis a platform to perfect their alignment.
 
+Using their webcam, the user has the ability to select various yoga poses and compare their stance.
 
 ### Getting Started:
 
