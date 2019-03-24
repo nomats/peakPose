@@ -25,28 +25,6 @@ const warriorTwo1 = {
   ]
 };
 
-const warriorTwo2 = {
-  score: 0.7041914033539155,
-  keypoints: [
-    {score: 0.9933145642280579, part: "nose", position: {x: 352.93767755681813, y: 129.62726218678128}},
-    {score: 0.9859431982040405, part: "leftEye", position: {x: 362.0659052861201, y: 117.53396417493019}},
-    {score: 0.8400688171386719, part: "rightEye", position: {x: 349.8154043222402, y: 118.65606373344255}},
-    {score: 0.9804317355155945, part: "leftEar", position: {x: 403.9972161627435, y: 120.8292568955466}},
-    {score: 0.1612030416727066, part: "rightEar", position: {x: 352.8980126318993, y: 125.5865689452935}},
-    {score: 0.9731451869010925, part: "leftShoulder", position: {x: 442.2649274553571, y: 189.54177083998826}},
-    {score: 0.9874529838562012, part: "rightShoulder", position: {x: 349.6244039163961, y: 202.3905374402198}},
-    {score: 0.4783990979194641, part: "leftElbow", position: {x: 449.67031503652595, y: 280.99868940787155}},
-    {score: 0.45742180943489075, part: "rightElbow", position: {x: 355.6839742288961, y: 291.33835765802974}},
-    {score: 0.22587648034095764, part: "leftWrist", position: {x: 680.111416903409, y: 563.1447907920196}},
-    {score: 0.18905481696128845, part: "rightWrist", position: {x: 306.9588004768668, y: 201.19956566165914}},
-    {score: 0.9826815724372864, part: "leftHip", position: {x: 440.9761186079545, y: 363.8836679428909}},
-    {score: 0.9631907939910889, part: "rightHip", position: {x: 377.9837472098214, y: 370.83069774592036}},
-    {score: 0.8389308452606201, part: "leftKnee", position: {x: 212.37569437398537, y: 416.0375220753322}},
-    {score: 0.7433191537857056, part: "rightKnee", position: {x: 211.39087231128244, y: 415.63129056651275}},
-    {score: 0.6226173043251038, part: "leftAnkle", position: {x: 207.47200309456167, y: 572.5858247465806}},
-    {score: 0.5482024550437927, part: "rightAnkle", position: {x: 208.72656884131493, y: 565.4627539138556}}
-  ]
-  }
 
 const mountain1 = {
   //https://www.yogajournal.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_1720/MTQ3MTUyNzM1MjQ1MzEzNDg2/mountainhp2_292_37362_cmyk.webp
@@ -121,6 +99,6 @@ const goddess1 = {
 };
 
 module.exports = {
-  correct: [warriorTwo1,warriorTwo2],
+  correct: [warriorTwo1],
   incorrect: [mountain1, handsOnHips1, goddess1]
 }
