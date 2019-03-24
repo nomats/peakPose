@@ -51,6 +51,33 @@ class RegressionHandler {
     return (this.s_xy(data)/this.s_xx(data));
   }
 
+  b_0(data, b_1) {
+    var xBar;
+    var yBar;
+    [xBar, yBar] = this.average(data);
+    return yBar -(this.b_1(data)*xBar)
+  }
+
+  yHat(x,b_1,b_0){
+    return (b_0 + b_1*x)
+  }
+
+  ssr(data){
+    var yBar = this.average(data)[1];
+    var b_1 = this.b_1(data);
+    var b_0 = this.b_0(data, b_1);
+    var sum = 0;
+    for(var i = 0; i < data.length; i++){
+       sum += (this.yHat(data[i]['x'],b_1,b_0) - yBar)**2
+    }
+    return sum
+  }
+  coefficientOfDetermination(data){
+    var ssr = this.ssr(data)
+    var ss_y = this.s_yy(data)
+    return ssr/ss_y
+  }
+
 }
 
 export default RegressionHandler

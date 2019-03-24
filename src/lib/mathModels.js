@@ -14,11 +14,11 @@ class MathModels{
   }
 
   isStraight(points, margin=0.9){
-    var regression = this._regHandler.r(points)
-    console.log("regression:")
-    console.log(regression)
-    console.log((regression > margin || regression < -1*margin))
-    return (regression > margin || regression < -1*margin)
+    var goodness = this._regHandler.coefficientOfDetermination(points)
+    console.log("goodness:")
+    console.log(goodness)
+    console.log((goodness > margin))
+    return (goodness > margin)
   }
   isHorizontal(points, margin=0.1){
     var gradient = this._regHandler.b_1(points)

@@ -96,7 +96,31 @@ const handsOnHips1 = {
   ]
 };
 
+const goddess1 = {
+  // https://i2.wp.com/www.feelgoodyogavictoria.com/fgyp/wp-content/uploads/2015/01/goddess-pose-deviasana.png?zoom=2&resize=376%2C396
+  score: 0.8067714589483598,
+  keypoints: [
+    {score: 0.9885653853416443, part: "nose", position: {x: 313.5378910433095, y: 149.70232754066345}},
+    {score: 0.9930859804153442, part: "leftEye", position: {x: 329.61143769356323, y: 135.6873429595447}},
+    {score: 0.9864208698272705, part: "rightEye", position: {x: 297.7349576860945, y: 135.78329615358447}},
+    {score: 0.8522735238075256, part: "leftEar", position: {x: 344.7119409674053, y: 145.61195300993373}},
+    {score: 0.5619542002677917, part: "rightEar", position: {x: 284.36341710551136, y: 146.73185449819096}},
+    {score: 0.9670693278312683, part: "leftShoulder", position: {x: 364.3139215392116, y: 226.3991557136911}},
+    {score: 0.9734305739402771, part: "rightShoulder", position: {x: 263.5299365082263, y: 208.68862249655803}},
+    {score: 0.9091839790344238, part: "leftElbow", position: {x: 471.7371297105451, y: 160.5766712126185}},
+    {score: 0.8775482177734375, part: "rightElbow", position: {x: 152.4275840212623, y: 160.40436146220225}},
+    {score: 0.2924434244632721, part: "leftWrist", position: {x: 141.10808494306428, y: 61.00912830790536}},
+    {score: 0.5988689064979553, part: "rightWrist", position: {x: 144.23210250997099, y: 60.3763734973845}},
+    {score: 0.9472538232803345, part: "leftHip", position: {x: 362.84028036052194, y: 413.3343275726819}},
+    {score: 0.9489489197731018, part: "rightHip", position: {x: 271.9970390343592, y: 422.4259206803119}},
+    {score: 0.8498261570930481, part: "leftKnee", position: {x: 513.5136606567003, y: 475.6993641837699}},
+    {score: 0.68251633644104, part: "rightKnee", position: {x: 513.5431885050837, y: 476.5147185779009}},
+    {score: 0.709509551525116, part: "leftAnkle", position: {x: 561.9560953776042, y: 633.6952253498015}},
+    {score: 0.5762156248092651, part: "rightAnkle", position: {x: 77.75166345756745, y: 636.0843527872055}}
+  ]
+};
+
 module.exports = {
   correct: [warriorTwo1,warriorTwo2],
-  incorrect: [mountain1, handsOnHips1]
+  incorrect: [mountain1, handsOnHips1, goddess1]
 }

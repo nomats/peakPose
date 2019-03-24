@@ -28,15 +28,15 @@ class Pose{
       this.bodypart("leftElbow").position,
       this.bodypart("leftWrist").position
     ],0.7)
-    const c2 = this._isHorizontal([
-      this.bodypart("rightWrist").position,
-      this.bodypart("rightElbow").position,
-      this.bodypart("rightShoulder").position,
-      this.bodypart("leftShoulder").position,
-      this.bodypart("leftElbow").position,
-      this.bodypart("leftWrist").position
-    ], 5)
-    return c1 && c2;
+    // const c2 = this._isHorizontal([
+    //   this.bodypart("rightWrist").position,
+    //   this.bodypart("rightElbow").position,
+    //   this.bodypart("rightShoulder").position,
+    //   this.bodypart("leftShoulder").position,
+    //   this.bodypart("leftElbow").position,
+    //   this.bodypart("leftWrist").position
+    // ], 5)
+    return c1;
   }
 
   isMountainPose(){
@@ -52,11 +52,7 @@ class Pose{
     const c3 = this._isPointBetween(this.bodypart("leftAnkle").position['x'],[this.bodypart("leftShoulder").position['x'],this.bodypart("rightShoulder").position['x']])
     const c4 = this._isPointBetween(this.bodypart("rightAnkle").position['x'],[this.bodypart("leftShoulder").position['x'],this.bodypart("rightShoulder").position['x']])
     const c5 = this.bodypart("leftAnkle").position['x'] > this.bodypart("rightAnkle").position['x']
-    const c6 = this._isStraight([this.bodypart("leftAnkle").position,
-                                this.bodypart("leftKnee").position,
-                                this.bodypart("leftHip").position])
-    console.log("is straight:")
-    console.log(c6)
+
     return (c1 && c2 && c3 && c4 && c5 )
   }
 
