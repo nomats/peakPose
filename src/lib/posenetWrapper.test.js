@@ -1,4 +1,5 @@
 import sample from '../../spec/posenet_sample/neutral_pose_testing';
+import chairSample from '../../spec/posenet_sample/chair_pose_testing';
 import Pose from './posenetWrapper';
 
 it('can create a pose class', () => {
@@ -135,17 +136,26 @@ it('#isMountainPose can recognise wrong position', () => {
 });
 
 it('#isChairPose can recognise wrong position', () => {
-  var input = sample['incorrect'][0]
+  var input = chairSample['incorrect'][0]
   var subject = new Pose(input)
-  expect(subject.isMountainPose()).toEqual(false)
-  input = sample['incorrect'][1]
+  expect(subject.isChairPose()).toEqual(false)
+  input = chairSample['incorrect'][1]
   subject = new Pose(input)
-  expect(subject.isMountainPose()).toEqual(false)
-  input = sample['incorrect'][2]
+  expect(subject.isChairPose()).toEqual(false)
+  input = chairSample['incorrect'][2]
   subject = new Pose(input)
-  expect(subject.isMountainPose()).toEqual(false)
-  input = sample['incorrect'][3]
+  expect(subject.isChairPose()).toEqual(false)
+});
+
+it('#isChairPose can recognise position', () => {
+  var input = sample['correct'][0]
+  var subject = new Pose(input)
+  expect(subject.isMountainPose()).toEqual(true)
+  input = sample['correct'][1]
   subject = new Pose(input)
-  expect(subject.isMountainPose()).toEqual(false)
+  expect(subject.isMountainPose()).toEqual(true)
+  input = sample['correct'][2]
+  subject = new Pose(input)
+  expect(subject.isMountainPose()).toEqual(true)
 });
 ///make bodypart hash
