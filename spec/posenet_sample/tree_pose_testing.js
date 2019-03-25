@@ -90,6 +90,110 @@ const tree1 = {
   ]
 };
 
+const tree2 = {
+  //https://www.yogajournal.com/.image/t_share/MTQ3MTU0OTQxNTE2MTk1NjMx/hp_291_1842_gn_bjk.jpg
+  score: 0.9308741443297442,
+  keypoints: [
+    {
+      score: 0.9892765283584595,
+      part: "nose",
+      position: { x: 306.96697301105644, y: 48.4154639155228 }
+    },
+    {
+      score: 0.9669217467308044,
+      part: "leftEye",
+      position: { x: 310.1896926193501, y: 42.78227259949868 }
+    },
+    {
+      score: 0.9628873467445374,
+      part: "rightEye",
+      position: { x: 301.9636319170361, y: 40.64954634482817 }
+    },
+    {
+      score: 0.9063107371330261,
+      part: "leftEar",
+      position: { x: 319.54850457531353, y: 46.41309193202428 }
+    },
+    {
+      score: 0.7662405371665955,
+      part: "rightEar",
+      position: { x: 292.8363311661981, y: 45.24858069567947 }
+    },
+
+    {
+      score: 0.9936502575874329,
+      part: "leftShoulder",
+      position: { x: 325.69644492390245, y: 81.41025059859946 }
+    },
+
+    {
+      score: 0.9829978942871094,
+      part: "rightShoulder",
+      position: { x: 285.25604987226967, y: 73.26782965808182 }
+    },
+
+    {
+      score: 0.956504225730896,
+      part: "leftElbow",
+      position: { x: 352.53324409669654, y: 124.61403831339771 }
+    },
+
+    {
+      score: 0.950573742389679,
+      part: "rightElbow",
+      position: { x: 259.9747918468858, y: 114.15821947370257 }
+    },
+
+    {
+      score: 0.9265909194946289,
+      part: "leftWrist",
+      position: { x: 325.25490097521083, y: 98.08581092787087 }
+    },
+
+    {
+      score: 0.9631973505020142,
+      part: "rightWrist",
+      position: { x: 278.95231147950904, y: 97.10627590203138 }
+    },
+
+    {
+      score: 0.9749913215637207,
+      part: "leftHip",
+      position: { x: 318.2689838343425, y: 158.1363325415191 }
+    },
+
+    {
+      score: 0.9759080410003662,
+      part: "rightHip",
+      position: { x: 275.47606365903437, y: 153.24996540709313 }
+    },
+
+    {
+      score: 0.9780644178390503,
+      part: "leftKnee",
+      position: { x: 308.12262828787306, y: 238.12133533169765 }
+    },
+
+    {
+      score: 0.9083049893379211,
+      part: "rightKnee",
+      position: { x: 305.27882295496323, y: 236.5154559212442 }
+    },
+
+    {
+      score: 0.8651717305183411,
+      part: "leftAnkle",
+      position: { x: 294.19821768895974, y: 301.0269254127645 }
+    },
+
+    {
+      score: 0.7572686672210693,
+      part: "rightAnkle",
+      position: { x: 299.3193418509407, y: 297.98718906189345 }
+    }
+  ]
+};
+
 const wrongSample4 = {
   //https://www.yogajournal.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_faces:center%2Cq_auto:good%2Cw_620/MTQ2MjI3ODcyMDE5ODUwODQ5/anatomy_287_3321_bjkforsacrum.jpg
   score: 0.8030242512331289,
@@ -551,6 +655,6 @@ const handsOnHips1 = {
 };
 
 module.exports = {
-  correct: [tree1],
+  correct: [tree1, tree2],
   incorrect: [mountain2, wrongSample5, wrongSample4, goddess1, handsOnHips1]
 };
