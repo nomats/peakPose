@@ -40,6 +40,16 @@ class Pose{
     return (c1 && c2 && c3 && c4 && c5 )
   }
 
+  isChairPose(){
+    const c1 = this.bodypart("rightHip").position['y'] > this.bodypart("rightKnee").position['y']
+    const c2 = this.bodypart("leftHip").position['y'] > this.bodypart("leftKnee").position['y']
+    // Knees are bent
+    const c3 = this._angle(this.bodypart("leftHip").position,
+                           this.bodypart("leftKnee").position,
+                            this.bodypart("leftAnkle").position) > 30;
+    return (c1 && c2 && c3)
+  }
+
   _isPointBetween(point,boundary){
     boundary.sort(function(a,b){return a - b});
     const withinUpperBound = boundary[1] > point
@@ -58,6 +68,7 @@ class Pose{
   _isHorizontal(points){
     return this._mm.isHorizontal(points)
   }
+
 };
 
 export default Pose;
