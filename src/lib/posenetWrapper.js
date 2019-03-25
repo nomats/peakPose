@@ -32,6 +32,28 @@ class Pose {
     );
   }
 
+  isWarrior2() {
+    const c1 = this._isHorizontal(
+      [
+        this.bodypart("rightWrist").position,
+        this.bodypart("rightElbow").position,
+        this.bodypart("rightShoulder").position,
+        this.bodypart("leftShoulder").position,
+        this.bodypart("leftElbow").position,
+        this.bodypart("leftWrist").position
+      ],
+      15
+    );
+
+    var kneeAngle = this._angle(
+      this.bodypart("rightHip").position,
+      this.bodypart("rightKnee").position,
+      this.bodypart("rightAnkle").position
+    );
+    const c2 = kneeAngle > 85 && kneeAngle < 115;
+    return c1 && c2;
+  }
+
   isMountainPose() {
     // var conditional =  new conditional([
     //this._isPointBetween(blah),
@@ -57,13 +79,7 @@ class Pose {
     const c5 =
       this.bodypart("leftAnkle").position["x"] >
       this.bodypart("rightAnkle").position["x"];
-    const c6 = this._isStraight([
-      this.bodypart("leftAnkle").position,
-      this.bodypart("leftKnee").position,
-      this.bodypart("leftHip").position
-    ]);
-    console.log("is straight:");
-    console.log(c6);
+
     return c1 && c2 && c3 && c4 && c5;
   }
 
@@ -85,16 +101,16 @@ class Pose {
     return withinUpperBound && withinLowerBound;
   }
 
-  _isStraight(points) {
-    return this._mm.isStraight(points);
+  _isStraight(points, margin = 10) {
+    return this._mm.isStraight(points, margin);
   }
 
   _angle(edge1, middle, edge2) {
     return this._mm.angle(edge1, middle, edge2);
   }
 
-  _isHorizontal(points) {
-    return this._mm.isHorizontal(points);
+  _isHorizontal(points, margin = 10) {
+    return this._mm.isHorizontal(points, margin);
   }
 }
 

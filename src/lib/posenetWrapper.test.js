@@ -191,4 +191,16 @@ it("#isTreePose can recognise position", () => {
   var input = treeSample["correct"][0];
   var subject = new Pose(input);
   expect(subject.isTreePose()).toEqual(true);
+  input = treeSample["correct"][1];
+  subject = new Pose(input);
+  expect(subject.isTreePose()).toEqual(true);
+});
+
+it("#isTreePose can recognise wrong position", () => {
+  var input = treeSample["incorrect"][0];
+  var subject = new Pose(input);
+  expect(subject.isTreePose()).toEqual(false);
+  input = treeSample["incorrect"][1];
+  subject = new Pose(input);
+  expect(subject.isTreePose()).toEqual(false);
 });
