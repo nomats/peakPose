@@ -110,7 +110,7 @@ class Pose {
   }
 
   isGoddess(){
-    const criteria1 = "both knees are bend and hips are open";
+    const criteria_1 = "both knees are bend and hips are open";
     const leftKneeAngle = this._angle(this.bodypart("leftHip").position,
                                       this.bodypart("leftKnee").position,
                                       this.bodypart("leftAnkle").position
@@ -119,21 +119,18 @@ class Pose {
                                       this.bodypart("rightKnee").position,
                                       this.bodypart("rightAnkle").position
                                     );
-    console.log(leftKneeAngle);
-    console.log(rightKneeAngle);
-    const check1 = leftKneeAngle <= 130 && rightKneeAngle <= 130;
 
-    const criteria2 = "wrists above elbows"
-    const check2 = this.bodypart("leftWrist").position['y'] < this.bodypart("leftElbow").position['y'] &&
+    const check_1 = leftKneeAngle <= 130 && rightKneeAngle <= 130;
+
+    const criteria_2 = "wrists above elbows"
+    const check_2 = this.bodypart("leftWrist").position['y'] < this.bodypart("leftElbow").position['y'] &&
                    this.bodypart("rightWrist").position['y'] < this.bodypart("rightElbow").position['y'];
-    console.log(check2);
 
-    const criteria3 = "elbows above hips"
-    const check3 = this.bodypart("leftHip").position['y'] > this.bodypart("leftElbow").position['y'] &&
+    const criteria_3 = "elbows above hips"
+    const check_3 = this.bodypart("leftHip").position['y'] > this.bodypart("leftElbow").position['y'] &&
                    this.bodypart("rightHip").position['y'] > this.bodypart("rightElbow").position['y'];
-    console.log(check3);
 
-    const criteria4 = "both arms are bend"
+    const criteria_4 = "both arms are bend"
     const leftElbowAngle = this._angle(this.bodypart("leftWrist").position,
                                       this.bodypart("leftElbow").position,
                                       this.bodypart("leftShoulder").position
@@ -142,13 +139,21 @@ class Pose {
                                       this.bodypart("rightElbow").position,
                                       this.bodypart("rightShoulder").position
                                     );
-    console.log(leftElbowAngle);
-    console.log(rightElbowAngle);
-    const check4 = leftElbowAngle < 130 && rightElbowAngle < 130;
+    const check_4 = leftElbowAngle < 130 && rightElbowAngle < 130;
 
-    return (check1 && check2 && check3 && check4)
+    const isZen = check_1 && check_2 && check_3 && check_4;
+
+    return [
+      isZen,
+      [
+        [check_1, criteria_1],
+        [check_2, criteria_2],
+        [check_3, criteria_3],
+        [check_4, criteria_4]
+      ]
+    ];
   };
-  
+
   _isPointBetween(point, boundary) {
     boundary.sort(function(a, b) {
       return a - b;
