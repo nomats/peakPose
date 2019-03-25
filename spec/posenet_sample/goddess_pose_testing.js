@@ -50,23 +50,23 @@ const goddess3 = {
   // https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBfcbKX/_h400_w284_m1_bwhite.jpg
   score: 0.6917345295934116,
   keypoints: [
-    0: {score: 0.8886802792549133, part: "nose", position: {x: 126.21708212738827, y: 181.69610075248303}},
-    1: {score: 0.8275051116943359, part: "leftEye", position: {x: 131.39031761050842, y: 177.01281761938287}},
-    2: {score: 0.8514989018440247, part: "rightEye", position: {x: 128.28988188906655, y: 175.68253509758054}},
-    3: {score: 0.561092734336853, part: "leftEar", position: {x: 146.04637659893135, y: 180.4844854783642}},
-    4: {score: 0.3592619299888611, part: "rightEar", position: {x: 111.22523490629047, y: 178.83824406113735}},
-    5: {score: 0.8980261087417603, part: "leftShoulder", position: {x: 136.55335421389248, y: 195.33497347572975}},
-    6: {score: 0.8471747040748596, part: "rightShoulder", position: {x: 118.76919603100711, y: 202.5942512926205}},
-    7: {score: 0.6728863716125488, part: "leftElbow", position: {x: 149.16584232310555, y: 207.87293663320614}},
-    8: {score: 0.5455041527748108, part: "rightElbow", position: {x: 84.86347099659973, y: 258.7884923654009}},
-    9: {score: 0.2988691031932831, part: "leftWrist", position: {x: 149.31491990163536, y: 197.60093842735586}},
-    10: {score: 0.5197473764419556, part: "rightWrist", position: {x: 106.59770273791693, y: 122.5069351787715}},
-    11: {score: 0.7847316265106201, part: "leftHip", position: {x: 140.703365345693, y: 265.2183591857437}},
-    12: {score: 0.724550187587738, part: "rightHip", position: {x: 114.91477057106135, y: 265.03801520295843}},
-    13: {score: 0.7646034955978394, part: "leftKnee", position: {x: 172.36446716624837, y: 276.1365186114644}},
-    14: {score: 0.8654268980026245, part: "rightKnee", position: {x: 85.91782169638519, y: 273.974893496018}},
-    15: {score: 0.5868241786956787, part: "leftAnkle", position: {x: 173.615213502874, y: 341.07597315588663}},
-    16: {score: 0.7631038427352905, part: "rightAnkle", position: {x: 64.15093772769592, y: 336.72736021529795}}
+    {score: 0.8886802792549133, part: "nose", position: {x: 126.21708212738827, y: 181.69610075248303}},
+    {score: 0.8275051116943359, part: "leftEye", position: {x: 131.39031761050842, y: 177.01281761938287}},
+    {score: 0.8514989018440247, part: "rightEye", position: {x: 128.28988188906655, y: 175.68253509758054}},
+    {score: 0.561092734336853, part: "leftEar", position: {x: 146.04637659893135, y: 180.4844854783642}},
+    {score: 0.3592619299888611, part: "rightEar", position: {x: 111.22523490629047, y: 178.83824406113735}},
+    {score: 0.8980261087417603, part: "leftShoulder", position: {x: 136.55335421389248, y: 195.33497347572975}},
+    {score: 0.8471747040748596, part: "rightShoulder", position: {x: 118.76919603100711, y: 202.5942512926205}},
+    {score: 0.6728863716125488, part: "leftElbow", position: {x: 149.16584232310555, y: 207.87293663320614}},
+    {score: 0.5455041527748108, part: "rightElbow", position: {x: 84.86347099659973, y: 258.7884923654009}},
+    {score: 0.2988691031932831, part: "leftWrist", position: {x: 149.31491990163536, y: 197.60093842735586}},
+    {score: 0.5197473764419556, part: "rightWrist", position: {x: 106.59770273791693, y: 122.5069351787715}},
+    {score: 0.7847316265106201, part: "leftHip", position: {x: 140.703365345693, y: 265.2183591857437}},
+    {score: 0.724550187587738, part: "rightHip", position: {x: 114.91477057106135, y: 265.03801520295843}},
+    {score: 0.7646034955978394, part: "leftKnee", position: {x: 172.36446716624837, y: 276.1365186114644}},
+    {score: 0.8654268980026245, part: "rightKnee", position: {x: 85.91782169638519, y: 273.974893496018}},
+    {score: 0.5868241786956787, part: "leftAnkle", position: {x: 173.615213502874, y: 341.07597315588663}},
+    {score: 0.7631038427352905, part: "rightAnkle", position: {x: 64.15093772769592, y: 336.72736021529795}}
   ]
 };
 
@@ -94,7 +94,7 @@ const mountain1 = {
   ]
 };
 
-const wrongSample4 = {
+const warriorTwo = {
   //https://www.yogajournal.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_faces:center%2Cq_auto:good%2Cw_620/MTQ2MjI3ODcyMDE5ODUwODQ5/anatomy_287_3321_bjkforsacrum.jpg
   score: 0.8030242512331289,
   keypoints: [
@@ -115,10 +115,34 @@ const wrongSample4 = {
     {score: 0.5863587856292725, part: "rightKnee", position: {x: 137.57498469118212, y: 376.69809009989757}},
     {score: 0.7472049593925476, part: "leftAnkle", position: {x: 125.03087878618084, y: 525.4517121862193}},
     {score: 0.4811806380748749, part: "rightAnkle", position: {x: 124.78814847352075, y: 520.7985979924437}}
-    ]
+  ]
+};
+
+const garland1 = {
+  // https://www.yogajournal.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_faces:center%2Cq_auto:good%2Cw_620/MTQ2MTgwNjczMDI3NDUwMzAx/garland-pose.jpg
+  score: 0.9190170589615317,
+  keypoints: [
+    {score: 0.9955768585205078, part: "nose", position: {x: 321.68691021463144, y: 71.95629307481109}},
+    {score: 0.9957558512687683, part: "leftEye", position: {x: 338.20144710185366, y: 63.17701170874424}},
+    {score: 0.9899040460586548, part: "rightEye", position: {x: 312.72985868276277, y: 63.57675446056929}},
+    {score: 0.8484482765197754, part: "leftEar", position: {x: 355.4769751507303, y: 68.27965232974194}},
+    {score: 0.7110867500305176, part: "rightEar", position: {x: 299.1030661067607, y: 66.97607221759733}},
+    {score: 0.9857170581817627, part: "leftShoulder", position: {x: 375.06405478530786, y: 119.07672019082992}},
+    {score: 0.9943251013755798, part: "rightShoulder", position: {x: 283.3637432785508, y: 119.98779246846183}},
+    {score: 0.9622207880020142, part: "leftElbow", position: {x: 416.6619280702579, y: 187.06515352843238}},
+    {score: 0.9821502566337585, part: "rightElbow", position: {x: 245.4825776852436, y: 189.85663742315575}},
+    {score: 0.868254542350769, part: "leftWrist", position: {x: 353.05898337038406, y: 206.62579545818392}},
+    {score: 0.904639482498169, part: "rightWrist", position: {x: 298.9313328902914, y: 204.51040799500512}},
+    {score: 0.9822059273719788, part: "leftHip", position: {x: 366.3887820036515, y: 215.20361578269083}},
+    {score: 0.9744805097579956, part: "rightHip", position: {x: 289.4362919967367, y: 219.76308703813396}},
+    {score: 0.9026881456375122, part: "leftKnee", position: {x: 440.4765489471625, y: 223.31308183513704}},
+    {score: 0.8405195474624634, part: "rightKnee", position: {x: 236.80399725303886, y: 217.10059094038166}},
+    {score: 0.8383535146713257, part: "leftAnkle", position: {x: 398.2663633927055, y: 304.561761574667}},
+    {score: 0.8469633460044861, part: "rightAnkle", position: {x: 257.97825300323296, y: 302.08436459400616}},
+  ]
 };
 
 module.exports = {
   correct: [goddess1, goddess2, goddess3],
-  incorrect: [mountain1, wrongSample4]
+  incorrect: [mountain1, warriorTwo, garland1]
 }
