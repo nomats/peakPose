@@ -24,12 +24,49 @@ class Pose{
     const c2 = this._isStraight([this.bodypart("rightAnkle").position,
                                  this.bodypart("rightKnee").position,
                                  this.bodypart("rightHip").position]) && 
-                                 this._isStraight([this.bodypart("rightHip").position,
+                this._isStraight([this.bodypart("rightHip").position,
                                  this.bodypart("rightShoulder").position,
                                  this.bodypart("rightWrist").position])
                                  console.log("back and leg are straight")
                                  console.log(c2)
                                  return (c1 && c2)
+  }
+
+  isHalfMoonPose(){
+    const criteria_1 = "right hand stacked below shoulder";
+    const check_1 = 
+      this.bodypart("rightWrist").position['y'] >
+      this.bodypart("rightShoulder").position['y'];
+    const criteria_2 = "left hand stacked above left shoulder";
+    const check_2 = 
+      this.bodypart("leftWrist").position['y'] <
+      this.bodypart("leftShouder").position['y'];
+    const criteria_3 = "left leg and back are horizontal";
+    const check_3 = this.isHorizontal(
+      [
+        this.bodypart("leftShoulder").position,
+        this.bodypart("leftHip").position,
+        this.bodypart("leftKnee").position,
+        this.bodypart("leftAnkle").position
+      ],
+      15
+    );
+    const criteria_4 = "right ankle stacked below right hip";
+    const check_4 = 
+      this.bodypart("rightAnkle").position['y'] >
+      this.bodypart("rightHip").position['y'];
+    
+    const isZen = check_1 && check_2 && check_3 && check_4;
+    
+    return [
+      isZen,
+      [
+      [check_1, criteria_1],
+      [check_2, criteria_2],
+      [check_3, criteria_3],
+      [check_4, criteria_4],
+      ]
+    ]
   }
 
   isMountainPose(){
