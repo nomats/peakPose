@@ -44,10 +44,19 @@ class Pose{
     const c1 = this.bodypart("rightHip").position['y'] > this.bodypart("rightKnee").position['y']
     const c2 = this.bodypart("leftHip").position['y'] > this.bodypart("leftKnee").position['y']
     // Knees are bent
-    const c3 = this._angle(this.bodypart("leftHip").position,
-                           this.bodypart("leftKnee").position,
-                            this.bodypart("leftAnkle").position) > 30;
-    return (c1 && c2 && c3)
+    const leftKneeAngle = this._angle(this.bodypart("leftHip").position,
+                                      this.bodypart("leftKnee").position,
+                                      this.bodypart("leftAnkle").position);
+console.log(leftKneeAngle)
+    const c3 = leftKneeAngle > 10 && leftKneeAngle < 150;
+
+    const leftHipAngle = this._angle(this.bodypart("leftShoulder").position,
+                                     this.bodypart("leftHip").position,
+                                     this.bodypart("leftKnee").position);
+console.log(leftHipAngle)
+    const c4 = leftHipAngle >10 && leftHipAngle < 150;
+
+    return (c1 && c2 && c3 && c4)
   }
 
   _isPointBetween(point,boundary){
