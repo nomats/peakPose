@@ -120,7 +120,7 @@ it('#isMountainPose can recognise position', () => {
   expect(subject.isMountainPose()).toEqual(true)
 });
 
-it('#isMountainPose can recognise wrong position', () => {
+it('#isMountainPose c an recognise wrong position', () => {
   var input = sample['incorrect'][0]
   var subject = new Pose(input)
   expect(subject.isMountainPose()).toEqual(false)

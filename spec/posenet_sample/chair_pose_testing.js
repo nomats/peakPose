@@ -8,7 +8,8 @@ const chair1 = {
     {score: 0.6072254776954651, part: "leftEye", position: {x: 349.67551895094067, y: 137.04136339229214}},
     {score: 0.9306417107582092, part: "rightEye", position: {x: 346.5226039232866, y: 136.36247714509102}},
     {score: 0.22097119688987732, part: "leftEar", position: {x: 345.48256419529423, y: 147.55306079900154}},
-    {score: 0.8479042053222656, part: "rightEar", position: {{x: 333.1816969066394, y: 152.58607126396393}},
+    {score: 0.8479042053222656, part: "rightEar", position: {x: 333.1816969066394, y: 152.58607126396393}},
+    {score: 0.8479042053222656, part: "rightEar", position: {x: 333.1816969066394, y: 152.58607126396393}},
     {score: 0.4532324969768524, part: "leftShoulder", position: {x: 355.97357995339274, y: 179.89985015013508}},
     {score: 0.6498027443885803, part: "rightShoulder", position: {x: 342.8119445990922, y: 184.57632864598546}},
     {score: 0.4284423291683197, part: "leftElbow", position: {x: 408.5187244831216, y: 150.70245979285315}},
@@ -72,30 +73,29 @@ const chair3 = {
   ]
 };
 
-const chair4 = {
-  //https://scontent-lga3-1.cdninstagram.com/vp/560695e4bc78975bee7519049e270266/5CF05FB7/t51.2885-15/sh0.08/e35/s750x750/51658320_2297351986982691_3477701556440440214_n.jpg?_nc_ht=scontent-lga3-1.cdninstagram.com&ig_cache_key=MTk4MTA3OTcxNzEzMzk4MDE2Ng%3D%3D.2
-  score: 0.609935412512106,
-  keypoints: [
-    0: {score: 0.6219176650047302, part: "nose", position: {…}},
-    1: {score: 0.6198150515556335, part: "leftEye", position: {…}},
-    2: {score: 0.500283420085907, part: "rightEye", position: {…}},
-    3: {score: 0.3365033268928528, part: "leftEar", position: {…}},
-    4: {score: 0.15198613703250885, part: "rightEar", position: {…}},
-    5: {score: 0.6156299710273743, part: "leftShoulder", position: {…}},
-    6: {score: 0.4357040822505951, part: "rightShoulder", position: {…}},
-    7: {score: 0.5757982730865479, part: "leftElbow", position: {…}},
-    8: {score: 0.5396974682807922, part: "rightElbow", position: {…}},
-    9: {score: 0.7637608051300049, part: "leftWrist", position: {…}},
-    10: {score: 0.7773314714431763, part: "rightWrist", position: {…}},
-    11: {score: 0.6680712103843689, part: "leftHip", position: {…}},
-    12: {score: 0.594380795955658, part: "rightHip", position: {…}},
-    13: {score: 0.9256381988525391, part: "leftKnee", position: {…}},
-    14: {score: 0.7165542244911194, part: "rightKnee", position: {…}},
-    15: {score: 0.8387916684150696, part: "leftAnkle", position: {…}},
-    16: {score: 0.687038242816925, part: "rightAnkle", position: {…}},
-  ]
-
-};
+// const chair4 = {
+//   //https://scontent-lga3-1.cdninstagram.com/vp/560695e4bc78975bee7519049e270266/5CF05FB7/t51.2885-15/sh0.08/e35/s750x750/51658320_2297351986982691_3477701556440440214_n.jpg?_nc_ht=scontent-lga3-1.cdninstagram.com&ig_cache_key=MTk4MTA3OTcxNzEzMzk4MDE2Ng%3D%3D.2
+//   score: 0.609935412512106,
+//   keypoints: [
+//     0: {score: 0.6219176650047302, part: "nose", position: {…}},
+//     1: {score: 0.6198150515556335, part: "leftEye", position: {…}},
+//     2: {score: 0.500283420085907, part: "rightEye", position: {…}},
+//     3: {score: 0.3365033268928528, part: "leftEar", position: {…}},
+//     4: {score: 0.15198613703250885, part: "rightEar", position: {…}},
+//     5: {score: 0.6156299710273743, part: "leftShoulder", position: {…}},
+//     6: {score: 0.4357040822505951, part: "rightShoulder", position: {…}},
+//     7: {score: 0.5757982730865479, part: "leftElbow", position: {…}},
+//     8: {score: 0.5396974682807922, part: "rightElbow", position: {…}},
+//     9: {score: 0.7637608051300049, part: "leftWrist", position: {…}},
+//     10: {score: 0.7773314714431763, part: "rightWrist", position: {…}},
+//     11: {score: 0.6680712103843689, part: "leftHip", position: {…}},
+//     12: {score: 0.594380795955658, part: "rightHip", position: {…}},
+//     13: {score: 0.9256381988525391, part: "leftKnee", position: {…}},
+//     14: {score: 0.7165542244911194, part: "rightKnee", position: {…}},
+//     15: {score: 0.8387916684150696, part: "leftAnkle", position: {…}},
+//     16: {score: 0.687038242816925, part: "rightAnkle", position: {…}},
+//   ]
+// };
 
 const jogging = {
   //https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe_J8PApA0cY3U1MpiNW5ShrZm892ck6uXv4Z22233Cr7y9nr-bQ
@@ -149,23 +149,23 @@ const mountainPose = {
   // https://www.yogabaron.com/wp-content/uploads/2018/12/Tadasana-mountain-yoga-pose-dec21.jpg
   score: 0.955197769052842,
   keypoints: [
-0: {score: 0.9976508021354675, part: "nose", position: {x: 511.05137667551963, y: 126.45921764719174}},
-1: {score: 0.9939570426940918, part: "leftEye", position: {x: 517.8058013440664, y: 118.79655005226671}},
-2: {score: 0.9921988844871521, part: "rightEye", position: {x: 500.01999899605727, y: 117.3580407616598}},
-3: {score: 0.7737576365470886, part: "leftEar", position: {x: 535.4552343255634, y: 131.45084496235222}},
-4: {score: 0.8435196876525879, part: "rightEar", position: {x: 483.84085159064085, y: 130.27143574336645}},
-5: {score: 0.9979614019393921, part: "leftShoulder", position: {x: 554.6716189755829, y: 187.60139265770403}},
-6: {score: 0.9962913990020752, part: "rightShoulder", position: {x: 469.4365290466499, y: 194.519687706316}},
-7: {score: 0.9886930584907532, part: "leftElbow", position: {x: 571.4666729032808, y: 266.5490317392637}},
-8: {score: 0.974977970123291, part: "rightElbow", position: {x: 454.5579799759054, y: 267.2668702645561}},
-9: {score: 0.9388396143913269, part: "leftWrist", position: {x: 574.1323557821019, y: 334.64925293951205}},
-10: {score: 0.979290783405304, part: "rightWrist", position: {x: 446.97686739057025, y: 336.186184489751}},
-11: {score: 0.9744642376899719, part: "leftHip", position: {x: 543.2488985150774, y: 333.3683743083501}},
-12: {score: 0.9809522032737732, part: "rightHip", position: {x: 481.0374084662797, y: 334.22228316186175}},
-13: {score: 0.9935455918312073, part: "leftKnee", position: {x: 525.1696839139469, y: 450.0315491582306}},
-14: {score: 0.9860374331474304, part: "rightKnee", position: {x: 489.5271759983907, y: 453.63397425569036}},
-15: {score: 0.9320444464683533, part: "leftAnkle", position: {x: 513.6898741915219, y: 567.7371725470007}},
-16: {score: 0.8941798806190491, part: "rightAnkle", position: {x: 507.24991462683755, y: 569.4951569770183}}
+    {score: 0.9976508021354675, part: "nose", position: {x: 511.05137667551963, y: 126.45921764719174}},
+    {score: 0.9939570426940918, part: "leftEye", position: {x: 517.8058013440664, y: 118.79655005226671}},
+    {score: 0.9921988844871521, part: "rightEye", position: {x: 500.01999899605727, y: 117.3580407616598}},
+    {score: 0.7737576365470886, part: "leftEar", position: {x: 535.4552343255634, y: 131.45084496235222}},
+    {score: 0.8435196876525879, part: "rightEar", position: {x: 483.84085159064085, y: 130.27143574336645}},
+    {score: 0.9979614019393921, part: "leftShoulder", position: {x: 554.6716189755829, y: 187.60139265770403}},
+    {score: 0.9962913990020752, part: "rightShoulder", position: {x: 469.4365290466499, y: 194.519687706316}},
+    {score: 0.9886930584907532, part: "leftElbow", position: {x: 571.4666729032808, y: 266.5490317392637}},
+    {score: 0.974977970123291, part: "rightElbow", position: {x: 454.5579799759054, y: 267.2668702645561}},
+    {score: 0.9388396143913269, part: "leftWrist", position: {x: 574.1323557821019, y: 334.64925293951205}},
+    {score: 0.979290783405304, part: "rightWrist", position: {x: 446.97686739057025, y: 336.186184489751}},
+    {score: 0.9744642376899719, part: "leftHip", position: {x: 543.2488985150774, y: 333.3683743083501}},
+    {score: 0.9809522032737732, part: "rightHip", position: {x: 481.0374084662797, y: 334.22228316186175}},
+    {score: 0.9935455918312073, part: "leftKnee", position: {x: 525.1696839139469, y: 450.0315491582306}},
+    {score: 0.9860374331474304, part: "rightKnee", position: {x: 489.5271759983907, y: 453.63397425569036}},
+    {score: 0.9320444464683533, part: "leftAnkle", position: {x: 513.6898741915219, y: 567.7371725470007}},
+    {score: 0.8941798806190491, part: "rightAnkle", position: {x: 507.24991462683755, y: 569.4951569770183}}
   ]
 };
 
