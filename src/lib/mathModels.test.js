@@ -63,3 +63,9 @@ it('MathModels#isHorizontal can deduce horizontal lines', () => {
   expect(_mm.isHorizontal([{x: -100, y: 326},{x: 0,y: 328},{x: 100,y: 323},{x: 200,y: 330},
      {x: 300, y:329}],10)).toEqual(true)
 });
+
+it('MathModels#isVertical can deduce vertical lines', () => {
+  var _mm = new MathModels()
+  expect(_mm.isVertical([{x: 3, y: -1},{x: 3.1,y: 1},{x: 3.6,y: 3},{x: 3.3,y: 5},
+     {x: 2.9, y:7}, {x: 2.8, y:9}],0.7)).toEqual(true)
+});
