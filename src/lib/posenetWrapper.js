@@ -65,26 +65,48 @@ class Pose {
     //this._isLowerThan(blah),
     //])
     // return conditional.isMet
-    const c1 =
+    const criteria_1 = "Right hand below hip";
+    const check_1 =
       this.bodypart("rightWrist").position["y"] >
       this.bodypart("rightHip").position["y"];
-    const c2 =
+    const criteria_2 = "Left hand below hip";
+    const check_2 =
       this.bodypart("leftWrist").position["y"] >
       this.bodypart("leftHip").position["y"];
     // lower body x-coordinates
-    const c3 = this._isPointBetween(this.bodypart("leftAnkle").position["x"], [
-      this.bodypart("leftShoulder").position["x"],
-      this.bodypart("rightShoulder").position["x"]
-    ]);
-    const c4 = this._isPointBetween(this.bodypart("rightAnkle").position["x"], [
-      this.bodypart("leftShoulder").position["x"],
-      this.bodypart("rightShoulder").position["x"]
-    ]);
-    const c5 =
+    const criteria_3 = "Left foot between shoulders";
+    const check_3 = this._isPointBetween(
+      this.bodypart("leftAnkle").position["x"],
+      [
+        this.bodypart("leftShoulder").position["x"],
+        this.bodypart("rightShoulder").position["x"]
+      ]
+    );
+    const criteria_4 = "Right foot between shoulders";
+    const check_4 = this._isPointBetween(
+      this.bodypart("rightAnkle").position["x"],
+      [
+        this.bodypart("leftShoulder").position["x"],
+        this.bodypart("rightShoulder").position["x"]
+      ]
+    );
+    const criteria_5 = "Feet not crossed";
+    const check_5 =
       this.bodypart("leftAnkle").position["x"] >
       this.bodypart("rightAnkle").position["x"];
 
-    return c1 && c2 && c3 && c4 && c5;
+    const isZen = check_1 && check_2 && check_3 && check_4 && check_5;
+
+    return [
+      isZen,
+      [
+        [check_1, criteria_1],
+        [check_2, criteria_2],
+        [check_3, criteria_3],
+        [check_4, criteria_4],
+        [check_5, criteria_5]
+      ]
+    ];
   }
 
   _isPointBetween(point, boundary) {
