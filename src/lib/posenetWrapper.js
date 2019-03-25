@@ -39,15 +39,43 @@ class Pose{
   }
 
 isGoddess(){
-  const criteria1 = "left knee makes 90 degree";
+  const criteria1 = "both knees are bend and hips are open";
   const leftKneeAngle = this._angle(this.bodypart("leftHip").position,
                                     this.bodypart("leftKnee").position,
                                     this.bodypart("leftAnkle").position
                                   );
+  const rightKneeAngle = this._angle(this.bodypart("rightHip").position,
+                                    this.bodypart("rightKnee").position,
+                                    this.bodypart("rightAnkle").position
+                                  );
   console.log(leftKneeAngle);
-  const check1 = leftKneeAngle < 150;
+  console.log(rightKneeAngle);
+  const check1 = leftKneeAngle <= 130 && rightKneeAngle <= 130;
 
-  return (check1)
+  const criteria2 = "wrists above elbows"
+  const check2 = this.bodypart("leftWrist").position['y'] < this.bodypart("leftElbow").position['y'] &&
+                 this.bodypart("rightWrist").position['y'] < this.bodypart("rightElbow").position['y'];
+  console.log(check2);
+
+  const criteria3 = "elbows above hips"
+  const check3 = this.bodypart("leftHip").position['y'] > this.bodypart("leftElbow").position['y'] &&
+                 this.bodypart("rightHip").position['y'] > this.bodypart("rightElbow").position['y'];
+  console.log(check3);
+
+  const criteria4 = "both arms are bend"
+  const leftElbowAngle = this._angle(this.bodypart("leftWrist").position,
+                                    this.bodypart("leftElbow").position,
+                                    this.bodypart("leftShoulder").position
+                                  );
+  const rightElbowAngle = this._angle(this.bodypart("rightWrist").position,
+                                    this.bodypart("rightElbow").position,
+                                    this.bodypart("rightShoulder").position
+                                  );
+  console.log(leftElbowAngle);
+  console.log(rightElbowAngle);
+  const check4 = leftElbowAngle < 130 && rightElbowAngle < 130;
+
+  return (check1 && check2 && check3 && check4)
 };
 
   _isPointBetween(point,boundary){
