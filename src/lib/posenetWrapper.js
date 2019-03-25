@@ -84,12 +84,41 @@ class Pose {
   }
 
   isTreePose() {
+    // straight standing leg
     const c1 =
-      this.bodypart("rightAnkle").position["y"] >
-        this.bodypart("rightKnee").position["y"] ||
-      this.bodypart("leftAnkle").position["y"] >
-        this.bodypart("leftKnee").position["y"];
-    return c1;
+      this._isStraight([
+        this.bodypart("leftAnkle").position,
+        this.bodypart("leftKnee").position,
+        this.bodypart("leftHip").position
+      ]) ||
+      this._isStraight([
+        this.bodypart("rightAnkle").position,
+        this.bodypart("rightKnee").position,
+        this.bodypart("rightHip").position
+      ]);
+    // bent floating leg
+    var rightKneeAngle = this._angle(
+      this.bodypart("rightHip").position,
+      this.bodypart("rightKnee").position,
+      this.bodypart("rightAnkle").position
+    );
+    var leftKneeAngle = this._angle(
+      this.bodypart("leftHip").position,
+      this.bodypart("leftKnee").position,
+      this.bodypart("lefttAnkle").position
+    );
+    const c2 = rightKneeAngle < 150 || leftKneeAngle < 150;
+    // aligned hips
+    const c3 = this._isHorizontal([
+      this.bodypart("leftHip").position,
+      this.bodypart("rightHip").position
+    ]);
+    // aligned shoulders
+    const c4 = this._isHorizontal([
+      this.bodypart("leftShoulder").position,
+      this.bodypart("rightShoulder").position
+    ]);
+    return c1 && c2;
   }
 
   _isPointBetween(point, boundary) {
