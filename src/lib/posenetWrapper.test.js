@@ -134,13 +134,4 @@ it('#isMountainPose can recognise wrong position', () => {
   expect(subject.isMountainPose()).toEqual(false)
 });
 
-it('#isGoddess can recognise position', () => {
-  var input = sample['correct'][0]
-  var subject = new Pose(input)
-  expect(subject.isGoddess()).toEqual(true)
-  input = sample['correct'][1]
-  subject = new Pose(input)
-  expect(subject.isGoddess()).toEqual(true)
-});
-
 ///make bodypart hash

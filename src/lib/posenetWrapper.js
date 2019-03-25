@@ -35,10 +35,20 @@ class Pose{
     const c6 = this._isStraight([this.bodypart("leftAnkle").position,
                                 this.bodypart("leftKnee").position,
                                 this.bodypart("leftHip").position])
-    console.log("is straight:")
-    console.log(c6)
     return (c1 && c2 && c3 && c4 && c5 )
   }
+
+isGoddess(){
+  const criteria1 = "left knee makes 90 degree";
+  const leftKneeAngle = this._angle(this.bodypart("leftHip").position,
+                                    this.bodypart("leftKnee").position,
+                                    this.bodypart("leftAnkle").position
+                                  );
+  console.log(leftKneeAngle);
+  const check1 = leftKneeAngle < 150;
+
+  return (check1)
+};
 
   _isPointBetween(point,boundary){
     boundary.sort(function(a,b){return a - b});
