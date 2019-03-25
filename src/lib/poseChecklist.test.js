@@ -5,7 +5,7 @@ it("#isWarrior2 can recognise correct position", () => {
   var input = sample["correct"][0];
   var subject = new Pose(input);
   expect(subject.isWarrior2()[1]).toEqual([
-    ["Horizontal Arms", true],
-    ["Knee at 90", true]
+    [true, "Horizontal Arms"],
+    [true, "Knee at 90"]
   ]);
 });
