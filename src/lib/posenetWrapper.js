@@ -55,12 +55,15 @@ class Pose {
     const check_2a = kneeAngle > 85 && kneeAngle < 115;
     const check_2b = this._isStacked(
       this.bodypart("rightKnee").position,
-      this.bodypart("rightAnkle").position,
-    )
+      this.bodypart("rightAnkle").position
+    );
 
     const isCorrect = check_1 && check_2a && check_2b;
 
-    return [isCorrect, [[check_1, criteria_1], [check_2a&&check_2b, criteria_2]]];
+    return [
+      isCorrect,
+      [[check_1, criteria_1], [check_2a && check_2b, criteria_2]]
+    ];
   }
 
   isMountainPose() {
