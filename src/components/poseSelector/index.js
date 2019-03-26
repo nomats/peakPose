@@ -1,18 +1,76 @@
 import React from "react";
 import styled from "styled-components";
+import PoseDetails from "../poseDetails"
 
 class PoseSelector extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      active: null, details: null
+    };
+    // this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(id, details) {
+    this.setState({
+      active: id,
+      details: details
+    })
+  }
 
   render() {
+    const {active} = this.state;
+    const poseInfo = this.state;
     return (
-      <div>poseSelector rendering</div>
+      <div className={this.props.className}>
+          {POSES.map(({ id, pose, details }) => (
+            <button key={id} onClick={() => this.handleClick(id, details)}>
+              {pose}
+              {id === active && details && <PoseDetails poseInfo={poseInfo} />}
+            </button>
+          ))}
+      </div>
     );
   }
 }
 
+const POSES = [
+  {
+    id: "warrior one",
+    pose: "Warrior One",
+    details: "this is warrior one pose",
+    src: "image.jpeg"
+  },
+  {
+    id: "warrior two",
+    pose: "Warrior Two",
+    details: "this is warrior two pose",
+    src: "image2.jpeg"
+  },
+  {
+    id: "goddess",
+    pose: "Goddess",
+    details: "this is goddess pose",
+    src: "image3.jpeg"
+  },
+  {
+    id: "tree",
+    pose: "Tree",
+    details: "this is tree pose",
+    src: "image4.jpeg"
+  },
+  {
+    id: "half moon",
+    pose: "Half Moon",
+    details: "this is half moon pose",
+    src: "image5.jpeg"
+  }
+];
+
 const StyledPoseSelector = styled(PoseSelector)`
-  border: 5px solid palevioletred;
+  button {
+    color: Black
+  }
 `
 ;
-
 export default StyledPoseSelector;
