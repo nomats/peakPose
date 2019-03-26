@@ -22,16 +22,6 @@ class RegressionHandler {
    return sum
   }
 
-  s_yy(data) {
-   var sum = 0;
-   var yBar;
-   yBar = this.average(data)[1]
-     for(var j = 0; j < data.length; j++){
-       sum += (data[j]['y'] - yBar)**2
-   }
-   return sum
-  }
-
   s_xy(data) {
     var xBar;
     var yBar;
@@ -43,12 +33,19 @@ class RegressionHandler {
     return sum
   }
 
-  r(data) {
-   return (this.s_xy(data)/(Math.sqrt(this.s_xx(data)*this.s_yy(data))))
-  }
-
   b_1(data){
     return (this.s_xy(data)/this.s_xx(data));
+  }
+
+  b_0(data, b_1) {
+    var xBar;
+    var yBar;
+    [xBar, yBar] = this.average(data);
+    return yBar -(this.b_1(data)*xBar)
+  }
+
+  yHat(x,b_1,b_0){
+    return (b_0 + b_1*x)
   }
 
 }

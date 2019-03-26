@@ -13,15 +13,42 @@ class MathModels{
     return Math.round(Math.acos((a**2 + b**2 - c**2)/(2*a*b))*(360/(Math.PI * 2)))
   }
 
-  isStraight(points, margin=0.9){
-    var regression = this._regHandler.r(points)
-    console.log("regression:")
-    console.log(regression)
-    return (regression > margin || regression < -1*margin)
+  isStraight(points, margin=10){
+    var result = true
+    var b_1 = this._regHandler.b_1(points)
+    var b_0 = this._regHandler.b_0(points, b_1)
+    const yHat = this._regHandler.yHat
+    for(var i = 0; i < points.length; i++){
+      var c_o = points[i]['y'] + points[i]['x']/b_1
+      var x_i = (b_1*(c_o - b_0))/((b_1**2)+1)
+      var y_i = yHat(x_i,b_1,b_0)
+      var distance = Math.sqrt((points[i]['y']-y_i)**2 + (points[i]['x']-x_i)**2)
+      if(distance > margin ){
+        result = false
+      }
+    }
+    return result
   }
-  isHorizontal(points, margin=0.1){
-    var gradient = this._regHandler.b_1(points)
-    return gradient < margin && gradient > -1*margin
+  isHorizontal(points, margin=5){
+    var result = points.length < 2 ? false : true
+    var average = this._regHandler.average(points)[1]
+    for(var i = 0; i < points.length ; i++ ){
+      if((points[i]['y']>average+margin) || (points[i]['y']<(average-margin))){
+        result = false
+      };
+    };
+    return result
+  }
+
+  isVertical(points, margin=5){
+    var result = points.length < 2 ? false : true
+    var average = this._regHandler.average(points)[0]
+    for(var i = 0; i < points.length ; i++ ){
+      if((points[i]['x']>average+margin) || (points[i]['x']<(average-margin))){
+        result = false
+      };
+    };
+    return result
   }
 }
 
