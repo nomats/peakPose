@@ -1,24 +1,24 @@
 const halfMoon1 = {
-  //https://www.yogajournal.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_1720/MTQ3MTU0OTQxNTE2MTMwMDk1/2hp_291_1860_gn_bjk.webp
-  score: 0.489810952807174,
+  // https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Ardha_Chandrasana.jpg/1200px-Ardha_Chandrasana.jpg
+  score: 0.46363212255870595,
   keypoints: [
-  {score: 0.5374189615249634, part: "nose", position: {x: 537.2029262942617, y: 527.1086329343166}},
-  {score: 0.5505287647247314, part: "leftEye", position: {x: 493.8763183306188, y: 550.5812729421128}},
-  {score: 0.5087366104125977, part: "rightEye", position: {x: 534.6593447484173, y: 535.066589482361}},
-  {score: 0.6362689137458801, part: "leftEar", position: {x: 513.0811596478394, y: 494.40605306327967}},
-  {score: 0.07119831442832947, part: "rightEar", position: {x: 524.1462123408054, y: 516.7628902189449}},
-  {score: 0.5522440671920776, part: "leftShoulder", position: {x: 610.0571458724419, y: 567.0720382341476}},
-  {score: 0.1835290789604187, part: "rightShoulder", position: {x: 602.9142698326157, y: 550.4191351432563}},
-  {score: 0.551015317440033, part: "leftElbow", position: {x: 1049.7056423227696, y: 372.94878147942114}},
-  {score: 0.5047919154167175, part: "rightElbow", position: {x: 609.7052325461021, y: 625.0448381261369}},
-  {score:ß 0.7831303477287292, part: "leftWrist", position: {x: 1219.8612999438678, y: 348.2152130063507}},
-  {score: 0.6061815619468689, part: "rightWrist", position: {x: 548.6576679710505, y: 154.4649960206601}},
-  {score: 0.07314778119325638, part: "leftHip", position: {x: 800.4417608146533, y: 441.12744952735187}},
-  {score: 0.07949861884117126, part: "rightHip", position: {x: 650.9068515809041, y: 471.4785399883056}},
-  {score: 0.9326012134552002, part: "leftKnee", position: {x: 827.6606985930139, y: 666.8618960945621}},
-  {score: 0.3895370066165924, part: "rightKnee", position: {x: 612.1574353329285, y: 657.2844040329393}},
-  {score: 0.703340470790863, part: "leftAnkle", position: {x: 841.2227778889687, y: 872.4463606297103}},
-  {score: 0.6636172533035278, part: "rightAnkle", position: {x: 841.4781190762111, y: 866.2469850409304}}
+    {score: 0.3050847351551056, part: "nose", position: {x: 230.88568453145274, y: 206.2328953322969}},
+    {score: 0.3692125976085663, part: "leftEye", position: {x: 216.1915181829855, y: 195.01307622879895}},
+    {score: 0.35832303762435913, part: "rightEye", position: {x: 220.80091324644516, y: 202.92756826766413}},
+    {score: 0.3805467486381531, part: "leftEar", position: {x: 222.30625878568338, y: 189.7494877237112}},
+    {score: 0.15467819571495056, part: "rightEar", position: {x: 226.00183717932254, y: 199.3131321328909}},
+    {score: 0.701135516166687, part: "leftShoulder", position: {x: 234.8007043752703, y: 203.35155494966654}},
+    {score: 0.5941345691680908, part: "rightShoulder", position: {x: 233.76121652992538, y: 210.85209446249846}},
+    {score: 0.3823959231376648, part: "leftElbow", position: {x: 241.11975963552928, y: 231.5716595822665}},
+    {score: 0.4130932092666626, part: "rightElbow", position: {x: 235.53018008961396, y: 232.3409607249838}},
+    {score: 0.31247299909591675, part: "leftWrist", position: {x: 246.89179522768436, y: 190.23336230658495}},
+    {score: 0.3992525041103363, part: "rightWrist", position: {x: 236.972579164076, y: 203.98514928471855}},
+    {score: 0.5417317748069763, part: "leftHip", position: {x: 270.9722076732807, y: 210.77088596166104}},
+    {score: 0.4350004494190216, part: "rightHip", position: {x: 269.5113554957828, y: 217.77995790471684}},
+    {score: 0.5102478861808777, part: "leftKnee", position: {x: 319.8192979225238, y: 283.8872917847312}},
+    {score: 0.5654211044311523, part: "rightKnee", position: {x: 321.4181761428146, y: 285.6215363339439}},
+    {score: 0.6857002973556519, part: "leftAnkle", position: {x: 314.6699793198529, y: 334.31017781786346}},
+    {score: 0.7733145356178284, part: "rightAnkle", position: {x: 316.8644255007839, y: 335.51763710456805}}
   ]
 };
 
@@ -120,6 +120,6 @@ const handsOnHips1 = {
 };
 
 module.exports = {
-  correct: [downwardFacingDog1, downwardFacingDog2],
+  correct: [halfMoon1],
   incorrect: [mountain1, mountain2, goddess1, handsOnHips1]
 }
