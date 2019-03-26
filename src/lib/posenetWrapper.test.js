@@ -165,27 +165,26 @@ it("#bodypart can get rightAnkle position", () => {
 it("#isMountainPose can recognise position", () => {
   var input = sample["correct"][0];
   var subject = new Pose(input);
-  expect(subject.isMountainPose()).toEqual(true);
+  expect(subject.isMountainPose()[0]).toEqual(true);
   input = sample["correct"][1];
   subject = new Pose(input);
-  expect(subject.isMountainPose()).toEqual(true);
+  expect(subject.isMountainPose()[0]).toEqual(true);
 });
 
 it("#isMountainPose can recognise wrong position", () => {
   var input = sample["incorrect"][0];
   var subject = new Pose(input);
-  expect(subject.isMountainPose()).toEqual(false);
+  expect(subject.isMountainPose()[0]).toEqual(false);
   input = sample["incorrect"][1];
   subject = new Pose(input);
-  expect(subject.isMountainPose()).toEqual(false);
+  expect(subject.isMountainPose()[0]).toEqual(false);
   input = sample["incorrect"][2];
   subject = new Pose(input);
-  expect(subject.isMountainPose()).toEqual(false);
+  expect(subject.isMountainPose()[0]).toEqual(false);
   input = sample["incorrect"][3];
   subject = new Pose(input);
-  expect(subject.isMountainPose()).toEqual(false);
+  expect(subject.isMountainPose()[0]).toEqual(false);
 });
-///make bodypart hash
 
 it("#isTreePose can recognise position", () => {
   var input = treeSample["correct"][0];
