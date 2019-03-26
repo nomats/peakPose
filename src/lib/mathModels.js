@@ -39,6 +39,17 @@ class MathModels{
     };
     return result
   }
+
+  isVertical(points, margin=5){
+    var result = points.length < 2 ? false : true
+    var average = this._regHandler.average(points)[0]
+    for(var i = 0; i < points.length ; i++ ){
+      if((points[i]['x']>average+margin) || (points[i]['x']<(average-margin))){
+        result = false
+      };
+    };
+    return result
+  }
 }
 
 export default MathModels;

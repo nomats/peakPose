@@ -33,7 +33,7 @@ class Pose {
   }
 
   isWarrior2() {
-    const criteria_1 = "Horizontal Arms";
+    const criteria_1 = "keep arms parrallel to the ground";
     const check_1 = this._isHorizontal(
       [
         this.bodypart("rightWrist").position,
@@ -46,16 +46,21 @@ class Pose {
       15
     );
 
+    const criteria_2 = "Right knee bent and stacked over right foot";
     var kneeAngle = this._angle(
       this.bodypart("rightHip").position,
       this.bodypart("rightKnee").position,
       this.bodypart("rightAnkle").position
     );
+    const check_2a = kneeAngle > 85 && kneeAngle < 115;
+    const check_2b = this._isStacked(
+      this.bodypart("rightKnee").position,
+      this.bodypart("rightAnkle").position,
+    )
 
-    const criteria_2 = "Knee at 90";
-    const check_2 = kneeAngle > 85 && kneeAngle < 115;
-    const isCorrect = check_1 && check_2;
-    return [isCorrect, [[check_1, criteria_1], [check_2, criteria_2]]];
+    const isCorrect = check_1 && check_2a && check_2b;
+
+    return [isCorrect, [[check_1, criteria_1], [check_2a&&check_2b, criteria_2]]];
   }
 
   isMountainPose() {
@@ -184,6 +189,10 @@ class Pose {
 
   _isHorizontal(points, margin = 10) {
     return this._mm.isHorizontal(points, margin);
+  }
+
+  _isStacked(points, margin = 10) {
+    return this._mm.isVertical(points, margin);
   }
 }
 
