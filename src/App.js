@@ -13,7 +13,7 @@ class App extends Component {
         <React.Fragment>
           <PoseWrapper />
           <StyledWebcamFeed />
-          <StyledChecklist />
+          <StyledChecklist checks={[false,[[true,"arms spaghetti"],[false, "darmsspaghetti"]]][1]}/>
         </React.Fragment>
       </div>
     );
