@@ -19,19 +19,6 @@ class Pose{
     return (new Bodypart(this.source['keypoints'][this._bodypartIndexLookup[bodypart]]))
   }
 
-  isDownwardFacingDog(){
-    const c1 = this.bodypart("rightHip").position['y'] > this.bodypart("rightKnee").position['y'] && this.bodypart("rightShoulder")
-    const c2 = this._isStraight([this.bodypart("rightAnkle").position,
-                                 this.bodypart("rightKnee").position,
-                                 this.bodypart("rightHip").position]) && 
-                this._isStraight([this.bodypart("rightHip").position,
-                                 this.bodypart("rightShoulder").position,
-                                 this.bodypart("rightWrist").position])
-                                 console.log("back and leg are straight")
-                                 console.log(c2)
-                                 return (c1 && c2)
-  }
-
   isHalfMoonPose(){
     const criteria_1 = "right hand stacked below shoulder";
     const check_1 = 
@@ -40,9 +27,9 @@ class Pose{
     const criteria_2 = "left hand stacked above left shoulder";
     const check_2 = 
       this.bodypart("leftWrist").position['y'] <
-      this.bodypart("leftShouder").position['y'];
+      this.bodypart("leftShoulder").position['y'];
     const criteria_3 = "left leg and back are horizontal";
-    const check_3 = this.isHorizontal(
+    const check_3 = this._isHorizontal(
       [
         this.bodypart("leftShoulder").position,
         this.bodypart("leftHip").position,

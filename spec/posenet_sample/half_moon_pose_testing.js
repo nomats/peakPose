@@ -23,6 +23,7 @@ const halfMoon1 = {
 };
 
 const halfMoon2 = {
+  // https://www.yogajournal.com/.image/t_share/MTQ2MTgwNzkyMTk5NzUxMTAx/story-image-18940.jpg
   score: 0.5347170365207335,
   keypoints: [
     {score: 0.5337181687355042, part: "nose", position: {x: 424.77364193609424, y: 220.43305443482078}},
