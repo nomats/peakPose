@@ -111,7 +111,8 @@ class Pose {
 
   isTreePose() {
     // straight standing leg
-    const c1 =
+    const criteria_1 = "Straight standing leg";
+    const check_1 =
       this._isStraight([
         this.bodypart("leftAnkle").position,
         this.bodypart("leftKnee").position,
@@ -122,7 +123,9 @@ class Pose {
         this.bodypart("rightKnee").position,
         this.bodypart("rightHip").position
       ]);
+    console.log("c1" + check_1);
     // bent floating leg
+    const criteria_2 = "Bent floating leg";
     var rightKneeAngle = this._angle(
       this.bodypart("rightHip").position,
       this.bodypart("rightKnee").position,
@@ -131,20 +134,35 @@ class Pose {
     var leftKneeAngle = this._angle(
       this.bodypart("leftHip").position,
       this.bodypart("leftKnee").position,
-      this.bodypart("lefttAnkle").position
+      this.bodypart("leftAnkle").position
     );
-    const c2 = rightKneeAngle < 150 || leftKneeAngle < 150;
+    console.log("l=" + leftKneeAngle + " r=" + rightKneeAngle);
+    const check_2 = rightKneeAngle < 160 || leftKneeAngle < 160;
+    console.log("c2" + check_2);
     // aligned hips
-    const c3 = this._isHorizontal([
+    const criteria_3 = "Hips aligned";
+    const check_3 = this._isHorizontal([
       this.bodypart("leftHip").position,
       this.bodypart("rightHip").position
     ]);
+    console.log("c3" + check_3);
     // aligned shoulders
-    const c4 = this._isHorizontal([
+    const criteria_4 = "Shoulders aligned";
+    const check_4 = this._isHorizontal([
       this.bodypart("leftShoulder").position,
       this.bodypart("rightShoulder").position
     ]);
-    return c1 && c2;
+    console.log("c4" + check_4);
+    const isZen = check_1 && check_2 && check_3 && check_4;
+    return [
+      isZen,
+      [
+        [check_1, criteria_1],
+        [check_2, criteria_2],
+        [check_3, criteria_3],
+        [check_4, criteria_4]
+      ]
+    ];
   }
 
   _isPointBetween(point, boundary) {

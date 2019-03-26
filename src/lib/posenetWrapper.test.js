@@ -187,19 +187,19 @@ it("#isMountainPose can recognise wrong position", () => {
 });
 
 it("#isTreePose can recognise position", () => {
-  var input = treeSample["correct"][0];
+  // var input = treeSample["correct"][0];
+  // var subject = new Pose(input);
+  // expect(subject.isTreePose()[0]).toEqual(true);
+  var input = treeSample["correct"][1];
   var subject = new Pose(input);
-  expect(subject.isTreePose()).toEqual(true);
-  input = treeSample["correct"][1];
-  subject = new Pose(input);
-  expect(subject.isTreePose()).toEqual(true);
+  expect(subject.isTreePose()[0]).toEqual(true);
 });
 
 it("#isTreePose can recognise wrong position", () => {
   var input = treeSample["incorrect"][0];
   var subject = new Pose(input);
-  expect(subject.isTreePose()).toEqual(false);
+  expect(subject.isTreePose()[0]).toEqual(false);
   input = treeSample["incorrect"][1];
   subject = new Pose(input);
-  expect(subject.isTreePose()).toEqual(false);
+  expect(subject.isTreePose()[0]).toEqual(false);
 });
