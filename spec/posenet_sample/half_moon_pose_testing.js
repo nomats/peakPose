@@ -1,24 +1,47 @@
 const halfMoon1 = {
-  // https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Ardha_Chandrasana.jpg/1200px-Ardha_Chandrasana.jpg
-  score: 0.46363212255870595,
+  // https://workouttrends.imgix.net/2014/08/Yoga-Poses-Half-Moon-Pose-Ardha-Chandrasana.jpg?auto=compress%2Cformat&fit=crop&h=1150&ixlib=php-1.2.1&w=1150&wpsize=stylemag-single-featured-column&s=c4415077cc65ca1d9a220a5a95f534c7
+  score: 0.5952436222749597,
   keypoints: [
-    {score: 0.3050847351551056, part: "nose", position: {x: 230.88568453145274, y: 206.2328953322969}},
-    {score: 0.3692125976085663, part: "leftEye", position: {x: 216.1915181829855, y: 195.01307622879895}},
-    {score: 0.35832303762435913, part: "rightEye", position: {x: 220.80091324644516, y: 202.92756826766413}},
-    {score: 0.3805467486381531, part: "leftEar", position: {x: 222.30625878568338, y: 189.7494877237112}},
-    {score: 0.15467819571495056, part: "rightEar", position: {x: 226.00183717932254, y: 199.3131321328909}},
-    {score: 0.701135516166687, part: "leftShoulder", position: {x: 234.8007043752703, y: 203.35155494966654}},
-    {score: 0.5941345691680908, part: "rightShoulder", position: {x: 233.76121652992538, y: 210.85209446249846}},
-    {score: 0.3823959231376648, part: "leftElbow", position: {x: 241.11975963552928, y: 231.5716595822665}},
-    {score: 0.4130932092666626, part: "rightElbow", position: {x: 235.53018008961396, y: 232.3409607249838}},
-    {score: 0.31247299909591675, part: "leftWrist", position: {x: 246.89179522768436, y: 190.23336230658495}},
-    {score: 0.3992525041103363, part: "rightWrist", position: {x: 236.972579164076, y: 203.98514928471855}},
-    {score: 0.5417317748069763, part: "leftHip", position: {x: 270.9722076732807, y: 210.77088596166104}},
-    {score: 0.4350004494190216, part: "rightHip", position: {x: 269.5113554957828, y: 217.77995790471684}},
-    {score: 0.5102478861808777, part: "leftKnee", position: {x: 319.8192979225238, y: 283.8872917847312}},
-    {score: 0.5654211044311523, part: "rightKnee", position: {x: 321.4181761428146, y: 285.6215363339439}},
-    {score: 0.6857002973556519, part: "leftAnkle", position: {x: 314.6699793198529, y: 334.31017781786346}},
-    {score: 0.7733145356178284, part: "rightAnkle", position: {x: 316.8644255007839, y: 335.51763710456805}}
+    {score: 0.8635486960411072, part: "nose", position: {x: 561.3013244417712, y: 295.69432875689336}},
+    {score: 0.5053015947341919, part: "leftEye", position: {x: 574.0436910345479, y: 289.19199379257674}},
+    {score: 0.6344153881072998, part: "rightEye", position: {x: 566.4801680092993, y: 282.85755830652573}},
+    {score: 0.3732994496822357, part: "leftEar", position: {x: 576.5654144815095, y: 290.2873319738051}},
+    {score: 0.4317576289176941, part: "rightEar", position: {x: 546.6659387502702, y: 276.1372708119323}},
+    {score: 0.3143918216228485, part: "leftShoulder", position: {x: 492.29416368741886, y: 298.8948412832504}},
+    {score: 0.5611999034881592, part: "rightShoulder", position: {x: 478.01336268652676, y: 279.8492431640625}},
+    {score: 0.35272347927093506, part: "leftElbow", position: {x: 479.6738568474264, y: 203.89519397775194}},
+    {score: 0.625004768371582, part: "rightElbow", position: {x: 174.4058840002568, y: 287.1628493998702}},
+    {score: 0.7290481925010681, part: "leftWrist", position: {x: 20.89990332052369, y: 260.7377207402952}},
+    {score: 0.8496237993240356, part: "rightWrist", position: {x: 480.7909269233888, y: 98.5087384814622}},
+    {score: 0.36011382937431335, part: "leftHip", position: {x: 379.69225187202636, y: 285.3207070109753}},
+    {score: 0.43901577591896057, part: "rightHip", position: {x: 321.7250203591317, y: 278.3216430241674}},
+    {score: 0.6246591806411743, part: "leftKnee", position: {x: 323.7830244546118, y: 417.8377778472372}},
+    {score: 0.8027912974357605, part: "rightKnee", position: {x: 325.70873643287734, y: 417.7081784575043}},
+    {score: 0.8451935648918152, part: "leftAnkle", position: {x: 469.86402887786545, y: 520.875470118539}},
+    {score: 0.8070532083511353, part: "rightAnkle", position: {x: 317.9388871242431, y: 555.1135634056012}},
+  ]
+};
+
+const halfMoon2 = {
+  score: 0.5347170365207335,
+  keypoints: [
+    {score: 0.5337181687355042, part: "nose", position: {x: 424.77364193609424, y: 220.43305443482078}},
+    {score: 0.4344838857650757, part: "leftEye", position: {x: 442.8301220534169, y: 215.49526898477978}},
+    {score: 0.32165616750717163, part: "rightEye", position: {x: 443.0343258339641, y: 209.56784077382457}},
+    {score: 0.27106210589408875, part: "leftEar", position: {x: 437.5394510975346, y: 217.45680205191974}},
+    {score: 0.19582627713680267, part: "rightEar", position: {x: 437.4915205483618, y: 202.10167247396677}},
+    {score: 0.5423921346664429, part: "leftShoulder", position: {x: 417.12635924659384, y: 201.93460861759482}},
+    {score: 0.7036873698234558, part: "rightShoulder", position: {x: 414.21089568352613, y: 187.00878771846158}},
+    {score: 0.48157817125320435, part: "leftElbow", position: {x: 412.1256792009083, y: 165.498536104983}},
+    {score: 0.7708371877670288, part: "rightElbow", position: {x: 272.5224267240214, y: 195.3199114231248}},
+    {score: 0.7363340258598328, part: "leftWrist", position: {x: 141.15671864017895, y: 182.4017508709369}},
+    {score: 0.7450700402259827, part: "rightWrist", position: {x: 143.34395781520328, y: 184.31769020199158}},
+    {score: 0.31203171610832214, part: "leftHip", position: {x: 360.47016922577853, y: 191.7743678908274}},
+    {score: 0.3373662233352661, part: "rightHip", position: {x: 348.69167235483343, y: 183.03560081047098}},
+    {score: 0.6944365501403809, part: "leftKnee", position: {x: 298.12389756568984, y: 290.2062643574927}},
+    {score: 0.9288240075111389, part: "rightKnee", position: {x: 289.13528811972856, y: 291.0421818550387}},
+    {score: 0.5206855535507202, part: "leftAnkle", position: {x: 406.0314983645112, y: 374.019903627702}},
+    {score: 0.560200035572052, part: "rightAnkle", position: {x: 296.84691115646626, y: 380.1007822461697}}
   ]
 };
 
@@ -120,6 +143,6 @@ const handsOnHips1 = {
 };
 
 module.exports = {
-  correct: [halfMoon1],
+  correct: [halfMoon1, halfMoon2],
   incorrect: [mountain1, mountain2, goddess1, handsOnHips1]
 }
