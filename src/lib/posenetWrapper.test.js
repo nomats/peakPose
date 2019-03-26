@@ -111,6 +111,7 @@ it('#bodypart can get rightAnkle position', () => {
 });
 
 it('#isMountainPose can recognise position', () => {
+  console.log("mountain")
   var input = sample['correct'][0]
   var subject = new Pose(input)
   expect(subject.isMountainPose()).toEqual(true)
@@ -120,6 +121,7 @@ it('#isMountainPose can recognise position', () => {
 });
 
 it('#isMountainPose can recognise wrong position', () => {
+  console.log("mountain")
   var input = sample['incorrect'][0]
   var subject = new Pose(input)
   expect(subject.isMountainPose()).toEqual(false)
