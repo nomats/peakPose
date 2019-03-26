@@ -1,4 +1,5 @@
 import sample from "../../spec/posenet_sample/neutral_pose_testing";
+import treeSample from "../../spec/posenet_sample/tree_pose_testing";
 import Pose from "./posenetWrapper";
 
 it("can create a pose class", () => {
@@ -184,4 +185,21 @@ it("#isMountainPose can recognise wrong position", () => {
   subject = new Pose(input);
   expect(subject.isMountainPose()[0]).toEqual(false);
 });
-///make bodypart hash
+
+it("#isTreePose can recognise position", () => {
+  // var input = treeSample["correct"][0];
+  // var subject = new Pose(input);
+  // expect(subject.isTreePose()[0]).toEqual(true);
+  var input = treeSample["correct"][1];
+  var subject = new Pose(input);
+  expect(subject.isTreePose()[0]).toEqual(true);
+});
+
+it("#isTreePose can recognise wrong position", () => {
+  var input = treeSample["incorrect"][0];
+  var subject = new Pose(input);
+  expect(subject.isTreePose()[0]).toEqual(false);
+  input = treeSample["incorrect"][1];
+  subject = new Pose(input);
+  expect(subject.isTreePose()[0]).toEqual(false);
+});
