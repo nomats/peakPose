@@ -59,24 +59,55 @@ class Pose {
   }
 
   isMountainPose() {
-    // var conditional =  new conditional([
-    //this._isPointBetween(blah),
-    //this._isHigherThan(blah),
-    //this._isLowerThan(blah),
-    //])
-    // return conditional.isMet
-    const c1 = this.bodypart("rightWrist").position['y'] > this.bodypart("rightHip").position['y'];
-    const c2 = this.bodypart("leftWrist").position['y'] > this.bodypart("leftHip").position['y'];
-    // lower body x-coordinates
-    const c3 = this._isPointBetween(this.bodypart("leftAnkle").position['x'],[this.bodypart("leftShoulder").position['x'],this.bodypart("rightShoulder").position['x']]);
-    const c4 = this._isPointBetween(this.bodypart("rightAnkle").position['x'],[this.bodypart("leftShoulder").position['x'],this.bodypart("rightShoulder").position['x']]);
-    const c5 = this.bodypart("leftAnkle").position['x'] > this.bodypart("rightAnkle").position['x'];
-    const c6 = this._isStraight([this.bodypart("leftAnkle").position,
-                                this.bodypart("leftKnee").position,
-                                this.bodypart("leftHip").position]);
+      // var conditional =  new conditional([
+      //this._isPointBetween(blah),
+      //this._isHigherThan(blah),
+      //this._isLowerThan(blah),
+      //])
+      // return conditional.isMet
+      const criteria_1 = "Right hand below hip";
+      const check_1 =
+        this.bodypart("rightWrist").position["y"] >
+        this.bodypart("rightHip").position["y"];
+      const criteria_2 = "Left hand below hip";
+      const check_2 =
+        this.bodypart("leftWrist").position["y"] >
+        this.bodypart("leftHip").position["y"];
+      // lower body x-coordinates
+      const criteria_3 = "Left foot between shoulders";
+      const check_3 = this._isPointBetween(
+        this.bodypart("leftAnkle").position["x"],
+        [
+          this.bodypart("leftShoulder").position["x"],
+          this.bodypart("rightShoulder").position["x"]
+        ]
+      );
+      const criteria_4 = "Right foot between shoulders";
+      const check_4 = this._isPointBetween(
+        this.bodypart("rightAnkle").position["x"],
+        [
+          this.bodypart("leftShoulder").position["x"],
+          this.bodypart("rightShoulder").position["x"]
+        ]
+      );
+      const criteria_5 = "Feet not crossed";
+      const check_5 =
+        this.bodypart("leftAnkle").position["x"] >
+        this.bodypart("rightAnkle").position["x"];
 
-    return (c1 && c2 && c3 && c4 && c5 )
-  };
+      const isZen = check_1 && check_2 && check_3 && check_4 && check_5;
+
+      return [
+        isZen,
+        [
+          [check_1, criteria_1],
+          [check_2, criteria_2],
+          [check_3, criteria_3],
+          [check_4, criteria_4],
+          [check_5, criteria_5]
+        ]
+      ];
+    }
 
   isChairPose(){
     const criteria_1 = "Hips are above knees";
