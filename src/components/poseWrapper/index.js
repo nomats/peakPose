@@ -11,6 +11,7 @@ class PoseWrapper extends React.Component {
       result: null,
       activePose: null
     };
+    this.handlePose = this.handlePose.bind(this);
   }
 
   componentDidMount() {
