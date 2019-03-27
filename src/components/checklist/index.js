@@ -15,11 +15,16 @@ const Checklist = props => (
 );
 
 const StyledChecklist = styled(Checklist)`
+  li {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  }
+
   li.false {
-    color: red;
+    color: #ff0066;
   }
   li.true {
-    color: green;
+    color: #00ff99;
+    opacity: 0.8;
   }
 `;
 
