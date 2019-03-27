@@ -6,14 +6,15 @@ class PoseSelector extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      active: null, details: null
+      active: null, details: null, src: null
     };
   }
 
-  handleClick(id, details) {
+  handleClick(id, details, src) {
     this.setState({
       active: id,
-      details: details
+      details: details,
+      src: src
     })
     this.props.getChosenPose(id);
   }
@@ -23,8 +24,8 @@ class PoseSelector extends React.Component {
     const poseInfo = this.state;
     return (
       <div className={this.props.className}>
-          {POSES.map(({ id, pose, details }) => (
-            <button key={id} onClick={() => this.handleClick(id, details)}>
+          {POSES.map(({ id, pose, details, src }) => (
+            <button key={id} onClick={() => this.handleClick(id, details, src)}>
               {pose}
               {id === active && details && <StyledPoseDetails poseInfo={poseInfo} />}
             </button>
@@ -36,34 +37,28 @@ class PoseSelector extends React.Component {
 
 const POSES = [
   {
-    id: "warrior one",
-    pose: "Warrior One",
-    details: "this is warrior one pose",
+    id: "isChairPose()",
+    pose: "Chair Pose",
+    details: "this is chair pose",
     src: "image.jpeg"
   },
   {
-    id: "warrior two",
+    id: "isWarrior2()",
     pose: "Warrior Two",
     details: "this is warrior two pose",
     src: "image2.jpeg"
   },
   {
-    id: "goddess",
+    id: "isGoddess()",
     pose: "Goddess",
     details: "this is goddess pose",
     src: "image3.jpeg"
   },
   {
-    id: "tree",
+    id: "isTreePose()",
     pose: "Tree",
     details: "this is tree pose",
     src: "image4.jpeg"
-  },
-  {
-    id: "half moon",
-    pose: "Half Moon",
-    details: "this is half moon pose",
-    src: "image5.jpeg"
   }
 ];
 

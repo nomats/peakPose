@@ -12,30 +12,44 @@ class PoseWrapper extends React.Component {
       activePose: null
     };
     this.setResult = this.setResult.bind(this);
+    this.getChosenPose = this.getChosenPose.bind(this);
   }
 
   componentDidMount() {
     this.runPosenet();
   }
 
-  setResult(wrappedPose) {
+  setResult(wrappedPose, activePose) {
+    console.log("set result executed")
+    console.log(activePose)
+    // var fn = window[settings.activePose];
+    // if(typeof fn === 'function') {
+    //   var result = wrappedPose.activePose;
+    // }
+
     var result = wrappedPose.isMountainPose();
     this.setState({
       result: result
     });
   }
 
-  getChosenPose = (chosenPose) => {
+  getChosenPose(chosenPose) {
     this.setState({
       activePose: chosenPose
     },
     () => {
+    console.log("getChosenPose executed")
     console.log(this.state);
     });
+    this.runPosenet();
   }
 
   runPosenet() {
     var setResult = this.setResult;
+    var activePose = this.state;
+    console.log("runPosenet executed")
+    console.log(activePose)
+    console.log("console log worked")
     setInterval(function() {
       let imageElement = document.getElementsByTagName("video")[0];
       let imageScaleFactor = 0.5;
@@ -54,7 +68,7 @@ class PoseWrapper extends React.Component {
         })
         .then(function(pose) {
           var wrappedPose = new Pose(pose);
-          setResult(wrappedPose);
+          setResult(wrappedPose, activePose);
           //   var result = setState
           //   console.log(wrapped);
           //   console.log(wrapped.isMountainPose() ? "😊" : "😭");
