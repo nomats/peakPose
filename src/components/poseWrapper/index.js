@@ -1,6 +1,7 @@
 import React from "react";
 import * as posenet from '@tensorflow-models/posenet';
 import Pose from "../../lib/posenetWrapper";
+import PoseSelector from "../poseSelector"
 
 class PoseWrapper extends React.Component {
 
@@ -14,6 +15,7 @@ class PoseWrapper extends React.Component {
         return net.estimateSinglePose(imageElement, imageScaleFactor, flipHorizontal, outputStride)
       }).then(function(pose){
         var wrapped = new Pose(pose);
+        console.log(wrapped);
         console.log(wrapped.isMountainPose() ? "😊" : "😭");
       })
     }, 500);
@@ -21,7 +23,9 @@ class PoseWrapper extends React.Component {
 
   render() {
     this.runPosenet();
-    return ""
+    return (
+      <div><PoseSelector /></div>
+    );
   }
 }
 export default PoseWrapper;
