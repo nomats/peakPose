@@ -4,6 +4,6 @@ module.exports = {
   entry: './src/lib/bundleEntry.js',
   output: {
     filename: 'megaScript.js',
-    path: path.resolve(__dirname, 'dist')
-  }
+    path: path.resolve(__dirname, 'dist'),
+  },
 };
