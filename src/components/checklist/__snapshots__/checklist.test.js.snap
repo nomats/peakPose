@@ -11,12 +11,12 @@ exports[`Checklist should render correctly with no props 1`] = `
         "isStatic": true,
         "rules": Array [
           "
-li.false{
-  color: red;
-}
-li.true{
-  color: green;
-}
+  li.false {
+    color: red;
+  }
+  li.true {
+    color: green;
+  }
 ",
         ],
       },
