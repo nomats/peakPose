@@ -95,11 +95,12 @@ class PoseWrapper extends React.Component {
 
   render() {
     var video = this.state.video;
+    console.log(video);
     return (
       <React.Fragment>
         <StyledPoseSelector getChosenPose={this.getChosenPose} />
         <StyledChecklist result={this.state.result} />
-        <StyledPoseDotter video={video} />
+        <StyledPoseDotter video={this.state.result} />
       </React.Fragment>
     );
   }
