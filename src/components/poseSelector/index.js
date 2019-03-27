@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import PoseDetails from "../poseDetails"
+import StyledPoseDetails from "../poseDetails"
 
 class PoseSelector extends React.Component {
   constructor(props) {
@@ -8,7 +8,6 @@ class PoseSelector extends React.Component {
     this.state = {
       active: null, details: null
     };
-    // this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(id, details) {
@@ -16,6 +15,7 @@ class PoseSelector extends React.Component {
       active: id,
       details: details
     })
+    this.props.getChosenPose(id);
   }
 
   render() {
@@ -26,7 +26,7 @@ class PoseSelector extends React.Component {
           {POSES.map(({ id, pose, details }) => (
             <button key={id} onClick={() => this.handleClick(id, details)}>
               {pose}
-              {id === active && details && <PoseDetails poseInfo={poseInfo} />}
+              {id === active && details && <StyledPoseDetails poseInfo={poseInfo} />}
             </button>
           ))}
       </div>
