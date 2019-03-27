@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import PoseWrapper from "./components/poseWrapper";
-import StyledChecklist from "./components/checklist";
 import StyledWebcamFeed from "./components/webcamFeed";
-
-
 
 class App extends Component {
   render() {
@@ -13,7 +10,6 @@ class App extends Component {
         <React.Fragment>
           <PoseWrapper />
           <StyledWebcamFeed />
-          <StyledChecklist checks={[false,[[true,"arms spaghetti"],[false, "darmsspaghetti"]]][1]}/>
         </React.Fragment>
       </div>
     );
