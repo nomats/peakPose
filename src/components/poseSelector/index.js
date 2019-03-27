@@ -1,21 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-import PoseDetails from "../poseDetails"
+import StyledPoseDetails from "../poseDetails"
 
 class PoseSelector extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      active: null, details: null
+      active: null, details: null, src: null
     };
-    // this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(id, details) {
+  handleClick(id, details, src) {
     this.setState({
       active: id,
-      details: details
+      details: details,
+      src: src
     })
+    this.props.getChosenPose(id);
+
   }
 
   render() {
@@ -23,10 +25,10 @@ class PoseSelector extends React.Component {
     const poseInfo = this.state;
     return (
       <div className={this.props.className}>
-          {POSES.map(({ id, pose, details }) => (
-            <button key={id} onClick={() => this.handleClick(id, details)}>
+          {POSES.map(({ id, pose, details, src }) => (
+            <button key={id} onClick={() => this.handleClick(id, details, src)}>
               {pose}
-              {id === active && details && <PoseDetails poseInfo={poseInfo} />}
+              {id === active && details && <StyledPoseDetails poseInfo={poseInfo} />}
             </button>
           ))}
       </div>
@@ -36,33 +38,33 @@ class PoseSelector extends React.Component {
 
 const POSES = [
   {
-    id: "warrior one",
-    pose: "Warrior One",
-    details: "this is warrior one pose",
+    id: "Chair Pose",
+    pose: "Chair Pose",
+    details: "this is chair pose",
     src: "image.jpeg"
   },
   {
-    id: "warrior two",
+    id: "Warrior Two",
     pose: "Warrior Two",
     details: "this is warrior two pose",
     src: "image2.jpeg"
   },
   {
-    id: "goddess",
+    id: "Goddess",
     pose: "Goddess",
     details: "this is goddess pose",
     src: "image3.jpeg"
   },
   {
-    id: "tree",
+    id: "Tree Pose",
     pose: "Tree",
     details: "this is tree pose",
     src: "image4.jpeg"
   },
   {
-    id: "half moon",
-    pose: "Half Moon",
-    details: "this is half moon pose",
+    id: "Mountain Pose",
+    pose: "Mountain",
+    details: "this is mountain pose",
     src: "image5.jpeg"
   }
 ];
