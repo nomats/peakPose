@@ -7,7 +7,7 @@ exports[`PoseSelector should render correctly with no props 1`] = `
       "$$typeof": Symbol(react.forward_ref),
       "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "sc-bdVaJa",
+        "componentId": "sc-bwzfXH",
         "isStatic": true,
         "rules": Array [
           "
@@ -20,7 +20,7 @@ exports[`PoseSelector should render correctly with no props 1`] = `
       "displayName": "Styled(PoseSelector)",
       "foldedComponentIds": Array [],
       "render": [Function],
-      "styledComponentId": "sc-bdVaJa",
+      "styledComponentId": "sc-bwzfXH",
       "target": [Function],
       "toString": [Function],
       "warnTooManyClasses": [Function],

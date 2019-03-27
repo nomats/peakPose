@@ -60,6 +60,12 @@ const POSES = [
     pose: "Tree",
     details: "this is tree pose",
     src: "image4.jpeg"
+  },
+  {
+    id: "Mountain Pose",
+    pose: "Mountain",
+    details: "this is mountain pose",
+    src: "image5.jpeg"
   }
 ];
 
