@@ -1,12 +1,10 @@
 import React from "react";
 import * as posenet from "@tensorflow-models/posenet";
+import styled from "styled-components";
 
 class PoseDotter extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      video: document.getElementsByTagName("video")[0]
-    };
   }
 
   componentDidMount() {
@@ -16,7 +14,18 @@ class PoseDotter extends React.Component {
   dotOverlay() {}
 
   render() {
-    return hello;
+    // var video = props.video;
+    // console.log(props.video);
+    // console.log(this.props.video);
+    return (
+      <div>
+        <canvas
+          ref="canvas"
+          width={this.props.video.videoWidth}
+          height={video.videoHeight}
+        />
+      </div>
+    );
   }
 }
 
