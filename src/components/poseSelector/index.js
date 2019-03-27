@@ -17,6 +17,7 @@ class PoseSelector extends React.Component {
       src: src
     })
     this.props.getChosenPose(id);
+
   }
 
   render() {
