@@ -38,25 +38,25 @@ class PoseSelector extends React.Component {
 
 const POSES = [
   {
-    id: "isChairPose()",
+    id: "Chair Pose",
     pose: "Chair Pose",
     details: "this is chair pose",
     src: "image.jpeg"
   },
   {
-    id: "isWarrior2()",
+    id: "Warrior Two",
     pose: "Warrior Two",
     details: "this is warrior two pose",
     src: "image2.jpeg"
   },
   {
-    id: "isGoddess()",
+    id: "Goddess",
     pose: "Goddess",
     details: "this is goddess pose",
     src: "image3.jpeg"
   },
   {
-    id: "isTreePose()",
+    id: "Tree Pose",
     pose: "Tree",
     details: "this is tree pose",
     src: "image4.jpeg"

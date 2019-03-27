@@ -21,11 +21,20 @@ class PoseWrapper extends React.Component {
 
   setResult(wrappedPose) {
     var activePose = this.state.activePose;
-    console.log(activePose)
-    var result = wrappedPose.isMountainPose();
-    this.setState({
-      result: result
-    });
+    switch(activePose) {
+      case "Chair Pose":
+        this.setState({ result: wrappedPose.isChairPose()});
+      break;
+      case "Warrior Two":
+        this.setState({ result: wrappedPose.isWarrior2()});
+      break;
+      default:
+        console.log("lol")
+    }
+    // var result = wrappedPose.isMountainPose();
+    // this.setState({
+    //   result: result
+    // });
   }
 
   getChosenPose(chosenPose) {
