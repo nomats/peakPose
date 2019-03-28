@@ -22,28 +22,24 @@ class PoseDotter extends React.Component {
 
   drawPose(ctx) {
     console.log("in here");
-    console.log(this.props.pose);
-    for (var i = 0; i < array.length; i++) {
-      array[i];
+
+    if (this.props.pose) {
+      for (var i = 0; i < this.props.pose.source.keypoints.length; i++) {
+        let x = this.props.pose.source.keypoints[i].position["x"];
+        let y = this.props.pose.source.keypoints[i].position["y"];
+        console.log(x, ",", y);
+        ctx.fillText("*", x, y);
+      }
+      ctx.fillText("*", 0, 0);
     }
     ctx.font = "40px Impact";
-    ctx.fillText("*", 210, 75);
-    ctx.fillText("*", 420, 75);
-    ctx.fillText("*", 300, 320);
   }
 
   render() {
-    console.log("POSE", this.props.pose && this.props.pose.source);
+    // console.log("POSE", this.props.pose && this.props.pose.source);
     return (
       <div>
         <canvas ref="canvas" width={640} height={480} />
-        <img
-          ref="image"
-          src="https://images.unsplash.com/photo-1524863479829-916d8e77f114?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-          className="hidden"
-          width={640}
-          height={480}
-        />
       </div>
     );
   }
