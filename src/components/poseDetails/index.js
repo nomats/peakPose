@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 class PoseDetails extends React.Component {
   render() {
@@ -12,7 +12,5 @@ class PoseDetails extends React.Component {
 }
 
 const StyledPoseDetails = styled(PoseDetails)`
-`
-;
-
+`;
 export default StyledPoseDetails;

@@ -1,6 +1,6 @@
-import React from "react";
-import Webcam from "react-webcam";
-import styled from "styled-components";
+import React from 'react';
+import Webcam from 'react-webcam';
+import styled from 'styled-components';
 
 class WebcamFeed extends React.Component {
   render() {

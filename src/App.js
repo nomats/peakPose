@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import "./App.css";
-import PoseWrapper from "./components/poseWrapper";
-import StyledWebcamFeed from "./components/webcamFeed";
+import React, { Component } from 'react';
+import './App.css';
+import PoseWrapper from './components/poseWrapper';
+import StyledWebcamFeed from './components/webcamFeed';
 
 class App extends Component {
   render() {
