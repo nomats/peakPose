@@ -10,19 +10,13 @@ class PoseDotter extends React.Component {
     const video = document.getElementsByTagName("video")[0];
     var source = this.props.pose;
     setInterval(() => {
-      this.drawPose(ctx);
+      this.drawPose(ctx, canvas);
     }, 500);
-
-    // drawME = () => {
-    //   console.log("in here");
-    //   console.log(this.props.pose);
-    //   ctx.font = "40px Courier";
-    //   ctx.fillText("*", 210, 75);
   }
 
-  drawPose(ctx) {
+  drawPose(ctx, canvas) {
     console.log("in here");
-
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     if (this.props.pose) {
       for (var i = 0; i < this.props.pose.source.keypoints.length; i++) {
         let x = this.props.pose.source.keypoints[i].position["x"];
