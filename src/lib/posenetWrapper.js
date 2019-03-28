@@ -78,9 +78,9 @@ class Pose {
       this.bodypart("rightWrist").position,
       this.bodypart("rightHip").position,
       this.bodypart("leftHip").position,
-      this.bodypart("leftWrist").position      
+      this.bodypart("leftWrist").position
     ], 25);
-    
+
     const criteria_2 = "Left foot between shoulders";
     const check_2 = this._isPointBetween(
       this.bodypart("leftAnkle").position["x"],
@@ -174,7 +174,7 @@ class Pose {
   }
 
   isGoddess() {
-    const criteria_1 = "both knees are bend and hips are open";
+    const criteria_1 = "Wide stance, toes out to the sides, knees bent over heels";
     const leftKneeAngle = this._angle(
       this.bodypart("leftHip").position,
       this.bodypart("leftKnee").position,
@@ -188,21 +188,19 @@ class Pose {
 
     const check_1 = leftKneeAngle <= 130 && rightKneeAngle <= 130;
 
-    const criteria_2 = "wrists above elbows";
-    const check_2 =
+    const criteria_2 = "Cactus the arms";
+    const subCheck_2_1 =
       this.bodypart("leftWrist").position["y"] <
         this.bodypart("leftElbow").position["y"] &&
       this.bodypart("rightWrist").position["y"] <
         this.bodypart("rightElbow").position["y"];
 
-    const criteria_3 = "elbows above hips";
-    const check_3 =
+    const subCheck_2_2 =
       this.bodypart("leftHip").position["y"] >
         this.bodypart("leftElbow").position["y"] &&
       this.bodypart("rightHip").position["y"] >
         this.bodypart("rightElbow").position["y"];
 
-    const criteria_4 = "both arms are bend";
     const leftElbowAngle = this._angle(
       this.bodypart("leftWrist").position,
       this.bodypart("leftElbow").position,
@@ -213,23 +211,23 @@ class Pose {
       this.bodypart("rightElbow").position,
       this.bodypart("rightShoulder").position
     );
-    const check_4 = leftElbowAngle < 130 && rightElbowAngle < 130;
+    const subCheck_2_3 = leftElbowAngle < 130 && rightElbowAngle < 130;
 
-    const isZen = check_1 && check_2 && check_3 && check_4;
+    const check_2 = subCheck_2_1 && subCheck_2_2 && subCheck_2_3;
+
+    const isZen = check_1 && check_2;
 
     return [
       isZen,
       [
         [check_1, criteria_1],
-        [check_2, criteria_2],
-        [check_3, criteria_3],
-        [check_4, criteria_4]
+        [check_2, criteria_2]
       ]
     ];
   }
 
   isChairPose() {
-    const criteria_1 = "Hips are above knees";
+    const criteria_1 = "Sit down on an imaginary chair";
     const check_1 =
       this.bodypart("rightHip").position["y"] <
         this.bodypart("rightKnee").position["y"] &&
@@ -238,7 +236,7 @@ class Pose {
     // console.log(check_1);
 
     // Knees
-    const criteria_2 = "Knees are bent";
+    const criteria_2 = "Knees over heels";
 
     const leftKneeAngle = this._angle(
       this.bodypart("leftHip").position,
@@ -263,7 +261,7 @@ class Pose {
       rightKneeAngle < 150;
 
     // Hips
-    const criteria_3 = "Tail bone is tucked in and hips are folded";
+    const criteria_3 = "Sit down on an imaginary chair";
     const leftHipAngle = this._angle(
       this.bodypart("leftShoulder").position,
       this.bodypart("leftHip").position,
