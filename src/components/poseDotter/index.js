@@ -8,32 +8,32 @@ class PoseDotter extends React.Component {
     const ctx = canvas.getContext("2d");
     const img = this.refs.image;
     const video = document.getElementsByTagName("video")[0];
+    var source = this.props.pose;
+    setInterval(() => {
+      this.drawPose(ctx);
+    }, 500);
 
-    img.onload = () => {
-      ctx.drawImage(img, 0, 0);
-      ctx.font = "40px Courier";
-      ctx.fillText("*", 210, 75);
-      ctx.fillText("*", 420, 75);
-      ctx.fillText("*", 160, 180);
-      ctx.fillText("*", 180, 200);
-      ctx.fillText("*", 200, 220);
-      ctx.fillText("*", 220, 240);
-      ctx.fillText("*", 240, 260);
-      ctx.fillText("*", 260, 280);
-      ctx.fillText("*", 280, 300);
-      ctx.fillText("*", 300, 320);
-
-      ctx.fillText("*", 440, 180);
-      ctx.fillText("*", 420, 200);
-      ctx.fillText("*", 400, 220);
-      ctx.fillText("*", 380, 240);
-      ctx.fillText("*", 360, 260);
-      ctx.fillText("*", 340, 280);
-      ctx.fillText("*", 320, 300);
-    };
+    // drawME = () => {
+    //   console.log("in here");
+    //   console.log(this.props.pose);
+    //   ctx.font = "40px Courier";
+    //   ctx.fillText("*", 210, 75);
   }
+
+  drawPose(ctx) {
+    console.log("in here");
+    console.log(this.props.pose);
+    for (var i = 0; i < array.length; i++) {
+      array[i];
+    }
+    ctx.font = "40px Impact";
+    ctx.fillText("*", 210, 75);
+    ctx.fillText("*", 420, 75);
+    ctx.fillText("*", 300, 320);
+  }
+
   render() {
-    console.log("POSE", this.props.pose.source);
+    console.log("POSE", this.props.pose && this.props.pose.source);
     return (
       <div>
         <canvas ref="canvas" width={640} height={480} />
