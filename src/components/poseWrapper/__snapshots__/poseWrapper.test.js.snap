@@ -8,5 +8,9 @@ exports[`PoseWrapper should render correctly with no props 1`] = `
   <Styled(Checklist)
     result={null}
   />
+  <Styled(PoseDotter)
+    pose={null}
+    result={null}
+  />
 </Fragment>
 `;

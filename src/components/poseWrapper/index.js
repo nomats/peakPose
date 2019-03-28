@@ -53,9 +53,7 @@ class PoseWrapper extends React.Component {
       {
         activePose: chosenPose
       },
-      () => {
-        console.log("chosenPose stored");
-      }
+      () => {}
     );
   }
 
