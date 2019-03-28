@@ -68,6 +68,9 @@ const POSES = [
 ];
 
 const StyledPoseSelector = styled(PoseSelector)`
+position: absolute;
+top: 0;
+z-index: 1;
   button {
     color: Black
   }
