@@ -7,17 +7,21 @@ const Criteria = props => (
 
 const Checklist = props => (
   <div className={props.className}>
+    <div>here goes a logo</div>
     <div className={props.result && (props.result[0]+"Result")}>
-    lol
     </div>
     <ul>
       {props.result &&
         props.result[1].map((check_i, index) => <Criteria check={check_i} />)}
     </ul>
+    <div>
+    other links
+    </div>
   </div>
 );
 
 const StyledChecklist = styled(Checklist)`
+text-align: center;
 font-size: 1.5em;
 margin-bottom: 3px;
 display: inline-block;
@@ -27,17 +31,20 @@ vertical-align: bottom;
 overflow: hidden;
 
 .trueResult{
-  height: 20px;
-  color: green
+  display: inline-block;
+  height: 256px;
+  width: 256px;
 }
 
 .falseResult{
-  height: 20px;
-  color: red;
+  display: inline-block;
+  height: 256px;
+  width: 256px;
+  background-image: url('https://d1j8pt39hxlh3d.cloudfront.net/uploads/party_face_256_1.gif')
 }
 
 ul {
-
+  
 }
 
   li {
@@ -49,11 +56,11 @@ ul {
   li.false {
     list-style-image: url('https://image.flaticon.com/icons/svg/148/148766.svg');
 
-    color: #ff0066;
+    color: #cc3d55;
   }
   li.true {
     list-style-image: url('https://image.flaticon.com/icons/svg/148/148767.svg');
-    color: green;
+    color: #6b9373;
   }
 `;
 
