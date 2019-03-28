@@ -15,11 +15,26 @@ const Checklist = props => (
 );
 
 const StyledChecklist = styled(Checklist)`
+margin-bottom: 3px;
+padding: 0px;
+display: inline-block;
+width: 24.9%;
+height: 100%;
+background-color: pink;
+vertical-align: bottom;
+overflow: hidden;
+
+  li {
+    padding-top: 15px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  }
+
   li.false {
-    color: red;
+    color: #ff0066;
   }
   li.true {
-    color: green;
+    color: #00ff99;
+    opacity: 0.8;
   }
 `;
 
