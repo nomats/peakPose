@@ -8,7 +8,6 @@ class PoseDotter extends React.Component {
     const ctx = canvas.getContext("2d");
     const img = this.refs.image;
     const video = document.getElementsByTagName("video")[0];
-    console.log(video.videoWidth);
     var source = this.props.pose;
     setInterval(() => {
       this.drawPose(ctx, canvas);
@@ -17,9 +16,7 @@ class PoseDotter extends React.Component {
 
   drawPose(ctx, canvas) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    // canvas.width = window.innerWidth;
-    // canvas.height = window.innerHeight;
-    ctx.font = "40px Impact";
+    ctx.font = "30px Impact";
     if (this.props.result) {
       ctx.fillStyle = this.props.result[0] ? "#00ff00" : "#ff0000";
     }
@@ -35,11 +32,7 @@ class PoseDotter extends React.Component {
   render() {
     return (
       <div className={this.props.className}>
-        <canvas
-          ref="canvas"
-          width={0.75 * window.innerWidth}
-          height={window.innerHeight}
-        />
+        <canvas ref="canvas" width={640} height={480} />
       </div>
     );
   }
@@ -54,6 +47,13 @@ const StyledPoseDotter = styled(PoseDotter)`
   transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
+  width: 75.1%;
+  height: 100%;
+  text-align: left;
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 export default StyledPoseDotter;
