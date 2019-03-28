@@ -73,13 +73,17 @@ class Pose {
     //this._isLowerThan(blah),
     //])
     // return conditional.isMet
-    const criteria_1 = "wrists are in line with hips"
-    const check_1 = this._isHorizontal([
-      this.bodypart("rightWrist").position,
-      this.bodypart("rightHip").position,
-      this.bodypart("leftHip").position,
-      this.bodypart("leftWrist").position
-    ], 25);
+
+    const criteria_1 = "wrists are in line with hips";
+    const check_1 = this._isHorizontal(
+      [
+        this.bodypart("rightWrist").position,
+        this.bodypart("rightHip").position,
+        this.bodypart("leftHip").position,
+        this.bodypart("leftWrist").position
+      ],
+      25
+    );
 
     const criteria_2 = "Left foot between shoulders";
     const check_2 = this._isPointBetween(
@@ -116,7 +120,6 @@ class Pose {
     ];
   }
 
-
   isTreePose() {
     // straight standing leg
     const criteria_1 = "Straight standing leg";
@@ -131,7 +134,6 @@ class Pose {
         this.bodypart("rightKnee").position,
         this.bodypart("rightHip").position
       ]);
-    console.log("c1" + check_1);
     // bent floating leg
     const criteria_2 = "Bent floating leg";
     var rightKneeAngle = this._angle(
@@ -144,23 +146,19 @@ class Pose {
       this.bodypart("leftKnee").position,
       this.bodypart("leftAnkle").position
     );
-    console.log("l=" + leftKneeAngle + " r=" + rightKneeAngle);
     const check_2 = rightKneeAngle < 160 || leftKneeAngle < 160;
-    console.log("c2" + check_2);
     // aligned hips
     const criteria_3 = "Hips aligned";
     const check_3 = this._isHorizontal([
       this.bodypart("leftHip").position,
       this.bodypart("rightHip").position
     ]);
-    console.log("c3" + check_3);
     // aligned shoulders
     const criteria_4 = "Shoulders aligned";
     const check_4 = this._isHorizontal([
       this.bodypart("leftShoulder").position,
       this.bodypart("rightShoulder").position
     ]);
-    console.log("c4" + check_4);
     const isZen = check_1 && check_2 && check_3 && check_4;
     return [
       isZen,
@@ -274,7 +272,6 @@ class Pose {
       leftKneeAngle < 150 &&
       rightKneeAngle > 20 &&
       rightKneeAngle < 150;
-
 
     const isZen = check_1 && check_2;
 
