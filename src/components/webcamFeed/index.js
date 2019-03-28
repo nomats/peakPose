@@ -13,6 +13,14 @@ class WebcamFeed extends React.Component {
 }
 
 const StyledWebcamFeed = styled(WebcamFeed)`
-  border: 5px solid palevioletred;
+  display: inline-block;
+  background-color: white;
+  width: 75.1%;
+  height: 100%;
+  text-align: left;
+  video {
+    width: 100%;
+    height: 100%;
+  }
 `;
 export default StyledWebcamFeed;
