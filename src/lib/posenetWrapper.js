@@ -73,14 +73,17 @@ class Pose {
     //this._isLowerThan(blah),
     //])
     // return conditional.isMet
-    const criteria_1 = "wrists are in line with hips"
-    const check_1 = this._isHorizontal([
-      this.bodypart("rightWrist").position,
-      this.bodypart("rightHip").position,
-      this.bodypart("leftHip").position,
-      this.bodypart("leftWrist").position      
-    ], 25);
-    
+    const criteria_1 = "wrists are in line with hips";
+    const check_1 = this._isHorizontal(
+      [
+        this.bodypart("rightWrist").position,
+        this.bodypart("rightHip").position,
+        this.bodypart("leftHip").position,
+        this.bodypart("leftWrist").position
+      ],
+      25
+    );
+
     const criteria_2 = "Left foot between shoulders";
     const check_2 = this._isPointBetween(
       this.bodypart("leftAnkle").position["x"],
@@ -116,7 +119,6 @@ class Pose {
     ];
   }
 
-
   isTreePose() {
     // straight standing leg
     const criteria_1 = "Straight standing leg";
@@ -131,7 +133,6 @@ class Pose {
         this.bodypart("rightKnee").position,
         this.bodypart("rightHip").position
       ]);
-    console.log("c1" + check_1);
     // bent floating leg
     const criteria_2 = "Bent floating leg";
     var rightKneeAngle = this._angle(
@@ -144,23 +145,19 @@ class Pose {
       this.bodypart("leftKnee").position,
       this.bodypart("leftAnkle").position
     );
-    console.log("l=" + leftKneeAngle + " r=" + rightKneeAngle);
     const check_2 = rightKneeAngle < 160 || leftKneeAngle < 160;
-    console.log("c2" + check_2);
     // aligned hips
     const criteria_3 = "Hips aligned";
     const check_3 = this._isHorizontal([
       this.bodypart("leftHip").position,
       this.bodypart("rightHip").position
     ]);
-    console.log("c3" + check_3);
     // aligned shoulders
     const criteria_4 = "Shoulders aligned";
     const check_4 = this._isHorizontal([
       this.bodypart("leftShoulder").position,
       this.bodypart("rightShoulder").position
     ]);
-    console.log("c4" + check_4);
     const isZen = check_1 && check_2 && check_3 && check_4;
     return [
       isZen,
@@ -235,7 +232,6 @@ class Pose {
         this.bodypart("rightKnee").position["y"] &&
       this.bodypart("leftHip").position["y"] <
         this.bodypart("leftKnee").position["y"];
-    // console.log(check_1);
 
     // Knees
     const criteria_2 = "Knees are bent";
@@ -245,16 +241,12 @@ class Pose {
       this.bodypart("leftKnee").position,
       this.bodypart("leftAnkle").position
     );
-    // console.log("leftKneeAngle");
-    // console.log(leftKneeAngle);
 
     const rightKneeAngle = this._angle(
       this.bodypart("rightHip").position,
       this.bodypart("rightKnee").position,
       this.bodypart("rightAnkle").position
     );
-    // console.log("rightKneeAngle");
-    // console.log(rightKneeAngle);
 
     const check_2 =
       leftKneeAngle > 20 &&
@@ -269,16 +261,12 @@ class Pose {
       this.bodypart("leftHip").position,
       this.bodypart("leftKnee").position
     );
-    // console.log("left hip angle");
-    // console.log(leftHipAngle);
 
     const rightHipAngle = this._angle(
       this.bodypart("rightShoulder").position,
       this.bodypart("rightHip").position,
       this.bodypart("rightKnee").position
     );
-    // console.log("right hip angle")
-    // console.log(rightHipAngle);
 
     const check_3 =
       leftHipAngle > 20 &&

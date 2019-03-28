@@ -8,8 +8,8 @@ class App extends Component {
     return (
       <div className="App">
         <React.Fragment>
-          <PoseWrapper />
           <StyledWebcamFeed />
+          <PoseWrapper />
         </React.Fragment>
       </div>
     );
