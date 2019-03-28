@@ -7,7 +7,7 @@ cache:
 script:
   - yarn test
   - yarn build
-  - yarn lint
+  - yarn lint --fix
 deploy:
   provider: heroku
   api_key:
