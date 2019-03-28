@@ -90,7 +90,7 @@ class PoseWrapper extends React.Component {
       <React.Fragment>
         <StyledPoseSelector getChosenPose={this.getChosenPose} />
         <StyledChecklist result={this.state.result} />
-        <StyledPoseDotter pose={this.state.pose} />
+        <StyledPoseDotter result={this.state.result} pose={this.state.pose} />
       </React.Fragment>
     );
   }
