@@ -2,7 +2,9 @@
 
 exports[`PoseWrapper should render correctly with no props 1`] = `
 <Fragment>
-  <Styled(PoseSelector) />
+  <Styled(PoseSelector)
+    getChosenPose={[Function]}
+  />
   <Styled(Checklist)
     result={null}
   />
