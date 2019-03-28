@@ -11,11 +11,9 @@ class PoseWrapper extends React.Component {
     this.state = {
       result: null,
       activePose: null,
-      pose: null,
-      video: null
+      pose: null
     };
     this.setResult = this.setResult.bind(this);
-    this.setVideo = this.setVideo.bind(this);
     this.getChosenPose = this.getChosenPose.bind(this);
   }
 
@@ -23,17 +21,12 @@ class PoseWrapper extends React.Component {
     this.runPosenet();
   }
 
-  setVideo(imageElement) {
-    this.setState({
-      video: imageElement
-    });
-    console.log(this.state.video);
-  }
-
   setResult(wrappedPose) {
     var activePose = this.state.activePose;
-    this.setState({
-      pose: wrappedPose
+    this.setState(function(state) {
+      return {
+        pose: wrappedPose
+      };
     });
     switch (activePose) {
       case "Chair Pose":
@@ -52,7 +45,6 @@ class PoseWrapper extends React.Component {
         this.setState({ result: wrappedPose.isMountainPose() });
         break;
       default:
-        console.log("lol");
     }
   }
 
@@ -69,10 +61,8 @@ class PoseWrapper extends React.Component {
 
   runPosenet() {
     var setResult = this.setResult;
-    var setVideo = this.setVideo;
     setInterval(function() {
       let imageElement = document.getElementsByTagName("video")[0];
-      setVideo(imageElement);
       let imageScaleFactor = 0.5;
       let outputStride = 16;
       let flipHorizontal = true;
@@ -94,13 +84,13 @@ class PoseWrapper extends React.Component {
   }
 
   render() {
-    var video = this.state.video;
-    console.log(video);
+    // console.log("pWp" + this.state.pose);
+    // console.log("pWr" + this.state.result);
     return (
       <React.Fragment>
         <StyledPoseSelector getChosenPose={this.getChosenPose} />
         <StyledChecklist result={this.state.result} />
-        <StyledPoseDotter video={this.state.result} />
+        <StyledPoseDotter pose={this.state.pose} />
       </React.Fragment>
     );
   }

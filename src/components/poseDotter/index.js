@@ -8,9 +8,6 @@ class PoseDotter extends React.Component {
     const ctx = canvas.getContext("2d");
     const img = this.refs.image;
     const video = document.getElementsByTagName("video")[0];
-    console.log(canvas);
-    console.log(img);
-    console.log(video);
 
     img.onload = () => {
       ctx.drawImage(img, 0, 0);
@@ -36,6 +33,7 @@ class PoseDotter extends React.Component {
     };
   }
   render() {
+    console.log("POSE", this.props.pose.source);
     return (
       <div>
         <canvas ref="canvas" width={640} height={480} />

@@ -6,7 +6,9 @@ class WebcamFeed extends React.Component {
   render() {
     return (
       <div className={this.props.className}>
-        <Webcam />
+        <div ref="video">
+          <Webcam />
+        </div>
       </div>
     );
   }
