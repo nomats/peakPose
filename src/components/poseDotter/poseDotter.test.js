@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import PoseSelector from "./index.js";
+import PoseDotter from "./index.js";
 import { mount, shallow, render } from "enzyme";
 
 describe("PoseDotter", () => {
