@@ -228,12 +228,31 @@ class Pose {
 
   isChairPose() {
     const criteria_1 = "Sit down on an imaginary chair";
-    const check_1 =
+    const subCheck_1_1 =
       this.bodypart("rightHip").position["y"] <
-        this.bodypart("rightKnee").position["y"] &&
+      this.bodypart("rightKnee").position["y"] &&
       this.bodypart("leftHip").position["y"] <
-        this.bodypart("leftKnee").position["y"];
-    // console.log(check_1);
+      this.bodypart("leftKnee").position["y"];
+
+    const leftHipAngle = this._angle(
+      this.bodypart("leftShoulder").position,
+      this.bodypart("leftHip").position,
+      this.bodypart("leftKnee").position
+    );
+
+    const rightHipAngle = this._angle(
+      this.bodypart("rightShoulder").position,
+      this.bodypart("rightHip").position,
+      this.bodypart("rightKnee").position
+    );
+
+    const subCheck_1_2 =
+    leftHipAngle > 20 &&
+    leftHipAngle < 150 &&
+    rightHipAngle > 20 &&
+    rightHipAngle < 150;
+
+    const check_1 = subCheck_1_1 && subCheck_1_2;
 
     // Knees
     const criteria_2 = "Knees over heels";
@@ -243,16 +262,12 @@ class Pose {
       this.bodypart("leftKnee").position,
       this.bodypart("leftAnkle").position
     );
-    // console.log("leftKneeAngle");
-    // console.log(leftKneeAngle);
 
     const rightKneeAngle = this._angle(
       this.bodypart("rightHip").position,
       this.bodypart("rightKnee").position,
       this.bodypart("rightAnkle").position
     );
-    // console.log("rightKneeAngle");
-    // console.log(rightKneeAngle);
 
     const check_2 =
       leftKneeAngle > 20 &&
@@ -260,35 +275,15 @@ class Pose {
       rightKneeAngle > 20 &&
       rightKneeAngle < 150;
 
-    // Hips
-    const criteria_3 = "Sit down on an imaginary chair";
-    const leftHipAngle = this._angle(
-      this.bodypart("leftShoulder").position,
-      this.bodypart("leftHip").position,
-      this.bodypart("leftKnee").position
-    );
-    // console.log("left hip angle");
-    // console.log(leftHipAngle);
 
-    const rightHipAngle = this._angle(
-      this.bodypart("rightShoulder").position,
-      this.bodypart("rightHip").position,
-      this.bodypart("rightKnee").position
-    );
-    // console.log("right hip angle")
-    // console.log(rightHipAngle);
-
-    const check_3 =
-      leftHipAngle > 20 &&
-      leftHipAngle < 150 &&
-      rightHipAngle > 20 &&
-      rightHipAngle < 150;
-
-    const isZen = check_1 && check_2 && check_3;
+    const isZen = check_1 && check_2;
 
     return [
       isZen,
-      [[check_1, criteria_1], [check_2, criteria_2], [check_3, criteria_3]]
+      [
+        [check_1, criteria_1],
+        [check_2, criteria_2]
+      ]
     ];
   }
 
