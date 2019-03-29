@@ -7,15 +7,19 @@ const Criteria = props => (
 
 const Checklist = props => (
   <div className={props.className}>
-    <div>here goes a logo</div>
-    <div className={props.result && (props.result[0]+"Result")}>
+
+    <div className={props.result ? (props.result[0]+"Result") : "noResult"}>
     </div>
-    <ul>
-      {props.result &&
-        props.result[1].map((check_i, index) => <Criteria check={check_i} />)}
-    </ul>
-    <div>
-    other links
+    <div className="listHolder">
+      <ul>
+        {props.result &&
+          props.result[1].map((check_i, index) => <Criteria check={check_i} />)}
+      </ul>
+    </div>
+    <div className="logoholder"><img src="peakpose_logo.png" alt="Logo" /></div>
+
+    <div className="links">
+    <a href="https://github.com/nomats/asanaApp">gitHub</a> | <a href="https://github.com/nomats">noMats</a> | asanaWrap
     </div>
   </div>
 );
@@ -30,23 +34,41 @@ height: 100%;
 vertical-align: bottom;
 overflow: hidden;
 
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.logoholder {
+  padding-right: 30px;
+  text-align: right;
+}
+
+.links {
+  padding-right: 47px;
+  text-align: right;
+  font-size: 0.5em;
+}
+
+img {
+  width: 67%;
+}
 .trueResult{
-  display: inline-block;
-  height: 256px;
-  width: 256px;
+  height: 33%;
+}
+
+.noResult {
+  height: 33%;
 }
 
 .falseResult{
-  display: inline-block;
-  height: 256px;
-  width: 256px;
+  height: 33%;
   background-image: url('https://d1j8pt39hxlh3d.cloudfront.net/uploads/party_face_256_1.gif')
 }
 
-ul {
-  
+.listHolder {
+  height: 50%;
 }
-
   li {
 
     padding-top: 25px;
