@@ -33,7 +33,7 @@ class Pose {
   }
 
   isWarrior2() {
-    const criteria_1 = "keep arms parrallel to the ground";
+    const criteria_1 = "Arms parallel to the ground";
     const check_1 = this._isHorizontal(
       [
         this.bodypart("rightWrist").position,
@@ -46,7 +46,7 @@ class Pose {
       15
     );
 
-    const criteria_2 = "Right knee bent and stacked over right foot";
+    const criteria_2 = "Knee bent and stacked over foot";
     var kneeAngle = this._angle(
       this.bodypart("rightHip").position,
       this.bodypart("rightKnee").position,
@@ -67,14 +67,7 @@ class Pose {
   }
 
   isMountainPose() {
-    // var conditional =  new conditional([
-    //this._isPointBetween(blah),
-    //this._isHigherThan(blah),
-    //this._isLowerThan(blah),
-    //])
-    // return conditional.isMet
-
-    const criteria_1 = "wrists are in line with hips";
+    const criteria_1 = "Arms by side, palms open";
     const check_1 = this._isHorizontal(
       [
         this.bodypart("rightWrist").position,
@@ -85,8 +78,8 @@ class Pose {
       25
     );
 
-    const criteria_2 = "Left foot between shoulders";
-    const check_2 = this._isPointBetween(
+    const criteria_2 = "Stand straight";
+    const check_2a = this._isPointBetween(
       this.bodypart("leftAnkle").position["x"],
       [
         this.bodypart("leftShoulder").position["x"],
@@ -94,28 +87,28 @@ class Pose {
       ]
     );
 
-    const criteria_3 = "Right foot between shoulders";
-    const check_3 = this._isPointBetween(
+    const check_2b = this._isPointBetween(
       this.bodypart("rightAnkle").position["x"],
       [
         this.bodypart("leftShoulder").position["x"],
         this.bodypart("rightShoulder").position["x"]
       ]
     );
-    const criteria_4 = "Feet not crossed";
-    const check_4 =
+    const check_2 = check_2a && check_2b
+
+    const criteria_3 = "Feet together";
+    const check_3 =
       this.bodypart("leftAnkle").position["x"] >
       this.bodypart("rightAnkle").position["x"];
 
-    const isZen = check_1 && check_2 && check_3 && check_4;
+    const isZen = check_1 && check_2 && check_3;
 
     return [
       isZen,
       [
         [check_1, criteria_1],
         [check_2, criteria_2],
-        [check_3, criteria_3],
-        [check_4, criteria_4]
+        [check_3, criteria_3]
       ]
     ];
   }
@@ -135,7 +128,7 @@ class Pose {
         this.bodypart("rightHip").position
       ]);
     // bent floating leg
-    const criteria_2 = "Bent floating leg";
+    const criteria_2 = "Bend floating leg";
     var rightKneeAngle = this._angle(
       this.bodypart("rightHip").position,
       this.bodypart("rightKnee").position,
@@ -172,7 +165,7 @@ class Pose {
   }
 
   isGoddess() {
-    const criteria_1 = "Wide stance, toes out to the sides, knees bent over heels";
+    const criteria_1 = "Wide stance, stack knee over heel";
     const leftKneeAngle = this._angle(
       this.bodypart("leftHip").position,
       this.bodypart("leftKnee").position,
@@ -186,7 +179,7 @@ class Pose {
 
     const check_1 = leftKneeAngle <= 130 && rightKneeAngle <= 130;
 
-    const criteria_2 = "Cactus the arms";
+    const criteria_2 = "Cactus arms";
     const subCheck_2_1 =
       this.bodypart("leftWrist").position["y"] <
         this.bodypart("leftElbow").position["y"] &&
@@ -225,7 +218,7 @@ class Pose {
   }
 
   isChairPose() {
-    const criteria_1 = "Sit down on an imaginary chair";
+    const criteria_1 = "Sit down on a 'chair'";
     const subCheck_1_1 =
       this.bodypart("rightHip").position["y"] <
       this.bodypart("rightKnee").position["y"] &&
@@ -253,7 +246,7 @@ class Pose {
     const check_1 = subCheck_1_1 && subCheck_1_2;
 
     // Knees
-    const criteria_2 = "Knees over heels";
+    const criteria_2 = "Stack knees over heels";
 
     const leftKneeAngle = this._angle(
       this.bodypart("leftHip").position,

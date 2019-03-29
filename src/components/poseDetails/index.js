@@ -16,8 +16,8 @@ const StyledPoseDetails = styled(PoseDetails)`
   flex: 1;
   align-items: center;
   padding: 0;
-  margin-top: 58%;
-  margin-left: -64%;
+  margin-top: 20%;
+  margin-left: -50%;
 
   p {
     color: #A33265;

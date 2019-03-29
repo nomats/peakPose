@@ -6,7 +6,7 @@ body {
   margin: 0px;
   padding: 0px;
   height: 100%;
-  background-color: blue;
+  background-color: white;
 }
 
 .App {
@@ -14,10 +14,12 @@ body {
   text-align: left;
   vertical-align: bottom;
   height: 100%;
-  background-color: green;
+  background-color: white;
 }
 
 #root {
   height: 100%;
-  background-color: pink;
+  background-color: white;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Oswald');
