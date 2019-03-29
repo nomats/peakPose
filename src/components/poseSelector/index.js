@@ -101,6 +101,7 @@ const StyledPoseSelector = styled(PoseSelector)`
   top: 0;
   left: 0;
   z-index: 2;
+  width: 100%;
 
   * {
     box-sizing: border-box;
@@ -116,6 +117,7 @@ const StyledPoseSelector = styled(PoseSelector)`
 
   ul {
     display: flex;
+    width: 100%;
     min-height: 100vh;
     max-height: 100vh;
     margin: 0;
@@ -129,28 +131,25 @@ const StyledPoseSelector = styled(PoseSelector)`
     display: flex;
     align-items: stretch;
     padding: 20px;
-    background: #E74C3C;
+    background: #A33265;
     cursor: pointer;
     transition: all .5s ease;
 
     &:hover {
-      background: darken(#E74C3C, 3);
+      background: #FF8F4F;
+
+      .pose-title {
+        color: #A33265;
+      }
     }
 
     &.active {
       flex: 5;
-      background: #fff;
+      background: #FF8F4F;
       cursor: default;
 
       h2 {
-        color: #E74C3C;
-      }
-
-      .pose-content {
-        flex: 4;
-        opacity: 1;
-
-        color: #E74C3C;
+        color: #A33265;
       }
     }
 
@@ -162,7 +161,7 @@ const StyledPoseSelector = styled(PoseSelector)`
       margin: 0;
       padding: 0;
       text-align: center;
-      color: white;
+      color: #FF8F4F;
 
       h2 {
         margin: 0;
@@ -182,10 +181,11 @@ const StyledPoseSelector = styled(PoseSelector)`
   }
 
   .material-icons.md-48 {
-    padding: 20px;
-    font-size: 48px;
+    padding: 50px;
+    font-size: 60px;
     z-index: 3;
         position: absolute;
+    color: #FFA9A8;
   }
 `;
 export default StyledPoseSelector;
