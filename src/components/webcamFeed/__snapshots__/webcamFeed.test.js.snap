@@ -11,7 +11,14 @@ exports[`WebcamFeed should render correctly with no props 1`] = `
         "isStatic": true,
         "rules": Array [
           "
-  border: 5px solid palevioletred;
+  display: inline-block;
+  background-color: white;
+  width: 75.1%;
+  height: 100%;
+  video {
+    width: 100%;
+    height: 100%;
+  }
 ",
         ],
       },

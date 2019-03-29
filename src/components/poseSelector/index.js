@@ -12,7 +12,6 @@ class PoseSelector extends React.Component {
       displayAccordion: false,
       className: undefined
     };
-    // this.updateClassName = this.updateClassName.bind(this);
     this.displayAccordion = this.displayAccordion.bind(this);
   }
 
@@ -24,7 +23,6 @@ class PoseSelector extends React.Component {
     },
     () => {
       console.log("lol")
-      // this.updateClassName(id);
     });
     this.props.getChosenPose(id);
   }
@@ -35,21 +33,9 @@ class PoseSelector extends React.Component {
     });
   }
 
-  // updateClassName(id) {
-  //   if (id === this.state.activePose) {
-  //     this.setState({
-  //       className: "active"
-  //     },
-  //     () => {
-  //       console.log("className changed")
-  //     });
-  //   }
-  // }
-
   render() {
     const {activePose} = this.state;
     const poseInfo = this.state;
-    // const {className} = this.state;
     let accordion = null;
 
     if (this.state.displayAccordion) {
