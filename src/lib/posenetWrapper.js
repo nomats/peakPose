@@ -67,22 +67,19 @@ class Pose {
   }
 
   isMountainPose() {
-    // var conditional =  new conditional([
-    //this._isPointBetween(blah),
-    //this._isHigherThan(blah),
-    //this._isLowerThan(blah),
-    //])
-    // return conditional.isMet
-    const criteria_1 = "wrists are in line with hips"
-    const check_1 = this._isHorizontal([
-      this.bodypart("rightWrist").position,
-      this.bodypart("rightHip").position,
-      this.bodypart("leftHip").position,
-      this.bodypart("leftWrist").position      
-    ], 25);
-    
-    const criteria_2 = "Left foot between shoulders";
-    const check_2 = this._isPointBetween(
+    const criteria_1 = "Arms by your side with open palms";
+    const check_1 = this._isHorizontal(
+      [
+        this.bodypart("rightWrist").position,
+        this.bodypart("rightHip").position,
+        this.bodypart("leftHip").position,
+        this.bodypart("leftWrist").position
+      ],
+      25
+    );
+
+    const criteria_2 = "Stand up straight";
+    const check_2a = this._isPointBetween(
       this.bodypart("leftAnkle").position["x"],
       [
         this.bodypart("leftShoulder").position["x"],
@@ -90,32 +87,31 @@ class Pose {
       ]
     );
 
-    const criteria_3 = "Right foot between shoulders";
-    const check_3 = this._isPointBetween(
+    const check_2b = this._isPointBetween(
       this.bodypart("rightAnkle").position["x"],
       [
         this.bodypart("leftShoulder").position["x"],
         this.bodypart("rightShoulder").position["x"]
       ]
-    );
-    const criteria_4 = "Feet not crossed";
-    const check_4 =
+    );    
+    const check_2 = check_2a && check_2b
+
+    const criteria_3 = "Feet touching";    
+    const check_3 =
       this.bodypart("leftAnkle").position["x"] >
       this.bodypart("rightAnkle").position["x"];
 
-    const isZen = check_1 && check_2 && check_3 && check_4;
+    const isZen = check_1 && check_2 && check_3;
 
     return [
       isZen,
       [
         [check_1, criteria_1],
         [check_2, criteria_2],
-        [check_3, criteria_3],
-        [check_4, criteria_4]
+        [check_3, criteria_3]
       ]
     ];
   }
-
 
   isTreePose() {
     // straight standing leg
