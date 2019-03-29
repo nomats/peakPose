@@ -78,7 +78,7 @@ img {
 }
 
 .sunIcon {
-  left: 22%;
+  left: 33%;
   top: 15%;
   width: 200px;
   position: absolute;
