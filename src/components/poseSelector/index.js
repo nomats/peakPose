@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import StyledPoseDetails from "../poseDetails"
+import StyledPoseDetails from "../poseDetails";
 
 class PoseSelector extends React.Component {
   constructor(props) {
@@ -28,9 +28,9 @@ class PoseSelector extends React.Component {
   }
 
   displayAccordion() {
-    this.setState({
-      displayAccordion: !this.state.displayQuestions
-    });
+    this.setState(prevState => ({
+      displayAccordion: !prevState.displayAccordion
+    }));
   }
 
   render() {
@@ -56,7 +56,7 @@ class PoseSelector extends React.Component {
     }
     return (
       <div className={this.props.className} id="poseSelector">
-        <button id="hamburger-menu" onClick={this.displayAccordion}><span></span><span></span><span></span></button>
+        <i class="material-icons md-48" onClick={this.displayAccordion}>{this.state.displayAccordion ? "close" : "accessibility_new"}</i>
         {accordion}
       </div>
     );
@@ -98,9 +98,9 @@ const POSES = [
 
 const StyledPoseSelector = styled(PoseSelector)`
   position: absolute;
-  top: 5px;
-  left: 5px;
-  z-index: 1;
+  top: 0;
+  left: 0;
+  z-index: 2;
 
   * {
     box-sizing: border-box;
@@ -181,38 +181,13 @@ const StyledPoseSelector = styled(PoseSelector)`
     }
   }
 
-  #menu-wrapper {
-    overflow: hidden;
-    max-width: 100%;
-    cursor: pointer;
+  .material-icons.md-48 {
+    padding: 20px;
+    font-size: 48px;
+    z-index: 3;
+        position: absolute;
   }
 
-  #menu-wrapper #hamburger-menu {
-    width: 30px;
-    height: 30px;
-    margin: 20px;
-  }
 
-  #menu-wrapper #hamburger-menu span {
-      opacity: 1;
-      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-      left: 0;
-      display: block;
-      width: 100%;
-      height: 3px;
-      border-radius: 10px;
-      color: black;
-      background-color: blue;
-      position: absolute;
-      -webkit-transform: rotate(0deg);
-      transform: rotate(0deg);
-      -webkit-transition: .4s ease-in-out;
-      transition: .4s ease-in-out;
-  }
-
-  button {
-    color: Black
-  }
-`
-;
+`;
 export default StyledPoseSelector;
