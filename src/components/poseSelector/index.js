@@ -12,7 +12,7 @@ class PoseSelector extends React.Component {
       displayAccordion: false,
       className: undefined
     };
-    this.updateClassName = this.updateClassName.bind(this);
+    // this.updateClassName = this.updateClassName.bind(this);
     this.displayAccordion = this.displayAccordion.bind(this);
   }
 
@@ -23,7 +23,8 @@ class PoseSelector extends React.Component {
       src: src,
     },
     () => {
-      this.updateClassName(id);
+      console.log("lol")
+      // this.updateClassName(id);
     });
     this.props.getChosenPose(id);
   }
@@ -34,23 +35,21 @@ class PoseSelector extends React.Component {
     });
   }
 
-  updateClassName(id) {
-    console.log(id)
-    console.log(this.state.activePose)
-    if (id === this.state.activePose) {
-      this.setState({
-        className: "active"
-      },
-      () => {
-        console.log("className changed")
-      });
-    }
-  }
+  // updateClassName(id) {
+  //   if (id === this.state.activePose) {
+  //     this.setState({
+  //       className: "active"
+  //     },
+  //     () => {
+  //       console.log("className changed")
+  //     });
+  //   }
+  // }
 
   render() {
     const {activePose} = this.state;
     const poseInfo = this.state;
-    const {className} = this.state;
+    // const {className} = this.state;
     let accordion = null;
 
     if (this.state.displayAccordion) {
@@ -58,7 +57,7 @@ class PoseSelector extends React.Component {
         <div className={this.props.className}>
         <ul className="accordion">
           {POSES.map(({ id, pose, details, src }) => (
-            <li className={className} key={id} onClick={() => this.handleChoice(id, details, src)}>
+            <li className={this.state.activePose === id ? "active" : "false" } key={id} onClick={() => this.handleChoice(id, details, src)}>
                 <div className="pose-title">
                   <h2>{pose}</h2>
                 </div>
