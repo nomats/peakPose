@@ -15,7 +15,7 @@ const Checklist = props => (
 
     <div className={props.result ? (props.result[0]+"Result") : "noResult"}>
       <div className="topBuffer"></div>
-      <div className="sunIcon"><img src="sun.png" /></div>
+      <div className="sunIcon"><img src="sun.png" alt="Sun"/></div>
       <div className="moveName">
         {props.activePose && props.activePose}
       </div>
