@@ -40,11 +40,16 @@ a {
 }
 
 .logoholder {
+  border-radius: 50px 0px 0px 0px;
+  background-color: white;
+  padding-top: 10px;
   padding-right: 30px;
   text-align: right;
 }
 
 .links {
+  height: 5%;
+  background-color: white;
   padding-right: 47px;
   text-align: right;
   font-size: 0.5em;

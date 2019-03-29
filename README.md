@@ -1,9 +1,11 @@
+![](./public/large_peak_pose_logo.png)
+
 ![Build Status](https://img.shields.io/travis/com/nomats/asanaApp.svg)
 ![Built By](https://img.shields.io/badge/built%20by-nomats-blue.svg)
-![](./public/large_peak_pose_logo.png)
-# Asana
 
-Asana is a web application that gives yogis a platform to perfect their alignment.
+# Peak Pose
+
+Peak Pose is a web application that gives yogis a platform to perfect their alignment.
 
 Using their webcam, the user has the ability to select various yoga poses and compare their stance.
 
