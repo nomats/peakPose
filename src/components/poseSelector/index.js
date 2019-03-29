@@ -187,7 +187,5 @@ const StyledPoseSelector = styled(PoseSelector)`
     z-index: 3;
         position: absolute;
   }
-
-
 `;
 export default StyledPoseSelector;

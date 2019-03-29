@@ -13,6 +13,7 @@ exports[`PoseSelector should render correctly with no props 1`] = `
           "
   position: absolute;
 <<<<<<< HEAD
+<<<<<<< HEAD
   top: 5px;
   left: 5px;
   z-index: 1;
@@ -125,6 +126,10 @@ exports[`PoseSelector should render correctly with no props 1`] = `
       transition: .4s ease-in-out;
   }
 
+=======
+  top: 0;
+  z-index: 2;
+>>>>>>> 5b795a7d981ccf7c089927ebc3b7c9eb447ea03d
 =======
   top: 0;
   z-index: 2;
