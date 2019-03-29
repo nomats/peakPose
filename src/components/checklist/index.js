@@ -92,20 +92,20 @@ img {
 }
 
 .trueResult{
-  letter-spacking: 3px;
+  letter-spacing: 3px;
   position: relative;
   color: #47EF8B;
   height: 33%;
 }
 
 .noResult {
-  letter-spacking: 3px;
+  letter-spacing: 3px;
   position: relative;
   height: 33%;
 }
 
 .falseResult{
-  letter-spacking: 3px;
+  letter-spacing: 3px;
   position: relative;
   color: #F43F3F;
   height: 33%;
@@ -114,7 +114,7 @@ img {
 .moveName {
   letter-spacing: 3px;
   font-family: 'Oswald', sans-serif;
-  font-size: 60px;
+  font-size: 1.2em;
   font-weight: bold;
   padding: 10%;
 }
