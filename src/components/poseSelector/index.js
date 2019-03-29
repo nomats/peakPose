@@ -56,7 +56,7 @@ class PoseSelector extends React.Component {
     }
     return (
       <div className={this.props.className} id="poseSelector">
-        <i class="material-icons md-48" onClick={this.displayAccordion}>{this.state.displayAccordion ? "close" : "accessibility_new"}</i>
+        <i className="material-icons md-48" onClick={this.displayAccordion}>{this.state.displayAccordion ? "close" : "accessibility_new"}</i>
         {accordion}
       </div>
     );
