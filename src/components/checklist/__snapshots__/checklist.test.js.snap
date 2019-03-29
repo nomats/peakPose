@@ -78,13 +78,11 @@ img {
   }
 
   li.false {
-    list-style-image: url('https://image.flaticon.com/icons/svg/148/148766.svg');
-
-    color: #cc3d55;
+    color: #ff0066;
   }
   li.true {
-    list-style-image: url('https://image.flaticon.com/icons/svg/148/148767.svg');
-    color: #6b9373;
+    color: #00ff99;
+    opacity: 0.8;
   }
 ",
         ],

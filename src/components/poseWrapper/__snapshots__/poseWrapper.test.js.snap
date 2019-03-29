@@ -9,5 +9,9 @@ exports[`PoseWrapper should render correctly with no props 1`] = `
     activePose={null}
     result={null}
   />
+  <Styled(PoseDotter)
+    pose={null}
+    result={null}
+  />
 </Fragment>
 `;

@@ -6,7 +6,9 @@ class WebcamFeed extends React.Component {
   render() {
     return (
       <div className={this.props.className}>
-        <Webcam />
+        <div ref="video">
+          <Webcam />
+        </div>
       </div>
     );
   }
@@ -16,7 +18,6 @@ const StyledWebcamFeed = styled(WebcamFeed)`
   display: inline-block;
   width: 75.1%;
   height: 100%;
-  text-align: left;
   video {
     width: 100%;
     height: 100%;

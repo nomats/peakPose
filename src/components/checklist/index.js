@@ -2,7 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 const Criteria = props => (
-  <li className={props.check[0].toString()}>{props.check[1]}</li>
+  <li className={props.check[0].toString()}>
+    <i class="material-icons">
+      {props.check[0] ? "check_circle" : "highlight_off"}
+    </i>
+    {props.check[1]}
+  </li>
 );
 
 const Checklist = props => (
@@ -112,6 +117,7 @@ img {
 
     padding-top: 25px;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    list-style: none;
   }
 
   li.false {
@@ -122,6 +128,13 @@ img {
   li.true {
     list-style-image: url('https://image.flaticon.com/icons/svg/148/148767.svg');
     color: #6b9373;
+  }
+
+  i {
+    margin-right: 10px;
+    font-size: 80%;
+    font-size: 200%;
+    vertical-align: middle;
   }
 `;
 
