@@ -9,10 +9,13 @@ const Checklist = props => (
   <div className={props.className}>
 
     <div className={props.result ? (props.result[0]+"Result") : "noResult"}>
-    <div className="topBuffer"></div>
-    <div className="moveName">
-      {props.activePose && props.activePose}
-    </div>
+      <div className="topBuffer"></div>
+      <div className="sunIcon"><img src="sun.png" /></div>
+      <div className="moveName">
+
+        {props.activePose && props.activePose}
+      </div>
+
     </div>
     <div className="listHolder">
       <ul>
@@ -29,6 +32,9 @@ const Checklist = props => (
 );
 
 const StyledChecklist = styled(Checklist)`
+
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
 text-align: center;
 font-size: 1.5em;
 margin-bottom: 3px;
@@ -67,23 +73,36 @@ img {
   height: 50%;
 }
 
+.sunIcon {
+  left: 22%;
+  top: 15%;
+  width: 200px;
+  position: absolute;
+  z-index: 2;
+  opacity: 0;
+}
+
+.trueResult .sunIcon{
+  animation: spin 4s linear infinite;
+  z-index: 0;
+  opacity: 1;
+}
+
 .trueResult{
-  vertical-align: middle;
+  position: relative;
   color: green;
   height: 33%;
 }
 
 .noResult {
-  vertical-align: middle;
+  position: relative;
   height: 33%;
 }
 
 .falseResult{
-  background-color: black;
-  vertical-align: middle;
+  position: relative;
   color: red;
   height: 33%;
-  background-image: url('https://d1j8pt39hxlh3d.cloudfront.net/uploads/party_face_256_1.gif')
 }
 
 .listHolder {

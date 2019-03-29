@@ -6,6 +6,7 @@ exports[`PoseWrapper should render correctly with no props 1`] = `
     getChosenPose={[Function]}
   />
   <Styled(Checklist)
+    activePose={null}
     result={null}
   />
 </Fragment>
