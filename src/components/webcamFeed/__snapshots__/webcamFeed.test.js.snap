@@ -15,14 +15,8 @@ exports[`WebcamFeed should render correctly with no props 1`] = `
   background-color: white;
   width: 75.1%;
   height: 100%;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
   text-align: left;
->>>>>>> 5b795a7d981ccf7c089927ebc3b7c9eb447ea03d
-=======
-  text-align: left;
->>>>>>> 5b795a7d981ccf7c089927ebc3b7c9eb447ea03d
+
   video {
     width: 100%;
     height: 100%;
