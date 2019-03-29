@@ -94,7 +94,7 @@ img {
 .trueResult{
   letter-spacing: 3px;
   position: relative;
-  color: #47EF8B;
+  color: #29CE6B;
   height: 33%;
 }
 
@@ -135,7 +135,7 @@ img {
     color: #F43F3F;
   }
   li.true {
-    color: #47EF8B;
+    color: #29CE6B;
   }
 
   i {
