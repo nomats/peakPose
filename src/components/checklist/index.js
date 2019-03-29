@@ -86,30 +86,34 @@ img {
   opacity: 0;
 }
 
-.falseResult .sunIcon{
+.trueResult .sunIcon{
   animation: spin 4s linear infinite;
   z-index: 0;
   opacity: 1;
 }
 
 .trueResult{
+  letter-spacking: 3px;
   position: relative;
-  color: green;
+  color: #47EF8B;
   height: 33%;
 }
 
 .noResult {
+  letter-spacking: 3px;
   position: relative;
   height: 33%;
 }
 
 .falseResult{
+  letter-spacking: 3px;
   position: relative;
-  color: red;
+  color: #F43F3F;
   height: 33%;
 }
 
 .moveName {
+  letter-spacking: 3px;
   font-size: 1.5em;
 }
 
