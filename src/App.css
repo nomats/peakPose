@@ -10,6 +10,7 @@ body {
 }
 
 .App {
+  min-height: 720px;
   min-width: 1280px;
   text-align: left;
   vertical-align: bottom;
