@@ -19,7 +19,6 @@ const StyledWebcamFeed = styled(WebcamFeed)`
   background-color: white;
   width: 75.1%;
   height: 100%;
-  text-align: left;
   video {
     width: 100%;
     height: 100%;

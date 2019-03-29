@@ -93,6 +93,7 @@ class PoseWrapper extends React.Component {
     );
   }
 }
+
 export default PoseWrapper;
 
 //
