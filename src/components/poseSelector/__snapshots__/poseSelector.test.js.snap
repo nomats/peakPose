@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PoseSelector should render correctly with no props 1`] = `
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-bwzfXH",
+        "isStatic": true,
+        "rules": Array [
+          "
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Lato';
+     -webkit-font-smoothing: antialiased;
+  	-moz-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
+  	text-rendering: optimizelegibility;
+  }
+
+  ul {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style-type: none;
+  }
+
+  li {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    padding: 20px;
+    background: #A33265;
+    cursor: pointer;
+    transition: all .5s ease;
+
+    &:hover {
+      background: #FF8F4F;
+
+      .pose-title {
+        color: #A33265;
+      }
+    }
+
+    &.active {
+      flex: 5;
+      background: #FF8F4F;
+      cursor: default;
+
+      h2 {
+        color: #A33265;
+      }
+    }
+
+    .pose-title {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: #FF8F4F;
+
+      h2 {
+        margin: 0;
+        transform: rotate(-90deg);
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .material-icons.md-48 {
+    padding: 50px;
+    font-size: 60px;
+    z-index: 3;
+        position: absolute;
+    color: #FFA9A8;
+  }
+",
+        ],
+      },
+      "displayName": "Styled(PoseSelector)",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "sc-bwzfXH",
+      "target": [Function],
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+      Symbol(Symbol.hasInstance): [Function],
+    }
+  }
+  forwardedRef={null}
+/>
+`;
