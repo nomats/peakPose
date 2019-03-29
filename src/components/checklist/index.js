@@ -9,6 +9,10 @@ const Checklist = props => (
   <div className={props.className}>
 
     <div className={props.result ? (props.result[0]+"Result") : "noResult"}>
+    <div className="topBuffer"></div>
+    <div className="moveName">
+      {props.activePose && props.activePose}
+    </div>
     </div>
     <div className="listHolder">
       <ul>
@@ -58,15 +62,26 @@ a {
 img {
   width: 67%;
 }
+
+.topBuffer {
+  height: 50%;
+}
+
 .trueResult{
+  vertical-align: middle;
+  color: green;
   height: 33%;
 }
 
 .noResult {
+  vertical-align: middle;
   height: 33%;
 }
 
 .falseResult{
+  background-color: black;
+  vertical-align: middle;
+  color: red;
   height: 33%;
   background-image: url('https://d1j8pt39hxlh3d.cloudfront.net/uploads/party_face_256_1.gif')
 }
