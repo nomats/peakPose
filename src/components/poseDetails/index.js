@@ -5,43 +5,29 @@ class PoseDetails extends React.Component {
   render() {
     return (
       <div className={this.props.className}>
-        <div className="pose-content">
-          <p>{this.props.poseInfo.details}</p>
-          {this.props.poseInfo.src}
-        </div>
+        <img alt="yoga-pose" src={this.props.poseInfo.src}/>
+        <p>{this.props.poseInfo.details}</p>
       </div>
     );
   }
 }
 
 const StyledPoseDetails = styled(PoseDetails)`
-  #pose-content {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    opacity: 0;
+  flex: 1;
+  align-items: center;
+  padding: 0;
+  margin-top: 58%;
+  margin-left: -64%;
+
+  p {
+    color: #A33265;
+    padding: 40px 20% 0 20%;
+    font-weight: bold;
   }
 
-  &.active {
-    flex: 5;
-    background: #fff;
-    cursor: default;
-
-    h2 {
-      color: #E74C3C;
-    }
-
-    .pose-content {
-      flex: 4;
-      opacity: 1;
-
-      color: #E74C3C;
-    }
+  img {
+    width: 100%;
   }
-
-
 
 `
 ;

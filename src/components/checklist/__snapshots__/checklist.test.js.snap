@@ -11,8 +11,6 @@ exports[`Checklist should render correctly with no props 1`] = `
         "isStatic": true,
         "rules": Array [
           "
-<<<<<<< HEAD
-<<<<<<< HEAD
   margin-bottom: 3px;
   padding: 0px;
   display: inline-block;
@@ -21,25 +19,11 @@ exports[`Checklist should render correctly with no props 1`] = `
   background-color: pink;
   vertical-align: bottom;
   overflow: hidden;
-=======
-=======
->>>>>>> 5b795a7d981ccf7c089927ebc3b7c9eb447ea03d
-margin-bottom: 3px;
-padding: 0px;
-display: inline-block;
-width: 24.9%;
-height: 100%;
-background-color: pink;
-vertical-align: bottom;
-overflow: hidden;
-<<<<<<< HEAD
->>>>>>> 5b795a7d981ccf7c089927ebc3b7c9eb447ea03d
-=======
->>>>>>> 5b795a7d981ccf7c089927ebc3b7c9eb447ea03d
 
   li {
     padding-top: 15px;
     font-family: \\"Lucida Sans Unicode\\", \\"Lucida Grande\\", sans-serif;
+    list-style: none;
   }
 
   li.false {
@@ -48,6 +32,13 @@ overflow: hidden;
   li.true {
     color: #00ff99;
     opacity: 0.8;
+  }
+
+  i {
+    margin-right: 10px;
+    font-size: 80%;
+    font-size: 200%;
+    vertical-align: middle;
   }
 ",
         ],
