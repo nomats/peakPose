@@ -73,6 +73,7 @@ class Pose {
     //this._isLowerThan(blah),
     //])
     // return conditional.isMet
+
     const criteria_1 = "wrists are in line with hips";
     const check_1 = this._isHorizontal(
       [
@@ -171,7 +172,7 @@ class Pose {
   }
 
   isGoddess() {
-    const criteria_1 = "both knees are bend and hips are open";
+    const criteria_1 = "Wide stance, toes out to the sides, knees bent over heels";
     const leftKneeAngle = this._angle(
       this.bodypart("leftHip").position,
       this.bodypart("leftKnee").position,
@@ -185,21 +186,19 @@ class Pose {
 
     const check_1 = leftKneeAngle <= 130 && rightKneeAngle <= 130;
 
-    const criteria_2 = "wrists above elbows";
-    const check_2 =
+    const criteria_2 = "Cactus the arms";
+    const subCheck_2_1 =
       this.bodypart("leftWrist").position["y"] <
         this.bodypart("leftElbow").position["y"] &&
       this.bodypart("rightWrist").position["y"] <
         this.bodypart("rightElbow").position["y"];
 
-    const criteria_3 = "elbows above hips";
-    const check_3 =
+    const subCheck_2_2 =
       this.bodypart("leftHip").position["y"] >
         this.bodypart("leftElbow").position["y"] &&
       this.bodypart("rightHip").position["y"] >
         this.bodypart("rightElbow").position["y"];
 
-    const criteria_4 = "both arms are bend";
     const leftElbowAngle = this._angle(
       this.bodypart("leftWrist").position,
       this.bodypart("leftElbow").position,
@@ -210,31 +209,51 @@ class Pose {
       this.bodypart("rightElbow").position,
       this.bodypart("rightShoulder").position
     );
-    const check_4 = leftElbowAngle < 130 && rightElbowAngle < 130;
+    const subCheck_2_3 = leftElbowAngle < 130 && rightElbowAngle < 130;
 
-    const isZen = check_1 && check_2 && check_3 && check_4;
+    const check_2 = subCheck_2_1 && subCheck_2_2 && subCheck_2_3;
+
+    const isZen = check_1 && check_2;
 
     return [
       isZen,
       [
         [check_1, criteria_1],
-        [check_2, criteria_2],
-        [check_3, criteria_3],
-        [check_4, criteria_4]
+        [check_2, criteria_2]
       ]
     ];
   }
 
   isChairPose() {
-    const criteria_1 = "Hips are above knees";
-    const check_1 =
+    const criteria_1 = "Sit down on an imaginary chair";
+    const subCheck_1_1 =
       this.bodypart("rightHip").position["y"] <
-        this.bodypart("rightKnee").position["y"] &&
+      this.bodypart("rightKnee").position["y"] &&
       this.bodypart("leftHip").position["y"] <
-        this.bodypart("leftKnee").position["y"];
+      this.bodypart("leftKnee").position["y"];
+
+    const leftHipAngle = this._angle(
+      this.bodypart("leftShoulder").position,
+      this.bodypart("leftHip").position,
+      this.bodypart("leftKnee").position
+    );
+
+    const rightHipAngle = this._angle(
+      this.bodypart("rightShoulder").position,
+      this.bodypart("rightHip").position,
+      this.bodypart("rightKnee").position
+    );
+
+    const subCheck_1_2 =
+    leftHipAngle > 20 &&
+    leftHipAngle < 150 &&
+    rightHipAngle > 20 &&
+    rightHipAngle < 150;
+
+    const check_1 = subCheck_1_1 && subCheck_1_2;
 
     // Knees
-    const criteria_2 = "Knees are bent";
+    const criteria_2 = "Knees over heels";
 
     const leftKneeAngle = this._angle(
       this.bodypart("leftHip").position,
@@ -254,31 +273,14 @@ class Pose {
       rightKneeAngle > 20 &&
       rightKneeAngle < 150;
 
-    // Hips
-    const criteria_3 = "Tail bone is tucked in and hips are folded";
-    const leftHipAngle = this._angle(
-      this.bodypart("leftShoulder").position,
-      this.bodypart("leftHip").position,
-      this.bodypart("leftKnee").position
-    );
-
-    const rightHipAngle = this._angle(
-      this.bodypart("rightShoulder").position,
-      this.bodypart("rightHip").position,
-      this.bodypart("rightKnee").position
-    );
-
-    const check_3 =
-      leftHipAngle > 20 &&
-      leftHipAngle < 150 &&
-      rightHipAngle > 20 &&
-      rightHipAngle < 150;
-
-    const isZen = check_1 && check_2 && check_3;
+    const isZen = check_1 && check_2;
 
     return [
       isZen,
-      [[check_1, criteria_1], [check_2, criteria_2], [check_3, criteria_3]]
+      [
+        [check_1, criteria_1],
+        [check_2, criteria_2]
+      ]
     ];
   }
 

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import StyledPoseDetails from "../poseDetails"
+import StyledPoseDetails from "../poseDetails";
 
 class PoseSelector extends React.Component {
   constructor(props) {
@@ -12,7 +12,6 @@ class PoseSelector extends React.Component {
       displayAccordion: false,
       className: undefined
     };
-    // this.updateClassName = this.updateClassName.bind(this);
     this.displayAccordion = this.displayAccordion.bind(this);
   }
 
@@ -23,8 +22,7 @@ class PoseSelector extends React.Component {
       src: src,
     },
     () => {
-      console.log("lol")
-      // this.updateClassName(id);
+      ""
     });
     this.props.getChosenPose(id);
   }
@@ -34,18 +32,7 @@ class PoseSelector extends React.Component {
       displayAccordion: !this.state.displayQuestions
     });
   }
-
-  // updateClassName(id) {
-  //   if (id === this.state.activePose) {
-  //     this.setState({
-  //       className: "active"
-  //     },
-  //     () => {
-  //       console.log("className changed")
-  //     });
-  //   }
-  // }
-
+  
   render() {
     const {activePose} = this.state;
     const poseInfo = this.state;
@@ -223,10 +210,5 @@ const StyledPoseSelector = styled(PoseSelector)`
       -webkit-transition: .4s ease-in-out;
       transition: .4s ease-in-out;
   }
-
-  button {
-    color: Black
-  }
-`
-;
+`;
 export default StyledPoseSelector;

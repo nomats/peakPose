@@ -1,29 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PoseSelector should render correctly with no props 1`] = `
+exports[`PoseDotter should render correctly with no props 1`] = `
 <StyledComponent
   forwardedComponent={
     Object {
       "$$typeof": Symbol(react.forward_ref),
       "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "sc-bwzfXH",
+        "componentId": "sc-bdVaJa",
         "isStatic": true,
         "rules": Array [
           "
+  display: inline-block;
   position: absolute;
   top: 0;
-  z-index: 2;
-  button {
-    color: Black;
+  left: 0;
+  z-index: 1;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  width: 75.1%;
+  height: 100%;
+  text-align: left;
+  canvas {
+    width: 100%;
+    height: 100%;
   }
 ",
         ],
       },
-      "displayName": "Styled(PoseSelector)",
+      "displayName": "Styled(PoseDotter)",
       "foldedComponentIds": Array [],
       "render": [Function],
-      "styledComponentId": "sc-bwzfXH",
+      "styledComponentId": "sc-bdVaJa",
       "target": [Function],
       "toString": [Function],
       "warnTooManyClasses": [Function],
