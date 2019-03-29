@@ -30,7 +30,7 @@ const Checklist = props => (
     <div className="logoholder"><img src="peakpose_logo.png" alt="Logo" /></div>
 
     <div className="links">
-    <a href="https://github.com/nomats/asanaApp">gitHub</a> | <a href="https://github.com/nomats">noMats</a> | asanaWrap
+    <a href="https://github.com/nomats/asanaApp">GitHub</a> | <a href="https://github.com/nomats">NoMats</a> | AsanaWrap
     </div>
   </div>
 );
@@ -47,6 +47,7 @@ width: 24.9%;
 height: 100%;
 vertical-align: bottom;
 overflow: hidden;
+background-color: #FFA9A8;
 
 a {
   color: black;
@@ -55,7 +56,6 @@ a {
 
 .logoholder {
   border-radius: 50px 0px 0px 0px;
-  background-color: white;
   padding-top: 10px;
   padding-right: 30px;
   text-align: right;
@@ -63,7 +63,6 @@ a {
 
 .links {
   height: 5%;
-  background-color: white;
   padding-right: 47px;
   text-align: right;
   font-size: 0.5em;
@@ -93,28 +92,31 @@ img {
 }
 
 .trueResult{
-  letter-spacking: 3px;
+  letter-spacing: 3px;
   position: relative;
-  color: #47EF8B;
+  color: #29CE6B;
   height: 33%;
 }
 
 .noResult {
-  letter-spacking: 3px;
+  letter-spacing: 3px;
   position: relative;
   height: 33%;
 }
 
 .falseResult{
-  letter-spacking: 3px;
+  letter-spacing: 3px;
   position: relative;
   color: #F43F3F;
   height: 33%;
 }
 
 .moveName {
-  letter-spacking: 3px;
-  font-size: 1.5em;
+  letter-spacing: 3px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 10%;
 }
 
 .listHolder {
@@ -133,7 +135,7 @@ img {
     color: #F43F3F;
   }
   li.true {
-    color: #47EF8B;
+    color: #29CE6B;
   }
 
   i {

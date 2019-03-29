@@ -75,6 +75,7 @@ img {
 
     padding-top: 25px;
     font-family: \\"Lucida Sans Unicode\\", \\"Lucida Grande\\", sans-serif;
+    list-style: none;
   }
 
   li.false {
@@ -83,6 +84,13 @@ img {
   li.true {
     color: #00ff99;
     opacity: 0.8;
+  }
+
+  i {
+    margin-right: 10px;
+    font-size: 80%;
+    font-size: 200%;
+    vertical-align: middle;
   }
 ",
         ],

@@ -56,7 +56,7 @@ class PoseSelector extends React.Component {
     }
     return (
       <div className={this.props.className} id="poseSelector">
-        <i class="material-icons md-48" onClick={this.displayAccordion}>{this.state.displayAccordion ? "close" : "accessibility_new"}</i>
+        <i className="material-icons md-48" onClick={this.displayAccordion}>{this.state.displayAccordion ? "close" : "accessibility_new"}</i>
         {accordion}
       </div>
     );
@@ -67,32 +67,32 @@ const POSES = [
   {
     id: "Chair Pose",
     pose: "Chair Pose",
-    details: "this is chair pose",
-    src: "image.jpeg"
+    details: "Chair Pose clearly works the muscles of the arms and legs, but it also stimulates the diaphragm and heart",
+    src: "chair_pose.png"
   },
   {
     id: "Warrior Two",
     pose: "Warrior Two",
-    details: "this is warrior two pose",
-    src: "image2.jpeg"
+    details: "Warrior II strengthens the legs, opens the hips and chest. The pose develops concentration, balance and groundedness. This pose improves circulation and respiration and energizes the entire body",
+    src: "warrior_two.png"
   },
   {
     id: "Goddess",
     pose: "Goddess",
-    details: "this is goddess pose",
-    src: "image3.jpeg"
+    details: "Goddess pose to help you harness the forces of the Universe while stretching and toning your core. This pose helps each of us connect to our inherent inner goddess, finding a common space with this powerful feminine energy.",
+    src: "goddess.png"
   },
   {
     id: "Tree Pose",
-    pose: "Tree",
-    details: "this is tree pose",
-    src: "image4.jpeg"
+    pose: "Tree Pose",
+    details: "Tree pose increases balance, focus, memory and concentration and strengthens the ankles and knees.",
+    src: "tree_pose.png"
   },
   {
     id: "Mountain Pose",
     pose: "Mountain",
-    details: "this is mountain pose",
-    src: "image5.jpeg"
+    details: "The foundation of all standing poses, Mountain Pose makes a great a starting position, resting pose, or tool to improve posture.",
+    src: "mountain_pose.png"
   }
 ];
 
@@ -168,15 +168,6 @@ const StyledPoseSelector = styled(PoseSelector)`
         transform: rotate(-90deg);
         white-space: nowrap;
       }
-    }
-
-    .pose-content {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      margin: 0;
-      padding: 0;
-      opacity: 0;
     }
   }
 
