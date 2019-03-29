@@ -1,12 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import StyledPoseDetails from "../poseDetails"
+import StyledPoseDetails from "../poseDetails";
 
 class PoseSelector extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      active: null, details: null, src: null
+      active: null,
+      details: null,
+      src: null
     };
   }
 
@@ -15,22 +17,23 @@ class PoseSelector extends React.Component {
       active: id,
       details: details,
       src: src
-    })
+    });
     this.props.getChosenPose(id);
-
   }
 
   render() {
-    const {active} = this.state;
+    const { active } = this.state;
     const poseInfo = this.state;
     return (
       <div className={this.props.className}>
-          {POSES.map(({ id, pose, details, src }) => (
-            <button key={id} onClick={() => this.handleClick(id, details, src)}>
-              {pose}
-              {id === active && details && <StyledPoseDetails poseInfo={poseInfo} />}
-            </button>
-          ))}
+        {POSES.map(({ id, pose, details, src }) => (
+          <button key={id} onClick={() => this.handleClick(id, details, src)}>
+            {pose}
+            {id === active && details && (
+              <StyledPoseDetails poseInfo={poseInfo} />
+            )}
+          </button>
+        ))}
       </div>
     );
   }
@@ -70,12 +73,11 @@ const POSES = [
 ];
 
 const StyledPoseSelector = styled(PoseSelector)`
-position: absolute;
-top: 0;
-z-index: 1;
+  position: absolute;
+  top: 0;
+  z-index: 2;
   button {
-    color: Black
+    color: Black;
   }
-`
-;
+`;
 export default StyledPoseSelector;
