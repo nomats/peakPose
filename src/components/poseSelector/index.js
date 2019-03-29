@@ -22,21 +22,20 @@ class PoseSelector extends React.Component {
       src: src,
     },
     () => {
-      ""
+      console.log("lol")
     });
     this.props.getChosenPose(id);
   }
 
   displayAccordion() {
-    this.setState({
-      displayAccordion: !this.state.displayQuestions
-    });
+    this.setState(prevState => ({
+      displayAccordion: !prevState.displayAccordion
+    }));
   }
-  
+
   render() {
     const {activePose} = this.state;
     const poseInfo = this.state;
-    // const {className} = this.state;
     let accordion = null;
 
     if (this.state.displayAccordion) {
@@ -57,7 +56,7 @@ class PoseSelector extends React.Component {
     }
     return (
       <div className={this.props.className} id="poseSelector">
-        <button id="hamburger-menu" onClick={this.displayAccordion}><span></span><span></span><span></span></button>
+        <i class="material-icons md-48" onClick={this.displayAccordion}>{this.state.displayAccordion ? "close" : "accessibility_new"}</i>
         {accordion}
       </div>
     );
@@ -99,9 +98,10 @@ const POSES = [
 
 const StyledPoseSelector = styled(PoseSelector)`
   position: absolute;
-  top: 5px;
-  left: 5px;
-  z-index: 1;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
 
   * {
     box-sizing: border-box;
@@ -117,6 +117,7 @@ const StyledPoseSelector = styled(PoseSelector)`
 
   ul {
     display: flex;
+    width: 100%;
     min-height: 100vh;
     max-height: 100vh;
     margin: 0;
@@ -130,28 +131,25 @@ const StyledPoseSelector = styled(PoseSelector)`
     display: flex;
     align-items: stretch;
     padding: 20px;
-    background: #E74C3C;
+    background: #A33265;
     cursor: pointer;
     transition: all .5s ease;
 
     &:hover {
-      background: darken(#E74C3C, 3);
+      background: #FF8F4F;
+
+      .pose-title {
+        color: #A33265;
+      }
     }
 
     &.active {
       flex: 5;
-      background: #fff;
+      background: #FF8F4F;
       cursor: default;
 
       h2 {
-        color: #E74C3C;
-      }
-
-      .pose-content {
-        flex: 4;
-        opacity: 1;
-
-        color: #E74C3C;
+        color: #A33265;
       }
     }
 
@@ -163,7 +161,7 @@ const StyledPoseSelector = styled(PoseSelector)`
       margin: 0;
       padding: 0;
       text-align: center;
-      color: white;
+      color: #FF8F4F;
 
       h2 {
         margin: 0;
@@ -182,33 +180,12 @@ const StyledPoseSelector = styled(PoseSelector)`
     }
   }
 
-  #menu-wrapper {
-    overflow: hidden;
-    max-width: 100%;
-    cursor: pointer;
-  }
-
-  #menu-wrapper #hamburger-menu {
-    width: 30px;
-    height: 30px;
-    margin: 20px;
-  }
-
-  #menu-wrapper #hamburger-menu span {
-      opacity: 1;
-      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-      left: 0;
-      display: block;
-      width: 100%;
-      height: 3px;
-      border-radius: 10px;
-      color: black;
-      background-color: blue;
-      position: absolute;
-      -webkit-transform: rotate(0deg);
-      transform: rotate(0deg);
-      -webkit-transition: .4s ease-in-out;
-      transition: .4s ease-in-out;
+  .material-icons.md-48 {
+    padding: 50px;
+    font-size: 60px;
+    z-index: 3;
+        position: absolute;
+    color: #FFA9A8;
   }
 `;
 export default StyledPoseSelector;
