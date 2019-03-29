@@ -17,7 +17,6 @@ const Checklist = props => (
       <div className="topBuffer"></div>
       <div className="sunIcon"><img src="sun.png" /></div>
       <div className="moveName">
-
         {props.activePose && props.activePose}
       </div>
 
@@ -87,7 +86,7 @@ img {
   opacity: 0;
 }
 
-.trueResult .sunIcon{
+.falseResult .sunIcon{
   animation: spin 4s linear infinite;
   z-index: 0;
   opacity: 1;
@@ -110,24 +109,27 @@ img {
   height: 33%;
 }
 
+.moveName {
+  font-size: 1.5em;
+}
+
 .listHolder {
+  text-align: left;
   height: 50%;
 }
-  li {
 
+  li {
+    font-size: 0.9em;
     padding-top: 25px;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     list-style: none;
   }
 
   li.false {
-    list-style-image: url('https://image.flaticon.com/icons/svg/148/148766.svg');
-
-    color: #cc3d55;
+    color: #F43F3F;
   }
   li.true {
-    list-style-image: url('https://image.flaticon.com/icons/svg/148/148767.svg');
-    color: #6b9373;
+    color: #47EF8B;
   }
 
   i {
