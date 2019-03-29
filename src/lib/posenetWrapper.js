@@ -96,7 +96,7 @@ class Pose {
     );    
     const check_2 = check_2a && check_2b
 
-    const criteria_3 = "Feet touching";    
+    const criteria_3 = "Put your feet together";    
     const check_3 =
       this.bodypart("leftAnkle").position["x"] >
       this.bodypart("rightAnkle").position["x"];
