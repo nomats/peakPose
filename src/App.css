@@ -6,7 +6,7 @@ body {
   margin: 0px;
   padding: 0px;
   height: 100%;
-  background-color: blue;
+  background-color: #dadbd9;
 }
 
 .App {
@@ -14,7 +14,7 @@ body {
   text-align: left;
   vertical-align: bottom;
   height: 100%;
-  background-color: green;
+  background-color: white;
 }
 
 #root {

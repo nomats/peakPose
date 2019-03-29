@@ -11,17 +11,69 @@ exports[`Checklist should render correctly with no props 1`] = `
         "isStatic": true,
         "rules": Array [
           "
-  margin-bottom: 3px;
-  padding: 0px;
-  display: inline-block;
-  width: 24.9%;
-  height: 100%;
-  background-color: pink;
-  vertical-align: bottom;
-  overflow: hidden;
-  
+text-align: center;
+font-size: 1.5em;
+margin-bottom: 3px;
+display: inline-block;
+width: 24.9%;
+height: 100%;
+vertical-align: bottom;
+overflow: hidden;
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.logoholder {
+  border-radius: 50px 0px 0px 0px;
+  background-color: white;
+  padding-top: 10px;
+  padding-right: 30px;
+  text-align: right;
+}
+
+.links {
+  height: 5%;
+  background-color: white;
+  padding-right: 47px;
+  text-align: right;
+  font-size: 0.5em;
+}
+
+img {
+  width: 67%;
+}
+
+.topBuffer {
+  height: 50%;
+}
+
+.trueResult{
+  vertical-align: middle;
+  color: green;
+  height: 33%;
+}
+
+.noResult {
+  vertical-align: middle;
+  height: 33%;
+}
+
+.falseResult{
+  background-color: black;
+  vertical-align: middle;
+  color: red;
+  height: 33%;
+  background-image: url('https://d1j8pt39hxlh3d.cloudfront.net/uploads/party_face_256_1.gif')
+}
+
+.listHolder {
+  height: 50%;
+}
   li {
-    padding-top: 15px;
+
+    padding-top: 25px;
     font-family: \\"Lucida Sans Unicode\\", \\"Lucida Grande\\", sans-serif;
   }
 

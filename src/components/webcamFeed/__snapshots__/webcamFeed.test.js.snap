@@ -12,7 +12,6 @@ exports[`WebcamFeed should render correctly with no props 1`] = `
         "rules": Array [
           "
   display: inline-block;
-  background-color: white;
   width: 75.1%;
   height: 100%;
   text-align: left;

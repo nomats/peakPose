@@ -13,8 +13,9 @@ class PoseDotter extends React.Component {
   drawPose(ctx, canvas) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.font = "30px Impact";
+    ctx.fillStyle = "#FFA9A8"
     if (this.props.result) {
-      ctx.fillStyle = this.props.result[0] ? "#00ff00" : "#ff0000";
+      ctx.fillStyle = this.props.result[0] ? "#47EF8B" : "#F43F3F";
     }
     if (this.props.pose) {
       for (var i = 0; i < this.props.pose.source.keypoints.length; i++) {
